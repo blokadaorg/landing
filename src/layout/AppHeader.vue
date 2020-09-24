@@ -19,79 +19,83 @@
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
                 <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
-                        <i class="ni ni-ui-04 d-lg-none"></i>
-                        <span class="nav-link-inner--text">Components</span>
+                        <i class="ni ni-ui-04 d-lg-none mr-2"></i>
+                        <span class="nav-link-inner--text">About</span>
                     </a>
                     <div class="dropdown-menu-inner">
-                        <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
+                        <a href="#about"
                            class="media d-flex align-items-center">
-                            <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                                <i class="ni ni-spaceship"></i>
+                            <div class="icon icon-shape bg-gradient-info rounded-circle text-white">
+                                <i class="fas fa-info"></i>
                             </div>
                             <div class="media-body ml-3">
-                                <h6 class="heading text-primary mb-md-1">Getting started</h6>
-                                <p class="description d-none d-md-inline-block mb-0">Get started with Bootstrap, the
-                                    world's most popular framework for building responsive sites.</p>
+                                <h6 class="heading mb-md-1">What is Blokada?</h6>
+                                <p class="description d-none d-md-inline-block mb-0">Learn the basic information about the app.</p>
                             </div>
                         </a>
-                        <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
+                        <a href="#download"
                            class="media d-flex align-items-center">
                             <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                                <i class="ni ni-ui-04"></i>
+                                <i class="fas fa-cloud-download-alt"></i>
                             </div>
                             <div class="media-body ml-3">
-                                <h5 class="heading text-warning mb-md-1">Components</h5>
-                                <p class="description d-none d-md-inline-block mb-0">Learn how to use Argon
-                                    compiling Scss, change brand colors and more.</p>
+                                <h5 class="heading mb-md-1">Download</h5>
+                                <p class="description d-none d-md-inline-block mb-0">Download Blokada for your platform.</p>
+                            </div>
+                        </a>
+                        <a href="#community"
+                           class="media d-flex align-items-center">
+                            <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                                <h5 class="heading mb-md-1">Community</h5>
+                                <p class="description d-none d-md-inline-block mb-0">Join our awesome community.</p>
+                            </div>
+                        </a>
+                        <a href="#donate"
+                           class="media d-flex align-items-center">
+                            <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                                <h5 class="heading mb-md-1">Support us</h5>
+                                <p class="description d-none d-md-inline-block mb-0">Donate to help us continue the project.</p>
                             </div>
                         </a>
                     </div>
                 </base-dropdown>
                 <base-dropdown tag="li" class="nav-item">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
-                        <i class="ni ni-collection d-lg-none"></i>
-                        <span class="nav-link-inner--text">Examples</span>
+                        <i class="ni ni-collection d-lg-none mr-2"></i>
+                        <span class="nav-link-inner--text">More</span>
                     </a>
-                    <router-link to="/landing" class="dropdown-item">Landing</router-link>
-                    <router-link to="/profile" class="dropdown-item">Profile</router-link>
-                    <router-link to="/login" class="dropdown-item">Login</router-link>
-                    <router-link to="/register" class="dropdown-item">Register</router-link>
+                    <a href="https://go.blokada.org/dev_home" class="dropdown-item">Source</a>
+                    <a href="https://go.blokada.org/credits" class="dropdown-item">Authors</a>
+                    <a href="https://go.blokada.org/terms" class="dropdown-item">Terms of use</a>
+                    <a href="https://go.blokada.org/privacy" class="dropdown-item">Privacy policy</a>
                 </base-dropdown>
             </ul>
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" rel="noopener"
-                       data-toggle="tooltip" title="Like us on Facebook">
-                        <i class="fa fa-facebook-square"></i>
-                        <span class="nav-link-inner--text d-lg-none">Facebook</span>
+                    <a class="nav-link nav-link-icon" href="https://go.blokada.org/forum" rel="noopener"
+                       data-toggle="tooltip" title="Forums">
+                        <i class="fas fa-comments"></i>
+                        <span class="nav-link-inner--text d-lg-none ml-2">Forums</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial"
-                       target="_blank" rel="noopener" data-toggle="tooltip" title="Follow us on Instagram">
-                        <i class="fa fa-instagram"></i>
-                        <span class="nav-link-inner--text d-lg-none">Instagram</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" rel="noopener"
-                       data-toggle="tooltip" title="Follow us on Twitter">
-                        <i class="fa fa-twitter-square"></i>
-                        <span class="nav-link-inner--text d-lg-none">Twitter</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/vue-argon-design-system"
-                       target="_blank" rel="noopener" data-toggle="tooltip" title="Star us on Github">
-                        <i class="fa fa-github"></i>
-                        <span class="nav-link-inner--text d-lg-none">Github</span>
+                    <a class="nav-link nav-link-icon" href="https://app.blokada.org"
+                       rel="noopener" data-toggle="tooltip" title="Dashboard">
+                        <i class="fas fa-user-circle"></i>
+                        <span class="nav-link-inner--text d-lg-none ml-2">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item d-none d-lg-block ml-lg-4">
-                    <a href="https://www.creative-tim.com/product/vue-argon-design-system" target="_blank" rel="noopener"
+                    <a href="#download" rel="noopener"
                        class="btn btn-neutral btn-icon">
                 <span class="btn-inner--icon">
-                  <i class="fa fa-cloud-download mr-2"></i>
+                  <i class="fas fa-cloud-download-alt mr-2"></i>
                 </span>
                         <span class="nav-link-inner--text">Download</span>
                     </a>

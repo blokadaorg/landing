@@ -7,11 +7,11 @@
     will-change: transform;
     letter-spacing: $btn-letter-spacing;
     font-size: $input-btn-font-size;
-    
+
     &:hover {
         @include box-shadow($btn-hover-box-shadow);
         transform: translateY(-1px);
-    }  
+    }
 
     &:not(:last-child) {
         margin-right: .5rem;
@@ -63,7 +63,7 @@
 }
 
 .btn-neutral {
-    color: theme-color("primary");
+    color: theme-color("default");
 }
 
 // Icons
@@ -72,7 +72,7 @@
 .btn i:not(:first-child) {
     margin-left: 0.5rem;
 }
- 
+
 .btn svg:not(:last-child),
 .btn i:not(:last-child) {
     margin-right: 0.5rem;
@@ -120,7 +120,7 @@
 }
 
 
-// Icons 
+// Icons
 
 .btn-icon {
     .btn-inner--icon {

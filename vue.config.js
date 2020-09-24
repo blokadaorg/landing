@@ -10,11 +10,11 @@ module.exports = {
     ]
   },
   pwa: {
-    name: 'Vue Argon Design',
-    themeColor: '#172b4d',
-    msTileColor: '#172b4d',
+    name: 'Blokada',
+    themeColor: '#121212',
+    msTileColor: '#121212',
     appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: '#172b4d'
+    appleMobileWebAppStatusBarStyle: '#121212'
   },
   css: {
     // Enable CSS source maps.

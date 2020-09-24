@@ -21,6 +21,11 @@ import router from "./router";
 import Argon from "./plugins/argon-kit";
 import './registerServiceWorker'
 
+// TODO: Change it in the future to only import used icons, not all
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+
+
 Vue.config.productionTip = false;
 Vue.use(Argon);
 new Vue({

@@ -1,5 +1,5 @@
 {
-  "name": "vue-argon-design-system",
+  "name": "landing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "bootstrap-vue": "^2.0.4",
     "flatpickr": "^4.5.1",
     "nouislider": "^11.1.0",

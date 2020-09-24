@@ -1,75 +1,59 @@
 <template>
     <footer class="footer has-cards">
-        <div class="container container-lg">
-            <div class="row">
-                <div class="col-md-6 mb-5 mb-md-0">
-                    <div class="card card-lift--hover shadow border-0">
-                        <router-link to="/landing" title="Landing Page">
-                            <img v-lazy="'img/theme/landing.jpg'" class="card-img">
-                        </router-link>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-5 mb-lg-0">
-                    <div class="card card-lift--hover shadow border-0">
-                        <router-link to="/profile" title="Profile Page">
-                            <img v-lazy="'img/theme/profile.jpg'" class="card-img">
-                        </router-link>
-                    </div>
-                </div>
-            </div>
+        <div class="container">
+            <br/><br/><br/><br/><br/><br/><br/>
         </div>
+
         <div class="container">
             <div class="row row-grid align-items-center my-md">
                 <div class="col-lg-6">
-                    <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-                    <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
+                    <h4 class="mb-0 font-weight-light">Let's stay in touch!</h4>
                 </div>
                 <div class="col-lg-6 text-lg-center btn-wrapper">
-                    <a target="_blank" rel="noopener" href="https://twitter.com/creativetim"
+                    <a rel="noopener" href="http://go.blokada.org/social_twitter"
                        class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Follow us">
-                        <i class="fa fa-twitter"></i>
+                       data-original-title="Twitter">
+                        <i class="fab fa-twitter"></i>
                     </a>
-                    <a target="_blank" rel="noopener" href="https://www.facebook.com/creativetim"
+                    <a rel="noopener" href="http://go.blokada.org/social_facebook"
                        class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Like us">
-                        <i class="fa fa-facebook-square"></i>
+                       data-original-title="Facebook">
+                        <i class="fab fa-facebook-square"></i>
                     </a>
-                    <a target="_blank" rel="noopener" href="https://dribbble.com/creativetim"
-                       class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" data-toggle="tooltip"
-                       data-original-title="Follow us">
-                        <i class="fa fa-dribbble"></i>
+                    <a rel="noopener" href="https://go.blokada.org/social_reddit"
+                       class="btn btn-neutral btn-icon-only btn-pinterest btn-lg btn-round" data-toggle="tooltip"
+                       data-original-title="Reddit">
+                        <i class="fab fa-reddit"></i>
                     </a>
-                    <a target="_blank" rel="noopener" href="https://github.com/creativetimofficial"
+                    <a rel="noopener" href="https://go.blokada.org/dev_home"
                        class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Star on Github">
-                        <i class="fa fa-github"></i>
+                       data-original-title="Github">
+                        <i class="fab fa-github"></i>
                     </a>
                 </div>
             </div>
             <hr>
             <div class="row align-items-center justify-content-md-between">
-                <div class="col-md-6">
+                <div class="col-md-4 mb-4 mb-md-0">
                     <div class="copyright">
                         &copy; {{year}}
-                        <a href="https://www.creative-tim.com" target="_blank" rel="noopener">Creative Tim</a> & <a href="https://www.binarcode.com" target="_blank" rel="noopener">Binar Code</a>
+                        <a href="https://blokada.org" rel="noopener">Blocka AB</a>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-12 col-md-8">
                     <ul class="nav nav-footer justify-content-end">
                         <li class="nav-item">
-                            <a href="https://www.creative-tim.com" class="nav-link" target="_blank" rel="noopener">Creative Tim</a>
+                            <a href="https://go.blokada.org/dev_home" class="nav-link" rel="noopener">Source</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank" rel="noopener">About
-                                Us</a>
+                            <a href="https://go.blokada.org/credits"
+                               class="nav-link" rel="noopener">Authors</a>
                         </li>
                         <li class="nav-item">
-                            <a href="http://blog.creative-tim.com" class="nav-link" target="_blank" rel="noopener">Blog</a>
+                            <a href="https://go.blokada.org/terms" class="nav-link" rel="noopener">Terms of use</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md"
-                               class="nav-link" target="_blank" rel="noopener">MIT License</a>
+                            <a href="https://go.blokada.org/privacy" class="nav-link" rel="noopener">Privacy policy</a>
                         </li>
                     </ul>
                 </div>

@@ -72,7 +72,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial"
-                       target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+                       data-toggle="tooltip" title="Follow us on Instagram">
                         <i class="fa fa-instagram"></i>
                         <span class="nav-link-inner--text d-lg-none">Instagram</span>
                     </a>
@@ -86,7 +86,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/vue-argon-design-system"
-                       target="_blank" data-toggle="tooltip" title="Star us on Github">
+                       data-toggle="tooltip" title="Star us on Github">
                         <i class="fa fa-github"></i>
                         <span class="nav-link-inner--text d-lg-none">Github</span>
                     </a>

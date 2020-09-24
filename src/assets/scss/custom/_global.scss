@@ -54,7 +54,7 @@
 
                 &:not(:nth-child(1)) {
                     opacity: 0;
-                } 
+                }
             }
         }
 
@@ -128,9 +128,9 @@
                 &:nth-child(13) {
                     left: calc(50% - (var(--gutter) * 2.7));
                     top: calc(50% - (var(--gutter) * 1.5));
-                } 
+                }
             }
-            
+
         }
     }
 }

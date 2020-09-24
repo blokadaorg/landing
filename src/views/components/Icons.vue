@@ -11,7 +11,7 @@
                     <div class="btn-wrapper">
                         <a href="https://demos.creative-tim.com/argon-design-system/docs/foundation/icons.html"
                            class="btn btn-primary">View demo icons</a>
-                        <a href="https://nucleoapp.com/?ref=1712" target="_blank" class="btn btn-default mt-3 mt-md-0">View
+                        <a href="https://nucleoapp.com/?ref=1712" class="btn btn-default mt-3 mt-md-0">View
                             all icons</a>
                     </div>
                 </div>

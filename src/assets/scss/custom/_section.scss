@@ -35,7 +35,7 @@
     .stars-and-coded{
         margin-top: 8rem;
     }
-    
+
     .shape {
         position: absolute;
         top: 0;
@@ -67,6 +67,13 @@
             + .shape-container {
                 padding-top: 18rem;
                 padding-bottom: 19rem;
+            }
+
+            @include media-breakpoint-down(sm) {
+                + .shape-container {
+                    padding-top: 11rem;
+                    padding-bottom: 11rem;
+                }
             }
         }
     }
