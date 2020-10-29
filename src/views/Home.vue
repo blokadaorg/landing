@@ -282,6 +282,35 @@
                 </card>
             </div>
         </section>
+        <section class="section section-lg pt-lg-0 mt-4" id="opinions">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-lg">
+                    <div class="col-lg-8">
+                        <p class="lead text-muted">Here are some of the opinions from our users.<br/><a href="https://go.blokada.org/opinions" class="text-warning">Tap here to see more</a>.</p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row row-grid">
+                            <div class="col-lg-4" v-for="opinion in opinionsToShow" :key="opinion">
+                                <card class="border-0" hover shadow body-classes="py-3">
+                                    <p class="mt-4">
+                                        <span class="text-warning"><i class="fas fa-star" /></span>
+                                        <span class="text-warning"><i class="fas fa-star" /></span>
+                                        <span class="text-warning"><i class="fas fa-star" /></span>
+                                        <span class="text-warning"><i class="fas fa-star" /></span>
+                                        <span class="text-warning"><i class="fas fa-star" /></span>
+                                    </p>
+
+                                    <p class="description mt-4">{{ opinion }}</p>
+                                </card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="section section-shaped my-0 overflow-hidden" id="donate">
             <div class="shape shape-style-3 bg-gradient-default shape-skew">
                 <span></span>
@@ -347,15 +376,39 @@
 
     </div>
 </template>
-
 <script>
-import Tabs from "@/components/Tabs/Tabs.vue";
-import TabPane from "@/components/Tabs/TabPane.vue";
-export default {
-  name: "home",
-  components: {
-    Tabs,
-    TabPane
-  }
-};
+  import Tabs from "@/components/Tabs/Tabs.vue";
+  import TabPane from "@/components/Tabs/TabPane.vue";
+
+  export default {
+    name: "home",
+    components: {
+      Tabs,
+      TabPane
+    },
+    data() {
+      return {
+        opinions: [
+          "Thanks for it. It totally solved the problem. Not a single ad. I tried some other apps /games from playstore which are known to have most annoying ads, but I didn’t see a single type of ad in any form. I didn’t know that it was my system’s fault, but thanks to Blokada now I’m ad free.",
+          "A world without blokada is desolate, annoying and too full.",
+          "My parents are phone shopping and yes this is a selling point that it works with Blokada as dad said so.",
+          "Just tested v5 today and speeds are nearly identical. Looks like v5 brought a performance boost.",
+          "I installed the v5 over the app and it went smoothly. No reset and the new ui is… Big. Great app, much thanks to the devs.",
+          "Best app till now. Installed on all my phones.",
+          "And thanks for making this free app in the first place, it’s a lifesaver.",
+          "IMO v5 is better organized compared to v4. all main actions are visible in bottom toolbar view.",
+          "Huge reason why I love this app now. Lots of battery left with 3 hours of SOT so far.",
+          "By the way VPN works flawlessly. It’s nice to have both working (blocking ads and using vpn).",
+          "To the developers: THANK YOU for releasing an iOS version of Blokada! This is the app I missed most when I migrated to iOS, and to top it off this is running on iOS 14 Beta 4!"
+        ]
+      }
+    },
+    computed: {
+      opinionsToShow() {
+        const size = this.opinions.length
+        const startIndex = Math.floor(Math.random() * (size - 3 + 1));
+        return this.opinions.slice(startIndex, startIndex + 3)
+      }
+    }
+  };
 </script>
