@@ -9,6 +9,7 @@ module.exports = {
       })
     ]
   },
+
   pwa: {
     name: 'Blokada',
     themeColor: '#121212',
@@ -16,8 +17,18 @@ module.exports = {
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: '#121212'
   },
+
   css: {
     // Enable CSS source maps.
     sourceMap: process.env.NODE_ENV !== 'production'
+  },
+
+  pluginOptions: {
+    i18n: {
+      locale: 'en',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
+      enableInSFC: true
+    }
   }
 };
