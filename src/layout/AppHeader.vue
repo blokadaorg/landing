@@ -89,31 +89,70 @@
                         <span class="nav-link-inner--text d-lg-none ml-2">Dashboard</span>
                     </a>
                 </li>
+                <li class="nav-item ml-lg-4">
+                  <a href="#" rel="noopener" @click.prevent="modal = true"
+                    class="nav-link nav-link-icon">
+                    <i class="fas fa-flag"></i>
+                    <span class="nav-link-inner--text ml-2">{{ $i18n.locale.toUpperCase() }}</span>
+                  </a>
+                </li>
                 <li class="nav-item d-none d-lg-block ml-lg-4">
                     <a href="#download" rel="noopener"
                        class="btn btn-neutral btn-icon">
-                <span class="btn-inner--icon">
-                  <i class="fas fa-cloud-download-alt mr-2"></i>
-                </span>
+                        <span class="btn-inner--icon">
+                          <i class="fas fa-cloud-download-alt mr-2"></i>
+                        </span>
                         <span class="nav-link-inner--text">Download</span>
                     </a>
                 </li>
             </ul>
         </base-nav>
+        <modal :show.sync="modal">
+          <h6 slot="header" class="modal-title" id="modal-title-default">{{ $t('app settings language label') }}</h6>
+
+          <div class="custom-control custom-radio mb-3" v-for="lang in langs" :key="lang" @click="saveLocale(lang)">
+            <input name="language" class="custom-control-input" :id="lang" type="radio">
+            <label class="custom-control-label" :for="lang">{{ langNames[lang] }}</label>
+          </div>
+
+          <template slot="footer">
+            <base-button type="link" class="ml-auto" @click="modal = false">{{ $t('universal action cancel') }}</base-button>
+          </template>
+        </modal>
     </header>
 </template>
 <script>
-import BaseNav from "@/components/BaseNav";
-import BaseDropdown from "@/components/BaseDropdown";
-import CloseButton from "@/components/CloseButton";
+  import BaseNav from "@/components/BaseNav";
+  import BaseDropdown from "@/components/BaseDropdown";
+  import CloseButton from "@/components/CloseButton";
+  import Modal from "@/components/Modal.vue";
 
-export default {
-  components: {
-    BaseNav,
-    CloseButton,
-    BaseDropdown
-  }
-};
+  export default {
+    components: {
+      BaseNav,
+      CloseButton,
+      BaseDropdown,
+      Modal
+    },
+    data () {
+      return {
+        modal: false,
+        langs: ["de", "en", "es", "pl"],
+        langNames: {
+          "en": "English",
+          "pl": "Polski",
+          "de": "Deutsch",
+          "es": "Español",
+        }
+      }
+    },
+    methods: {
+      saveLocale(lang) {
+        console.log(`Changed locale: ${lang}`)
+        this.$i18n.locale = lang
+        sessionStorage.setItem("blokada_locale", lang)
+        this.modal = false
+      }
+    }
+  };
 </script>
-<style>
-</style>

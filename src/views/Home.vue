@@ -29,7 +29,7 @@
                                                  class="mb-3 mb-sm-0"
                                                  type="warning"
                                                  icon="ni ni-cloud-download-95">
-                                        Download
+                                        {{ $t('universal action download') }}
                                     </base-button>
                                     <base-button tag="a"
                                                  href="#about"

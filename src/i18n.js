@@ -17,6 +17,11 @@ function loadLocaleMessages () {
 }
 
 function decideLocale() {
+  let savedLocale = sessionStorage.getItem("blokada_locale")
+  if (savedLocale) {
+    return savedLocale
+  }
+
   let userLocale = navigator.language || navigator.userLanguage
   // This soon will be a problem
   return userLocale.split('-')[0]
