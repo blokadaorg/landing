@@ -18,7 +18,7 @@
                 <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
                         <i class="ni ni-ui-04 d-lg-none mr-2"></i>
-                        <span class="nav-link-inner--text">About</span>
+                        <span class="nav-link-inner--text">{{ $t('account action about') }}</span>
                     </a>
                     <div class="dropdown-menu-inner">
                         <a href="#about"
@@ -27,8 +27,8 @@
                                 <i class="fas fa-info"></i>
                             </div>
                             <div class="media-body ml-3">
-                                <h6 class="heading mb-md-1">What is Blokada?</h6>
-                                <p class="description d-none d-md-inline-block mb-0">Learn the basic information about the app.</p>
+                                <h6 class="heading mb-md-1">{{ $t('homepage header what is blokada') }}</h6>
+                                <p class="description d-none d-md-inline-block mb-0">{{ $t('homepage desc what is blokada') }}</p>
                             </div>
                         </a>
                         <a href="#download"
@@ -37,8 +37,8 @@
                                 <i class="fas fa-cloud-download-alt"></i>
                             </div>
                             <div class="media-body ml-3">
-                                <h5 class="heading mb-md-1">Download</h5>
-                                <p class="description d-none d-md-inline-block mb-0">Download Blokada for your platform.</p>
+                                <h5 class="heading mb-md-1">{{ $t('universal action download') }}</h5>
+                                <p class="description d-none d-md-inline-block mb-0">{{ $t('homepage desc download') }}</p>
                             </div>
                         </a>
                         <a href="#community"
@@ -47,8 +47,8 @@
                                 <i class="fas fa-comments"></i>
                             </div>
                             <div class="media-body ml-3">
-                                <h5 class="heading mb-md-1">Community</h5>
-                                <p class="description d-none d-md-inline-block mb-0">Join our awesome community.</p>
+                                <h5 class="heading mb-md-1">{{ $t('universal action community') }}</h5>
+                                <p class="description d-none d-md-inline-block mb-0">{{ $t('homepage desc community') }}</p>
                             </div>
                         </a>
                         <a href="#donate"
@@ -57,8 +57,8 @@
                                 <i class="fas fa-heart"></i>
                             </div>
                             <div class="media-body ml-3">
-                                <h5 class="heading mb-md-1">Support us</h5>
-                                <p class="description d-none d-md-inline-block mb-0">Donate to help us continue the project.</p>
+                                <h5 class="heading mb-md-1">{{ $t('homepage header support') }}</h5>
+                                <p class="description d-none d-md-inline-block mb-0">{{ $t('homepage desc support') }}</p>
                             </div>
                         </a>
                     </div>
@@ -66,32 +66,32 @@
                 <base-dropdown tag="li" class="nav-item">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
                         <i class="ni ni-collection d-lg-none mr-2"></i>
-                        <span class="nav-link-inner--text">More</span>
+                        <span class="nav-link-inner--text">{{ $t('universal action more') }}</span>
                     </a>
-                    <a href="https://go.blokada.org/dev_home" class="dropdown-item">Source</a>
-                    <a href="https://go.blokada.org/credits" class="dropdown-item">Authors</a>
-                    <a href="https://go.blokada.org/terms" class="dropdown-item">Terms of use</a>
-                    <a href="https://go.blokada.org/privacy" class="dropdown-item">Privacy policy</a>
+                    <a href="https://go.blokada.org/dev_home" class="dropdown-item">{{ $t('homepage action source') }}</a>
+                    <a href="https://go.blokada.org/credits" class="dropdown-item">{{ $t('homepage action authors') }}</a>
+                    <a href="https://go.blokada.org/terms" class="dropdown-item">{{ $t('payment action terms') }}</a>
+                    <a href="https://go.blokada.org/privacy" class="dropdown-item">{{ $t('payment action policy') }}</a>
                 </base-dropdown>
             </ul>
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="https://go.blokada.org/forum" rel="noopener"
-                       data-toggle="tooltip" title="Forums">
+                       data-toggle="tooltip" :title="$t('homepage action forums')">
                         <i class="fas fa-comments"></i>
-                        <span class="nav-link-inner--text d-lg-none ml-2">Forums</span>
+                        <span class="nav-link-inner--text d-lg-none ml-2">{{ $t('homepage action forums') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="https://app.blokada.org"
-                       rel="noopener" data-toggle="tooltip" title="Dashboard">
+                       rel="noopener" data-toggle="tooltip" :title="$t('homepage action dashboard')">
                         <i class="fas fa-user-circle"></i>
-                        <span class="nav-link-inner--text d-lg-none ml-2">Dashboard</span>
+                        <span class="nav-link-inner--text d-lg-none ml-2">{{ $t('homepage action dashboard') }}</span>
                     </a>
                 </li>
                 <li class="nav-item ml-lg-4">
                   <a href="#" rel="noopener" @click.prevent="modal = true"
-                    class="nav-link nav-link-icon">
+                    class="nav-link nav-link-icon" data-toggle="tooltip" :title="$t('app settings language label')">
                     <i class="fas fa-flag"></i>
                     <span class="nav-link-inner--text ml-2">{{ $i18n.locale.toUpperCase() }}</span>
                   </a>
@@ -102,7 +102,7 @@
                         <span class="btn-inner--icon">
                           <i class="fas fa-cloud-download-alt mr-2"></i>
                         </span>
-                        <span class="nav-link-inner--text">Download</span>
+                        <span class="nav-link-inner--text">{{ $t('universal action download') }}</span>
                     </a>
                 </li>
             </ul>

@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row row-grid align-items-center my-md">
                 <div class="col-lg-6">
-                    <h4 class="mb-0 font-weight-light">Let's stay in touch!</h4>
+                    <h4 class="mb-0 font-weight-light">{{ $t('homepage about footer') }}</h4>
                 </div>
                 <div class="col-lg-6 text-lg-center btn-wrapper">
                     <a rel="noopener" href="http://go.blokada.org/social_twitter"
@@ -43,17 +43,17 @@
                 <div class="col-12 col-md-8">
                     <ul class="nav nav-footer justify-content-end">
                         <li class="nav-item">
-                            <a href="https://go.blokada.org/dev_home" class="nav-link" rel="noopener">Source</a>
+                            <a href="https://go.blokada.org/dev_home" class="nav-link" rel="noopener">{{ $t('homepage action source') }}</a>
                         </li>
                         <li class="nav-item">
                             <a href="https://go.blokada.org/credits"
-                               class="nav-link" rel="noopener">Authors</a>
+                               class="nav-link" rel="noopener">{{ $t('homepage action authors') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://go.blokada.org/terms" class="nav-link" rel="noopener">Terms of use</a>
+                            <a href="https://go.blokada.org/terms" class="nav-link" rel="noopener">{{ $t('payment action terms') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://go.blokada.org/privacy" class="nav-link" rel="noopener">Privacy policy</a>
+                            <a href="https://go.blokada.org/privacy" class="nav-link" rel="noopener">{{ $t('payment action policy') }}</a>
                         </li>
                     </ul>
                 </div>

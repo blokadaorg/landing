@@ -19,10 +19,10 @@
                     <div class="col px-0">
                         <div class="row">
                             <div class="col-lg-6">
-                                <h1 class="display-3  text-white">The privacy app
-                                    <span>free and open source</span>
+                                <h1 class="display-3  text-white">{{ $t('homepage hero title') }}
+                                    <span>{{ $t('homepage hero subtitle') }}</span>
                                 </h1>
-                                <p class="lead  text-white">Blokada is the popular ad blocker and privacy app for Android and iOS. It's being supported and actively developed by the amazing open source community.</p>
+                                <p class="lead text-white">{{ $t('homepage hero desc') }}</p>
                                 <div class="btn-wrapper">
                                     <base-button tag="a"
                                                  href="#download"
@@ -35,7 +35,7 @@
                                                  href="#about"
                                                  class="mb-3 mb-sm-0"
                                                  type="white">
-                                        Learn More
+                                        {{ $t('universal action learn more') }}
                                     </base-button>
                                 </div>
                             </div>
@@ -53,31 +53,31 @@
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-1">
                         <div class="pr-md-5">
-                            <h3>Blokada 5, the ad blocker</h3>
-                            <p>If you want to efficiently block ads, trackers, malware, save on your data plan, speed up your device and protect your privacy with just one application, then Blokada is for you. It is free, secure and open source.</p>
+                            <h3>{{ $t('homepage about title') }}</h3>
+                            <p>{{ $t('homepage about desc') }}</p>
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
                                         <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">Blocks ads & trackers</h6>
+                                        <h6 class="mb-0">{{ $t('homepage about point one') }}</h6>
                                     </div>
                                 </li>
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
                                         <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">Works for all apps and the browser</h6>
+                                        <h6 class="mb-0">{{ $t('homepage about point two') }}</h6>
                                     </div>
                                 </li>
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
                                         <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">Requires no root or jailbreak</h6>
+                                        <h6 class="mb-0">{{ $t('homepage about point three') }}</h6>
                                     </div>
                                 </li>
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
                                         <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">Built in VPN for better protection</h6>
+                                        <h6 class="mb-0">{{ $t('homepage about point four') }</h6>
                                     </div>
                                 </li>
                             </ul>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div>
-                    <h6 class="mt-5"><a href="https://go.blokada.org/vpn" class="text-warning">Learn more about Blokada Plus</a></h6>
+                    <h6 class="mt-5"><a href="https://go.blokada.org/vpn" class="text-warning">{{ $t('homepage about action plus') }}</a></h6>
                 </div>
             </div>
         </section>
