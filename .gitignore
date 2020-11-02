@@ -20,4 +20,5 @@ yarn-error.log*
 *.sln
 *.sw*
 
-src/locales
+src/locales/*
+!src/locales/en.json
