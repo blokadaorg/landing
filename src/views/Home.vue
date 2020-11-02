@@ -77,7 +77,7 @@
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
                                         <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage about point four') }</h6>
+                                        <h6 class="mb-0">{{ $t('homepage about point four') }}</h6>
                                     </div>
                                 </li>
                             </ul>
@@ -107,8 +107,8 @@
                                       rounded></icon>
                             </div>
                             <div class="pl-md-4">
-                                <h4 class="display-3 text-white">Download Blokada</h4>
-                                <p class="text-white">Blokada is available for several platforms, choose yours.</p>
+                                <h4 class="display-3 text-white">{{ $t('homepage download header') }}</h4>
+                                <p class="text-white">{{ $t('homepage download subheader') }}</p>
                             </div>
                         </div>
 
@@ -127,8 +127,8 @@
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
-                                            <h4 class="title">Blokada 5 for Android</h4>
-                                            <p>This is our new, recommended version <b>for smartphones and tablets with Android 7 or newer</b>. It is simpler and faster compared to Blokada 4 (<a href="https://go.blokada.org/blokada5_vs_blokada4" class="text-warning">read more</a>).</p>
+                                            <h4 class="title">{{ $t('homepage download option android five') }}</h4>
+                                            <p v-html="$t('homepage download desc android five')">{{ $t('homepage download desc android five') }} <a href="https://go.blokada.org/blokada5_vs_blokada4" class="text-warning">{{ $t('universal action learn more') }}</a></p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
@@ -136,13 +136,13 @@
                                                         class="mb-3 mb-sm-0"
                                                         type="warning"
                                                         icon="ni ni-cloud-download-95">
-                                                    Download Blokada 5 .apk
+                                                    {{ $t('homepage download action android five') }}
                                                 </base-button>
                                                 <base-button tag="a"
                                                             href="https://go.blokada.org/apk5_beta"
                                                             class="mb-3 mb-sm-0"
-                                                            type="white">
-                                                    Get Beta .apk
+                                                            type="white" v-html="$t('homepage download action android five beta')">
+                                                    {{ $t('homepage download action android five beta') }}
                                                 </base-button>
                                             </div>
                                         </div>
@@ -156,8 +156,8 @@
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
-                                            <h4 class="title">Blokada 5 Slim for Android</h4>
-                                            <p>Blokada Slim is a <b>lightweight version of the app</b>, and it only contains features allowed by the Google Play policy (<a href="https://go.blokada.org/slim_faq" class="text-warning">read more</a>).</p>
+                                            <h4 class="title">{{ $t('homepage download option android slim') }}</h4>
+                                            <p v-html="$t('homepage download desc android slim')">{{ $t('homepage download desc android slim') }} <a href="https://go.blokada.org/slim_faq" class="text-warning">{{ $t('universal action learn more') }}</a></p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
@@ -165,7 +165,7 @@
                                                         class="mb-3 mb-sm-0"
                                                         type="info"
                                                         icon="fab fa-google-play">
-                                                    Get it on Google Play
+                                                    {{ $t('homepage download action android slim') }}
                                                 </base-button>
                                             </div>
                                         </div>
@@ -179,8 +179,8 @@
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
-                                            <h4 class="title">Blokada 4 for Android</h4>
-                                            <p>We still maintain the older version of Blokada. It has more features, and works on older devices, and TVs.</p>
+                                            <h4 class="title">{{ $t('homepage download option android four') }}</h4>
+                                            <p>{{ $t('homepage download desc android four')}}</p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
@@ -188,13 +188,13 @@
                                                         class="mb-3 mb-sm-0"
                                                         type="success"
                                                         icon="ni ni-cloud-download-95">
-                                                    Download Blokada 4 .apk
+                                                    {{ $t('homepage download action android four') }}
                                                 </base-button>
                                                 <base-button tag="a"
                                                             href="https://go.blokada.org/fdroid"
                                                             class="mb-3 mb-sm-0"
                                                             type="white">
-                                                    Get it on F-Droid
+                                                    {{ $t('homepage download action android four fdroid') }}
                                                 </base-button>
                                             </div>
                                         </div>
@@ -212,8 +212,8 @@
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
-                                            <h4 class="title">Blokada 5 for iOS</h4>
-                                            <p>Blokada 5 is simply available on App Store.</p>
+                                            <h4 class="title">{{ $t('homepage download option ios') }}</h4>
+                                            <p>{{ $t('homepage download desc ios') }}</p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
@@ -221,7 +221,7 @@
                                                         class="mb-3 mb-sm-0"
                                                         type="danger"
                                                         icon="fab fa-apple">
-                                                    Get it on App Store
+                                                    {{ $t('homepage download action ios') }}
                                                 </base-button>
                                             </div>
                                         </div>
@@ -230,7 +230,7 @@
 
                                 <tab-pane key="tab3">
                                     <template slot="title">
-                                        <i class="fas fa-laptop mr-2"></i>Other
+                                        <i class="fas fa-laptop mr-2"></i>{{ $t('account section header other') }}
                                     </template>
 
                                     <div class="d-flex px-md-3">
@@ -239,9 +239,9 @@
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
-                                            <h4 class="title">Blokada for other platforms</h4>
-                                            <p>Currently, we do not provide Blokada for other platforms. However, if you are Blokada Plus user, you can use our VPN on Windows, Linux, Mac, and other platforms where Wireguard is available.</p>
-                                            <a href="https://go.blokada.org/other_platforms" class="text-warning">Learn more</a>
+                                            <h4 class="title">{{ $t('homepage download option other') }}</h4>
+                                            <p>{{ $t('homepage download desc other')}}</p>
+                                            <a href="https://go.blokada.org/other_platforms" class="text-warning">{{ $t('universal action learn more') }}</a>
                                         </div>
                                     </div>
                                 </tab-pane>
@@ -256,8 +256,8 @@
             <div class="container">
                 <div class="row justify-content-center text-center mb-lg">
                     <div class="col-lg-8">
-                        <h2 class="display-3">The Community</h2>
-                        <p class="lead text-muted">Blokada is not only the privacy app. It is also the community of people who care about their digital privacy and wellbeing. You will find us on our forum, where you can ask any questions you may have. We are also present on other social media and chats.</p>
+                        <h2 class="display-3">{{ $t('homepage community header')}}</h2>
+                        <p class="lead text-muted">{{ $t('homepage community desc') }}</p>
                     </div>
                 </div>
 
@@ -268,13 +268,13 @@
                     <div class="p-4 p-md-5">
                         <div class="row align-items-center">
                             <div class="col-lg-8">
-                                <h3 class="text-white">Join us and say hi!</h3>
-                                <p class="lead text-white mt-3">We base all of our work on the feedback of our users. Tell us what you think, what should we improve, or just hang out.</p>
+                                <h3 class="text-white">{{ $t('homepage community cta subheader')}}</h3>
+                                <p class="lead text-white mt-3">{{ $t('homepage community cta desc')}}</p>
                             </div>
                             <div class="col-lg-3 ml-lg-auto">
                                 <base-button tag="a" href="https://go.blokada.org/forum"
                                              type="white" block size="lg">
-                                    Go to forums
+                                    {{ $t('homepage community cta action')}}
                                 </base-button>
                             </div>
                         </div>
@@ -286,7 +286,7 @@
             <div class="container">
                 <div class="row justify-content-center text-center mb-lg">
                     <div class="col-lg-8">
-                        <p class="lead text-muted">Here are some of the opinions from our users.<br/><a href="https://go.blokada.org/opinions" class="text-warning">Tap here to see more</a>.</p>
+                        <p class="lead text-muted">{{ $t('homepage community opinions') }}<br/><a href="https://go.blokada.org/opinions" class="text-warning">{{ $t('universal action learn more') }}</a></p>
                     </div>
                 </div>
 
@@ -321,8 +321,8 @@
             <div class="container pt-lg pb-300">
                 <div class="row text-center justify-content-center">
                     <div class="col-lg-10">
-                        <h2 class="display-3 text-white">Support the project</h2>
-                        <p class="lead text-white">If you like what we do, consider supporting us, so that we can continue developing new features and improvements. This way, Blokada can stay open source and free forever.</p>
+                        <h2 class="display-3 text-white">{{ $t('homepage support header') }}</h2>
+                        <p class="lead text-white">{{ $t('homepage support desc') }}</p>
                     </div>
                 </div>
             </div>
@@ -332,18 +332,18 @@
                 <div class="row justify-content-center mt--300">
                     <div class="col-lg-8">
                         <card gradient="secondary" shadow body-classes="p-lg-5">
-                            <h4 class="mb-1">Blokada is made by you</h4>
-                            <p class="mt-0">Blokada is an open source project, which means you can be sure it's always going to be free, safe to use, and without any hidden agenda. We believe this is the only right way to develop a privacy app you can trust.</p>
+                            <h4 class="mb-1">{{ $t('homepage support cta header') }}</h4>
+                            <p class="mt-0">{{ $t('homepage support cta desc') }}</p>
 
-                            <p>However, developing a quality app like Blokada requires a considerable amount of resources. This project exists thanks to the support of awesome people like you!.</p>
+                            <p>{{ $t('homepage support cta desc more') }}</p>
 
                             <div class="row justify-content-center">
                                 <div class="col-md-8 mt-3">
                                     <base-button type="default" round block size="lg" tag="a" href="https://go.blokada.org/donate">
-                                        Donate (card, Paypal)
+                                        {{ $t('homepage support cta action')}}
                                     </base-button>
                                     <base-button type="white" round block size="lg" tag="a" href="https://go.blokada.org/donate_more">
-                                        Donate (bank, crypto)
+                                        {{ $t('homepage support cta action alt')}}
                                     </base-button>
                                 </div>
                             </div>
@@ -356,10 +356,10 @@
             <div class="container">
                 <div class="row row-grid justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="display-3">Are you a developer
-                            <span class="text-success">and want to make Blokada better?</span>
+                        <h2 class="display-3">{{ $t('homepage developer header')}}
+                            <span class="text-success">{{ $t('homepage developer subheader') }}</span>
                         </h2>
-                        <p class="lead">Blokada is an open source project dedicated to developing the best ad blocker and privacy app for Android and iOS. Check our Github, and let us know, if you need any assistance to make your first PR.</p>
+                        <p class="lead">{{ $t('homepage developer desc') }}</p>
 
                         <br/><br/>
                         <base-button tag="a"
@@ -367,7 +367,7 @@
                             class="mb-3 mb-sm-0"
                             type="default"
                             icon="fab fa-github">
-                            Go to repo
+                            {{ $t('homepage developer action')}}
                         </base-button>
                     </div>
                 </div>
