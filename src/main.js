@@ -26,6 +26,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import i18n from './i18n'
 
+Vue.i18n = i18n
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
