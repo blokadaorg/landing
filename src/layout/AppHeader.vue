@@ -138,7 +138,7 @@
       return {
         modal: false,
         langs: [
-            "bg", "cs", "de", "en", "es", "fr", "id", "it", "ja", "hu", "nl", "pl", "pt-BR", "ro", "ru", "fi", "tr", "zh-Hant"
+            "bg", "cs", "de", "en", "es", "fr", "id", "it", "ja", "hu", "nl", "pl", "pt", "pt-BR", "ro", "ru", "fi", "tr", "zh-Hant"
         ],
         langNames: {
             "en": "English",
@@ -157,6 +157,7 @@
             "ar": "عربى",
             "fi": "Suomalainen",
             "ro": "Română",
+            "pt": "Portugues (Portugal)",
             "pt-BR": "Portugues (Brasil)",
             "fr": "Français",
             "hu": "Magyar",
