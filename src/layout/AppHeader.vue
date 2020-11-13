@@ -137,12 +137,31 @@
     data () {
       return {
         modal: false,
-        langs: ["de", "en", "es", "pl"],
+        langs: [
+            "en", "pl", "de", "es", "it", "hi", "ru", "bg", "tr", "ja", "id", "cs", "zh-Hant", "ar", "fi",
+            "ro", "pt-BR", "fr", "hu", "nl"
+        ],
         langNames: {
-          "en": "English",
-          "pl": "Polski",
-          "de": "Deutsch",
-          "es": "Español",
+            "en": "English",
+            "pl": "Polski",
+            "de": "Deutsch",
+            "es": "Español",
+            "it": "Italiano",
+            "hi": "हिन्दी",
+            "ru": "Pусский",
+            "bg": "Български",
+            "tr": "Türk",
+            "ja": "日本語",
+            "id": "bahasa Indonesia",
+            "cs": "Český",
+            "zh-Hant": "中文 (繁體)",
+            "ar": "عربى",
+            "fi": "Suomalainen",
+            "ro": "Română",
+            "pt-BR": "Portugues (Brasil)",
+            "fr": "Français",
+            "hu": "Magyar",
+            "nl": "Nederlands"
         }
       }
     },
