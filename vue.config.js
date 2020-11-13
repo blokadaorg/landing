@@ -37,6 +37,15 @@ module.exports = {
       fallbackLocale: 'en',
       localeDir: 'locales',
       enableInSFC: true
+    },
+    prerenderSpa: {
+      registry: undefined,
+      renderRoutes: [
+        '/'
+      ],
+      useRenderEvent: true,
+      headless: true,
+      onlyProduction: true
     }
   }
 };
