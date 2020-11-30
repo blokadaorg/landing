@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
+import langs from '../translate/langs.js'
 
 Vue.use(VueI18n)
 
@@ -23,8 +24,17 @@ function decideLocale() {
   }
 
   let userLocale = navigator.language || navigator.userLanguage
-  // This soon will be a problem
-  return userLocale.split('-')[0]
+  console.log(userLocale)
+  if (langs.langs.includes(userLocale)) {
+    return userLocale
+  }
+
+  let langLocale = userLocale.split('-')[0]
+  if (langs.langs.includes(langLocale)) {
+    return langLocale
+  }
+
+  return 'en'
 }
 
 export default new VueI18n({
