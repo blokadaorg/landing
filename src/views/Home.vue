@@ -369,7 +369,7 @@
                                 <input type="hidden" name="storeId" value="9zW6UzCqpL622q1M92tQtodLdug3ChSdLMqjLGmcph7i" />
                                 <input type="hidden" name="price" :value="donateAmount" />
                                 <input type="hidden" name="currency" value="EUR" />
-                                <button type="submit" class="submit" name="submit" style="min-width:209px; min-height:57px; border-radius: 4px;border-style: none;background-color: #0f3b21;" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor"><span style="color:#fff">{{ $paymentText }}</span>
+                                <button type="submit" class="submit" name="submit" style="min-width:209px; min-height:57px; border-radius: 4px;border-style: none;background-color: #0f3b21;" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor"><span style="color:#fff">{{ paymentText() }} &nbsp;&nbsp;</span>
                                 <img src="https://btcpay.blocka.net/img/logo.svg" style="height:57px;display:inline-block;padding: 5% 0 5% 5px;">
                                 </button></form>
 
@@ -462,7 +462,9 @@
         const size = this.opinions.length
         const startIndex = Math.floor(Math.random() * (size - 3 + 1));
         return this.opinions.slice(startIndex, startIndex + 3)
-      },
+      }
+    },
+    methods: {
       paymentText() {
         let price = `${this.donateAmount} €`;
         return this.$t("payment action pay", [price]);
