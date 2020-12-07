@@ -327,7 +327,7 @@
                 </div>
             </div>
         </section>
-        <section class="section section-lg pt-lg-0 section-contact-us">
+        <section class="section section-lg pt-lg-0 section-contact-us" id="crypto">
             <div class="container">
                 <div class="row justify-content-center mt--300">
                     <div class="col-lg-8">
@@ -342,12 +342,62 @@
                                     <base-button type="default" round block size="lg" tag="a" href="https://go.blokada.org/donate">
                                         {{ $t('homepage support cta action')}}
                                     </base-button>
-                                    <base-button type="white" round block size="lg" tag="a" href="https://go.blokada.org/donate_more">
+                                    <base-button type="white" round block size="lg" tag="a" @click.prevent="donateModal = true">
                                         {{ $t('homepage support cta action alt')}}
                                     </base-button>
                                 </div>
                             </div>
                         </card>
+                        <modal :show.sync="donateModal"
+                            gradient="success"
+                            modal-classes="modal-success modal-dialog-centered">
+                            <h6 slot="header" class="modal-title" id="modal-title-notification">{{ $t('homepage support cta action alt')}}</h6>
+
+                            <div class="text-center">
+                                <p>{{ $t('payment donate disclaimer') }}</p>
+                                <p class="small">{{ $t('payment euro desc') }}</p>
+
+                                <hr />
+                                <div class="row justify-content-center mb-3">
+                                    <base-button class="col-2" type="primary" textColor="white" @click.prevent="donateAmount = 5">5 €</base-button>
+                                    <base-button class="col-2" type="primary" textColor="white" @click.prevent="donateAmount = 10">10 €</base-button>
+                                    <base-button class="col-2" type="primary" textColor="white" @click.prevent="donateAmount = 20">20 €</base-button>
+                                    <base-button class="col-2" type="primary" textColor="white" @click.prevent="donateAmount = 50">50 €</base-button>
+                                </div>
+
+                                <form method="POST"  action="https://btcpay.blocka.net/api/v1/invoices" class="btcpay-form btcpay-form--block">
+                                <input type="hidden" name="storeId" value="9zW6UzCqpL622q1M92tQtodLdug3ChSdLMqjLGmcph7i" />
+                                <input type="hidden" name="price" :value="donateAmount" />
+                                <input type="hidden" name="currency" value="EUR" />
+                                <button type="submit" class="submit" name="submit" style="min-width:209px; min-height:57px; border-radius: 4px;border-style: none;background-color: #0f3b21;" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor"><span style="color:#fff">{{ $paymentText }}</span>
+                                <img src="https://btcpay.blocka.net/img/logo.svg" style="height:57px;display:inline-block;padding: 5% 0 5% 5px;">
+                                </button></form>
+
+                                <hr />
+                                <p class="text-monospace text-left small">
+                                    BTC: 16rJ49uNKCohVhHvWNganP6Y48Ba9BTyKd<br/>
+                                    ETH: 0x91F94632B8269F92E6B41E016458EeA682a10395<br/>
+                                    LTC: LNThTbPqgFiAg9yzG31BXQ5QYwfBbH8NC9
+                                </p>
+                                <hr />
+
+                                <p class="text-monospace text-left small">
+                                    IBAN: SE79 5000 0000 0508 0822 7432<br/>
+                                    BIC: ESSESESS<br/>
+                                    NAME: Blocka AB<br/>
+                                    TITLE: Blokada donation
+                                </p>
+                            </div>
+
+                            <template slot="footer">
+                                <base-button type="link"
+                                            text-color="white"
+                                            class="ml-auto"
+                                            @click="donateModal = false">
+                                    {{ $t('universal action close') }}
+                                </base-button>
+                            </template>
+                        </modal>
                     </div>
                 </div>
             </div>
@@ -379,12 +429,14 @@
 <script>
   import Tabs from "@/components/Tabs/Tabs.vue";
   import TabPane from "@/components/Tabs/TabPane.vue";
+  import Modal from "@/components/Modal.vue";
 
   export default {
     name: "home",
     components: {
       Tabs,
-      TabPane
+      TabPane,
+      Modal
     },
     data() {
       return {
@@ -400,7 +452,9 @@
           "Huge reason why I love this app now. Lots of battery left with 3 hours of SOT so far.",
           "By the way VPN works flawlessly. It’s nice to have both working (blocking ads and using vpn).",
           "To the developers: THANK YOU for releasing an iOS version of Blokada! This is the app I missed most when I migrated to iOS, and to top it off this is running on iOS 14 Beta 4!"
-        ]
+        ],
+        donateModal: false,
+        donateAmount: 10
       }
     },
     computed: {
@@ -408,7 +462,16 @@
         const size = this.opinions.length
         const startIndex = Math.floor(Math.random() * (size - 3 + 1));
         return this.opinions.slice(startIndex, startIndex + 3)
+      },
+      paymentText() {
+        let price = `${this.donateAmount} €`;
+        return this.$t("payment action pay", [price]);
       }
+    },
+    created() {
+        if (this.$route.hash == "#crypto") {
+            this.donateModal = true
+        }
     }
   };
 </script>
