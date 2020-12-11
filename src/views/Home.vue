@@ -144,6 +144,12 @@
                                                             type="white" v-html="$t('homepage download action android five beta')">
                                                     {{ $t('homepage download action android five beta') }}
                                                 </base-button>
+                                                <base-button tag="a"
+                                                            href="https://go.blokada.org/fdroid5"
+                                                            class="mb-3 mb-sm-0"
+                                                            type="white">
+                                                    {{ $t('homepage download action android four fdroid') }}
+                                                </base-button>
                                             </div>
                                         </div>
                                     </div>
