@@ -20,6 +20,15 @@ const router = new Router({
         footer: AppFooter
       }
     },
+    {
+      path: "/index.html",
+      name: "home",
+      components: {
+        header: AppHeader,
+        default: Home,
+        footer: AppFooter
+      }
+    },
   ],
   scrollBehavior: to => {
     if (to.hash) {
