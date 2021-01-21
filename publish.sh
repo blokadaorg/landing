@@ -19,13 +19,13 @@ echo $commit
 cd landing-github-pages
 git add .
 git commit -am "$commit"
-git tag "$hash"
+git tag "deploy-$hash"
 git push
 git push --tags
 
 cd ..
 git commit -am "$commit"
-git tag "$hash"
+git tag "deploy-$hash"
 git push
 git push --tags
 
