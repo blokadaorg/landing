@@ -132,14 +132,14 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://github.com/blokadaorg/blokada/releases/download/android-v5.6.0/blokada-v5.6.0.apk"
+                                                        href="https://go.blokada.org/apk5"
                                                         class="mb-3 mb-sm-0"
                                                         type="warning"
                                                         icon="ni ni-cloud-download-95">
                                                     {{ $t('homepage download action android five') }}
                                                 </base-button>
                                                 <base-button tag="a"
-                                                            href="https://github.com/blokadaorg/blokada/releases/download/android-v5.7.0/app-full-beta.apk"
+                                                            href="https://go.blokada.org/apk5_beta"
                                                             class="mb-3 mb-sm-0"
                                                             type="white" v-html="$t('homepage download action android five beta')">
                                                     {{ $t('homepage download action android five beta') }}
@@ -167,7 +167,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://play.google.com/store/apps/details?id=org.blokada.alarm.dnschanger"
+                                                        href="https://go.blokada.org/play"
                                                         class="mb-3 mb-sm-0"
                                                         type="info"
                                                         icon="fab fa-google-play">
@@ -190,7 +190,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://github.com/blokadaorg/blokada/releases/download/4.10.0/blokada-v4.10.0.apk"
+                                                        href="https://go.blokada.org/apk4"
                                                         class="mb-3 mb-sm-0"
                                                         type="success"
                                                         icon="ni ni-cloud-download-95">
@@ -223,7 +223,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://apps.apple.com/us/app/blokada/id1508341781"
+                                                        href="https://go.blokada.org/appstore"
                                                         class="mb-3 mb-sm-0"
                                                         type="danger"
                                                         icon="fab fa-apple">
