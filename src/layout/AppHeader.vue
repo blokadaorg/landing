@@ -68,7 +68,10 @@
                         <i class="ni ni-collection d-lg-none mr-2"></i>
                         <span class="nav-link-inner--text">{{ $t('universal action more') }}</span>
                     </a>
-                    <a href="https://go.blokada.org/dev_home" class="dropdown-item">{{ $t('homepage action source') }}</a>
+                    <a href="#faq" class="dropdown-item">{{ $t('homepage action faq') }}</a>
+                    <a href="#vpn" class="dropdown-item">{{ $t('homepage action vpn') }}</a>
+                    <a href="#opinions" class="dropdown-item">{{ $t('homepage action opinions') }}</a>
+                    <a href="#developer" class="dropdown-item">{{ $t('homepage action source') }}</a>
                     <a href="https://go.blokada.org/credits" class="dropdown-item">{{ $t('homepage action authors') }}</a>
                     <a href="https://go.blokada.org/terms" class="dropdown-item">{{ $t('payment action terms') }}</a>
                     <a href="https://go.blokada.org/privacy" class="dropdown-item">{{ $t('payment action policy') }}</a>

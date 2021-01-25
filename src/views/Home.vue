@@ -80,6 +80,56 @@
                                         <h6 class="mb-0">{{ $t('homepage about point four') }}</h6>
                                     </div>
                                 </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage about point five') }}</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="mt-5"><a href="#faq" class="text-warning">{{ $t('homepage about action faq') }}</a></h6>
+                </div>
+            </div>
+        </section>
+        <section class="section section-lg" id="vpn">
+            <div class="container">
+                <div class="row row-grid align-items-center">
+                    <div class="col-md-5 col-lg-6 order-md-1">
+                        <img src="img/ill/android-phones.png" class="img-fluid floating">
+                    </div>
+                    <div class="col-md-7 col-lg-6 order-md-2">
+                        <div class="pl-md-5">
+                            <h3>{{ $t('homepage vpn title') }}</h3>
+                            <p>{{ $t('homepage vpn desc') }}</p>
+                            <ul class="list-unstyled mt-5">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point one') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point two') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point three') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point four') }}</h6>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -311,6 +361,36 @@
 
                                     <p class="description mt-4">{{ opinion }}</p>
                                 </card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-lg" id="faq">
+            <div class="container">
+                <div class="row row-grid justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-3">{{ $t('homepage faq header')}}</h2>
+                        <br/><br/>
+
+                        <div class="col text-justify">
+                            <h3>{{ $t('homepage faq title 1') }}</h3>
+                            <p>{{ $t('homepage faq desc 1') }}</p>
+                            <br/>
+
+                            <h3>{{ $t('homepage faq title 2') }}</h3>
+                            <p>{{ $t('homepage faq desc 2') }}</p>
+                            <br/>
+
+                            <h3>{{ $t('homepage faq title 3') }}</h3>
+                            <p>{{ $t('homepage faq desc 3') }}</p>
+
+                            <h3>{{ $t('homepage faq title 4') }}</h3>
+                            <p>{{ $t('homepage faq desc 4') }}</p>
+
+                            <div>
+                                <h6 class="mt-5"><a href="https://go.blokada.org/faq" class="text-warning">{{ $t('homepage faq action more') }}</a></h6>
                             </div>
                         </div>
                     </div>

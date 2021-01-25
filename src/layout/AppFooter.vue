@@ -32,6 +32,7 @@
                     </a>
                 </div>
             </div>
+            <p class="copyright">{{ $t('homepage vpn credit') }}</p>
             <hr>
             <div class="row align-items-center justify-content-md-between">
                 <div class="col-md-4 mb-4 mb-md-0">
