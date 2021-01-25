@@ -49,7 +49,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-2">
-                        <img src="img/ill/android-phones.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-libre.png" class="img-fluid floating">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-1">
                         <div class="pr-md-5">
@@ -99,7 +99,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-1">
-                        <img src="img/ill/android-phones.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-plus.png" class="img-fluid floating">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-2">
                         <div class="pl-md-5">
@@ -385,6 +385,7 @@
 
                             <h3>{{ $t('homepage faq title 3') }}</h3>
                             <p>{{ $t('homepage faq desc 3') }}</p>
+                            <br/>
 
                             <h3>{{ $t('homepage faq title 4') }}</h3>
                             <p>{{ $t('homepage faq desc 4') }}</p>
