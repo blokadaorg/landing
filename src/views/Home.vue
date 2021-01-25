@@ -257,7 +257,7 @@
                                     </div>
                                 </tab-pane>
 
-                                <tab-pane key="tab2">
+                                <tab-pane key="tab2" color="default">
                                     <template slot="title">
                                         <i class="fab fa-apple mr-2"></i>iOS
                                     </template>
@@ -284,7 +284,7 @@
                                     </div>
                                 </tab-pane>
 
-                                <tab-pane key="tab3">
+                                <tab-pane key="tab3" color="default">
                                     <template slot="title">
                                         <i class="fas fa-laptop mr-2"></i>{{ $t('account section header other') }}
                                     </template>
@@ -419,10 +419,10 @@
                 <div class="row justify-content-center mt--300">
                     <div class="col-lg-8">
                         <card gradient="secondary" shadow body-classes="p-lg-5">
-                            <h4 class="mb-1">{{ $t('homepage support cta header') }}</h4>
-                            <p class="mt-0">{{ $t('homepage support cta desc') }}</p>
+                            <h4 class="mb-1 text-black">{{ $t('homepage support cta header') }}</h4>
+                            <p class="mt-0 text-black">{{ $t('homepage support cta desc') }}</p>
 
-                            <p>{{ $t('homepage support cta desc more') }}</p>
+                            <p class="text-black">{{ $t('homepage support cta desc more') }}</p>
 
                             <div class="row justify-content-center">
                                 <div class="col-md-8 mt-3">
