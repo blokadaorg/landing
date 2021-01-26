@@ -559,7 +559,7 @@
     },
     created() {
         if (this.$route.hash == "#crypto") {
-            this.donateModal = true
+            setTimeout(() => this.donateModal = true, 500);
         }
     }
   };
