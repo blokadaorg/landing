@@ -462,17 +462,15 @@
 
                                 <hr />
                                 <p class="text-monospace text-left small">
-                                    BTC: 16rJ49uNKCohVhHvWNganP6Y48Ba9BTyKd<br/>
-                                    ETH: 0x91F94632B8269F92E6B41E016458EeA682a10395<br/>
-                                    LTC: LNThTbPqgFiAg9yzG31BXQ5QYwfBbH8NC9
+                                    Ethereum: <a href="https://blokada.argent.xyz/" class="text-white">https://blokada.argent.xyz</a>
                                 </p>
                                 <hr />
 
                                 <p class="text-monospace text-left small">
                                     IBAN: SE79 5000 0000 0508 0822 7432<br/>
                                     BIC: ESSESESS<br/>
-                                    NAME: Blocka AB<br/>
-                                    TITLE: Blokada donation
+                                    Name: Blocka AB<br/>
+                                    Title: Blokada donation
                                 </p>
                             </div>
 
