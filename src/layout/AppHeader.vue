@@ -81,21 +81,21 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="https://go.blokada.org/forum" rel="noopener"
                        data-toggle="tooltip" :title="$t('homepage action forums')">
-                        <i class="fas fa-comments"></i>
+                        <i class="ni fas fa-comments"></i>
                         <span class="nav-link-inner--text d-lg-none ml-2">{{ $t('homepage action forums') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="https://app.blokada.org"
                        rel="noopener" data-toggle="tooltip" :title="$t('homepage action dashboard')">
-                        <i class="fas fa-user-circle"></i>
+                        <i class="ni fas fa-user-circle"></i>
                         <span class="nav-link-inner--text d-lg-none ml-2">{{ $t('homepage action dashboard') }}</span>
                     </a>
                 </li>
                 <li class="nav-item ml-lg-4">
                   <a href="#" rel="noopener" @click.prevent="modal = true"
                     class="nav-link nav-link-icon" data-toggle="tooltip" :title="$t('app settings language label')">
-                    <i class="fas fa-flag"></i>
+                    <i class="ni fas fa-flag"></i>
                     <span class="nav-link-inner--text ml-2">{{ $i18n.locale.toUpperCase() }}</span>
                   </a>
                 </li>
