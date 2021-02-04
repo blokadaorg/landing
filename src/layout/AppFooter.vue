@@ -10,12 +10,12 @@
                     <h4 class="mb-0 font-weight-light">{{ $t('homepage about footer') }}</h4>
                 </div>
                 <div class="col-lg-6 text-lg-center btn-wrapper">
-                    <a rel="noopener" href="http://go.blokada.org/social_twitter"
+                    <a rel="noopener" href="https://go.blokada.org/social_twitter"
                        class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip"
                        data-original-title="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a rel="noopener" href="http://go.blokada.org/social_facebook"
+                    <a rel="noopener" href="https://go.blokada.org/social_facebook"
                        class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip"
                        data-original-title="Facebook">
                         <i class="fab fa-facebook-square"></i>
