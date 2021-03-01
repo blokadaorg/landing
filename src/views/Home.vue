@@ -389,6 +389,14 @@
 
                             <h3>{{ $t('homepage faq title 4') }}</h3>
                             <p>{{ $t('homepage faq desc 4') }}</p>
+                            <br/>
+
+                            <h3>{{ $t('homepage faq title 5') }}</h3>
+                            <p>{{ $t('homepage faq desc 5') }}</p>
+                            <br/>
+
+                            <h3>{{ $t('homepage faq title 6') }}</h3>
+                            <p>{{ $t('homepage faq desc 6') }}</p>
 
                             <div>
                                 <h6 class="mt-5"><a href="https://go.blokada.org/faq" class="text-warning">{{ $t('homepage faq action more') }}</a></h6>
