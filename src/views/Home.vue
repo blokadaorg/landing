@@ -437,9 +437,6 @@
                                     <base-button type="default" round block size="lg" tag="a" href="https://go.blokada.org/donate">
                                         {{ $t('homepage support cta action')}}
                                     </base-button>
-                                    <base-button type="white" round block size="lg" tag="a" @click.prevent="donateModal = true">
-                                        {{ $t('homepage support cta action alt')}}
-                                    </base-button>
                                 </div>
                             </div>
                         </card>
