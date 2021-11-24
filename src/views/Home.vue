@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <h1 class="display-3  text-white">{{ $t('homepage hero title') }}
-                                    <span>{{ $t('homepage hero subtitle') }}</span>
+                                    <span>{{ $t('homepage hero opensource') }}</span>
                                 </h1>
                                 <p class="lead text-white">{{ $t('homepage hero desc') }}</p>
                                 <div class="btn-wrapper">
@@ -86,6 +86,18 @@
                                         <h6 class="mb-0">{{ $t('homepage about point five') }}</h6>
                                     </div>
                                 </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage about point six') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage about point seven') }}</h6>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -99,13 +111,82 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-1">
-                        <img src="img/ill/blokada-plus.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-cloud.png" class="img-fluid floating">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-2">
                         <div class="pl-md-5">
+                            <h3>{{ $t('homepage cloud title') }}</h3>
+                            <p>{{ $t('homepage cloud desc') }}</p>
+                            <ul class="list-unstyled mt-5">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point one') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point two') }}</h6>
+                                    </div>
+                                </li>
+                                
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point three') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point four') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point one') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point five') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point six') }}</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="mt-5"><a href="https://go.blokada.org/cloud" class="text-warning">{{ $t('homepage cloud learn more') }}</a></h6>
+                </div>
+            </div>
+        </section>
+        <section class="section section-lg" id="cloud">
+            <div class="container">
+                <div class="row row-grid align-items-center">
+                    <div class="col-md-5 col-lg-6 order-md-2">
+                        <img src="img/ill/blokada-plus.png" class="img-fluid floating">
+                    </div>
+                    <div class="col-md-7 col-lg-6 order-md-1">
+                        <div class="pr-md-5">
                             <h3>{{ $t('homepage vpn title') }}</h3>
                             <p>{{ $t('homepage vpn desc') }}</p>
                             <ul class="list-unstyled mt-5">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point five') }}</h6>
+                                    </div>
+                                </li>
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
                                         <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
@@ -128,6 +209,18 @@
                                     <div class="d-flex align-items-center">
                                         <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
                                         <h6 class="mb-0">{{ $t('homepage vpn point four') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point six') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point seven') }}</h6>
                                     </div>
                                 </li>
                             </ul>
@@ -291,13 +384,45 @@
 
                                     <div class="d-flex px-md-3">
                                         <div class="d-none d-lg-block">
-                                            <icon name="fas fa-laptop" gradient="dark" color="white" shadow
+                                            <icon name="fas fa-cloud" gradient="dark" color="white" shadow
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
-                                            <h4 class="title">{{ $t('homepage download option other') }}</h4>
-                                            <p>{{ $t('homepage download desc other')}}</p>
-                                            <a href="https://go.blokada.org/other_platforms" class="text-warning">{{ $t('universal action learn more') }}</a>
+                                            <h4 class="title">Blokada Cloud</h4>
+                                            <p>{{ $t('homepage download cloud desc') }}</p>
+
+                                            <div class="btn-wrapper">
+                                                <base-button tag="a"
+                                                        href="https://app.blokada.org"
+                                                        class="mb-3 mb-sm-0"
+                                                        type="dark"
+                                                        icon="fas fa-user-circle">
+                                                    {{ $t('homepage download action open dashboard') }}
+                                                </base-button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr/>
+
+                                    <div class="d-flex px-md-3">
+                                        <div class="d-none d-lg-block">
+                                            <icon name="fas fa-shield-alt" gradient="dark" color="white" shadow
+                                                rounded></icon>
+                                        </div>
+                                        <div class="pl-md-4">
+                                            <h4 class="title">Blokada Plus</h4>
+                                            <p>{{ $t('homepage download plus desc') }}</p>
+
+                                            <div class="btn-wrapper">
+                                                <base-button tag="a"
+                                                        href="https://app.blokada.org"
+                                                        class="mb-3 mb-sm-0"
+                                                        type="dark"
+                                                        icon="fas fa-user-circle">
+                                                    {{ $t('homepage download action open dashboard') }}
+                                                </base-button>
+                                            </div>
                                         </div>
                                     </div>
                                 </tab-pane>
@@ -383,12 +508,12 @@
                             <p>{{ $t('homepage faq desc 2') }}</p>
                             <br/>
 
-                            <h3>{{ $t('homepage faq title 3') }}</h3>
-                            <p>{{ $t('homepage faq desc 3') }}</p>
+                            <h3>{{ $t('homepage faq title 7') }}</h3>
+                            <p>{{ $t('homepage faq desc 7') }}</p>
                             <br/>
 
-                            <h3>{{ $t('homepage faq title 4') }}</h3>
-                            <p>{{ $t('homepage faq desc 4') }}</p>
+                            <h3>{{ $t('homepage faq title 3') }}</h3>
+                            <p>{{ $t('homepage faq desc 3') }}</p>
                             <br/>
 
                             <h3>{{ $t('homepage faq title 5') }}</h3>
@@ -417,7 +542,7 @@
                 <div class="row text-center justify-content-center">
                     <div class="col-lg-10">
                         <h2 class="display-3 text-white">{{ $t('homepage support header') }}</h2>
-                        <p class="lead text-white">{{ $t('homepage support desc') }}</p>
+                        <p class="lead text-white">{{ $t('homepage support desc2') }}</p>
                     </div>
                 </div>
             </div>
@@ -428,7 +553,7 @@
                     <div class="col-lg-8">
                         <card gradient="secondary" shadow body-classes="p-lg-5">
                             <h4 class="mb-1 text-black">{{ $t('homepage support cta header') }}</h4>
-                            <p class="mt-0 text-black">{{ $t('homepage support cta desc') }}</p>
+                            <p class="mt-0 text-black">{{ $t('homepage support cta desc2') }}</p>
 
                             <p class="text-black">{{ $t('homepage support cta desc more') }}</p>
 

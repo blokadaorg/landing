@@ -69,6 +69,7 @@
                         <span class="nav-link-inner--text">{{ $t('universal action more') }}</span>
                     </a>
                     <a href="#faq" class="dropdown-item">{{ $t('homepage action faq') }}</a>
+                    <a href="#cloud" class="dropdown-item">{{ $t('homepage action cloud') }}</a>
                     <a href="#vpn" class="dropdown-item">{{ $t('homepage action vpn') }}</a>
                     <a href="#opinions" class="dropdown-item">{{ $t('homepage action opinions') }}</a>
                     <a href="#developer" class="dropdown-item">{{ $t('homepage action source') }}</a>
