@@ -68,6 +68,7 @@
                         <i class="ni ni-collection d-lg-none mr-2"></i>
                         <span class="nav-link-inner--text">{{ $t('universal action more') }}</span>
                     </a>
+                    <a href="https://go.blokada.org/newsletter" class="dropdown-item">{{ $t('homepage action newsletter') }}</a>
                     <a href="#faq" class="dropdown-item">{{ $t('homepage action faq') }}</a>
                     <a href="#cloud" class="dropdown-item">Cloud</a>
                     <a href="#vpn" class="dropdown-item">VPN</a>

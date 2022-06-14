@@ -457,6 +457,10 @@
                                              type="white" block size="lg">
                                     {{ $t('homepage community cta action')}}
                                 </base-button>
+                                <base-button tag="a" href="https://go.blokada.org/newsletter"
+                                             type="white" block size="lg">
+                                    {{ $t('homepage action newsletter')}}
+                                </base-button>
                             </div>
                         </div>
                     </div>
