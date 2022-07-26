@@ -21,7 +21,7 @@
                         <span class="nav-link-inner--text">{{ $t('account action about') }}</span>
                     </a>
                     <div class="dropdown-menu-inner">
-                        <a href="#about"
+                        <a href="#cloud"
                            class="media d-flex align-items-center">
                             <div class="icon icon-shape bg-gradient-info rounded-circle text-white">
                                 <i class="fas fa-info"></i>
@@ -70,8 +70,8 @@
                     </a>
                     <a href="https://go.blokada.org/newsletter" class="dropdown-item">{{ $t('homepage action newsletter') }}</a>
                     <a href="#faq" class="dropdown-item">{{ $t('homepage action faq') }}</a>
-                    <a href="#cloud" class="dropdown-item">Cloud</a>
-                    <a href="#vpn" class="dropdown-item">VPN</a>
+                    <a href="#cloud" class="dropdown-item">Blokada 6 (Cloud)</a>
+                    <a href="#vpn" class="dropdown-item">Blokada Plus (VPN)</a>
                     <a href="#opinions" class="dropdown-item">{{ $t('homepage action opinions') }}</a>
                     <a href="#developer" class="dropdown-item">{{ $t('homepage action source') }}</a>
                     <a href="https://go.blokada.org/credits" class="dropdown-item">{{ $t('homepage action authors') }}</a>

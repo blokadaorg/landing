@@ -32,7 +32,7 @@
                                         {{ $t('universal action download') }}
                                     </base-button>
                                     <base-button tag="a"
-                                                 href="#about"
+                                                 href="#cloud"
                                                  class="mb-3 mb-sm-0"
                                                  type="white">
                                         {{ $t('universal action learn more') }}
@@ -45,6 +45,69 @@
             </section>
             <!-- 1st Hero Variation -->
         </div>
+        <section class="section section-lg" id="cloud">
+            <div class="container">
+                <div class="row row-grid align-items-center">
+                    <div class="col-md-5 col-lg-6 order-md-1">
+                        <img src="img/ill/blokada-cloud.png" class="img-fluid floating">
+                    </div>
+                    <div class="col-md-7 col-lg-6 order-md-2">
+                        <div class="pl-md-5">
+                            <h3>{{ $t('homepage cloud title') }}</h3>
+                            <p>{{ $t('homepage cloud desc') }}</p>
+                            <ul class="list-unstyled mt-5">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point one') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point two') }}</h6>
+                                    </div>
+                                </li>
+                                
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point three') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point four') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point one') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point five') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point six') }}</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="mt-5"><a href="#faq" class="text-warning">{{ $t('homepage about action faq') }}</a></h6>
+                </div>
+            </div>
+        </section>
         <section class="section section-lg" id="about">
             <div class="container">
                 <div class="row row-grid align-items-center">
@@ -107,70 +170,8 @@
                 </div>
             </div>
         </section>
+        
         <section class="section section-lg" id="vpn">
-            <div class="container">
-                <div class="row row-grid align-items-center">
-                    <div class="col-md-5 col-lg-6 order-md-1">
-                        <img src="img/ill/blokada-cloud.png" class="img-fluid floating">
-                    </div>
-                    <div class="col-md-7 col-lg-6 order-md-2">
-                        <div class="pl-md-5">
-                            <h3>{{ $t('homepage cloud title') }}</h3>
-                            <p>{{ $t('homepage cloud desc') }}</p>
-                            <ul class="list-unstyled mt-5">
-                                <li class="py-2">
-                                    <div class="d-flex align-items-center">
-                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage cloud point one') }}</h6>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="d-flex align-items-center">
-                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage cloud point two') }}</h6>
-                                    </div>
-                                </li>
-                                
-                                <li class="py-2">
-                                    <div class="d-flex align-items-center">
-                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage cloud point three') }}</h6>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="d-flex align-items-center">
-                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage cloud point four') }}</h6>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="d-flex align-items-center">
-                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage vpn point one') }}</h6>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="d-flex align-items-center">
-                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage cloud point five') }}</h6>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="d-flex align-items-center">
-                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage cloud point six') }}</h6>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h6 class="mt-5"><a href="https://go.blokada.org/cloud" class="text-warning">{{ $t('homepage cloud learn more') }}</a></h6>
-                </div>
-            </div>
-        </section>
-        <section class="section section-lg" id="cloud">
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-2">
@@ -181,12 +182,6 @@
                             <h3>{{ $t('homepage vpn title') }}</h3>
                             <p>{{ $t('homepage vpn desc') }}</p>
                             <ul class="list-unstyled mt-5">
-                                <li class="py-2">
-                                    <div class="d-flex align-items-center">
-                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
-                                        <h6 class="mb-0">{{ $t('homepage vpn point five') }}</h6>
-                                    </div>
-                                </li>
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
                                         <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
@@ -228,7 +223,7 @@
                     </div>
                 </div>
                 <div>
-                    <h6 class="mt-5"><a href="https://go.blokada.org/vpn" class="text-warning">{{ $t('homepage about action plus') }}</a></h6>
+                    <h6 class="mt-5"><a href="#faq" class="text-warning">{{ $t('homepage about action faq') }}</a></h6>
                 </div>
             </div>
         </section>
