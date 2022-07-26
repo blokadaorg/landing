@@ -299,12 +299,6 @@
                                                         icon="ni ni-cloud-download-95">
                                                     {{ $t('homepage download action android five') }}
                                                 </base-button>
-                                                <base-button tag="a"
-                                                            href="https://go.blokada.org/apk5_beta"
-                                                            class="mb-3 mb-sm-0"
-                                                            type="white" v-html="$t('homepage download action android five beta')">
-                                                    {{ $t('homepage download action android five beta') }}
-                                                </base-button>
                                             </div>
                                         </div>
                                     </div>
