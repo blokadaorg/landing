@@ -310,20 +310,6 @@
                                             <icon name="fas fa-robot" gradient="success" color="white" shadow
                                                 rounded></icon>
                                         </div>
-                                        <div class="pl-md-4">
-                                            <h4 class="title">{{ $t('homepage download option android four') }}</h4>
-                                            <p>{{ $t('homepage download desc android four')}}</p>
-
-                                            <div class="btn-wrapper">
-                                                <base-button tag="a"
-                                                        href="https://go.blokada.org/apk4"
-                                                        class="mb-3 mb-sm-0"
-                                                        type="success"
-                                                        icon="ni ni-cloud-download-95">
-                                                    {{ $t('homepage download action android four') }}
-                                                </base-button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </tab-pane>
 
