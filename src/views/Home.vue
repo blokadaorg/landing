@@ -302,15 +302,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <hr/>
-
-                                    <div class="d-flex px-md-3">
-                                        <div class="d-none d-lg-block">
-                                            <icon name="fas fa-robot" gradient="success" color="white" shadow
-                                                rounded></icon>
-                                        </div>
-                                    </div>
                                 </tab-pane>
 
                                 <tab-pane key="tab2" color="default">
