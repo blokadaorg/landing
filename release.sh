@@ -17,7 +17,7 @@ set -e
 
 ./sync-translations.sh
 
-tag=$(git describe --abbrev=4 --always --tags --dirty)
+tag=$(git describe --abbrev=4 --always --dirty)
 
 commit="release: $tag"
 
