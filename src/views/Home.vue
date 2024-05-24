@@ -323,7 +323,7 @@
 
                                     <div class="d-flex px-md-3">
                                         <div class="d-none d-lg-block">
-                                            <icon name="fab fa-google-play" gradient="info" color="white" shadow
+                                            <icon name="fab fa-google-play" gradient="warning" color="white" shadow
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
@@ -334,7 +334,7 @@
                                                 <base-button tag="a"
                                                         href="https://go.blokada.org/play_cloud"
                                                         class="mb-3 mb-sm-0"
-                                                        type="info"
+                                                        type="warning"
                                                         icon="fab fa-google-play">
                                                     {{ $t('homepage download action android slim') }}
                                                 </base-button>
@@ -346,7 +346,7 @@
 
                                     <div class="d-flex px-md-3">
                                         <div class="d-none d-lg-block">
-                                            <icon name="fab fa-android" gradient="warning" color="white" shadow
+                                            <icon name="fab fa-android" gradient="success" color="white" shadow
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
@@ -357,7 +357,7 @@
                                                 <base-button tag="a"
                                                         href="https://go.blokada.org/apk5"
                                                         class="mb-3 mb-sm-0"
-                                                        type="warning"
+                                                        type="success"
                                                         icon="ni ni-cloud-download-95">
                                                     {{ $t('homepage download action android five') }}
                                                 </base-button>
@@ -377,6 +377,29 @@
                                                 rounded></icon>
                                         </div>
                                         <div class="pl-md-4">
+                                            <h4 class="title">{{ $t('homepage download option ios family') }}</h4>
+                                            <p>{{ $t('homepage download desc ios family') }}</p>
+
+                                            <div class="btn-wrapper">
+                                                <base-button tag="a"
+                                                        href="https://go.blokada.org/family/appstore"
+                                                        class="mb-3 mb-sm-0"
+                                                        type="danger"
+                                                        icon="fab fa-apple">
+                                                    {{ $t('homepage download action ios') }}
+                                                </base-button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr/>
+
+                                    <div class="d-flex px-md-3">
+                                        <div class="d-none d-lg-block">
+                                            <icon name="fab fa-apple" gradient="warning" color="white" shadow
+                                                rounded></icon>
+                                        </div>
+                                        <div class="pl-md-4">
                                             <h4 class="title">{{ $t('homepage download option ios') }}</h4>
                                             <p>{{ $t('homepage download desc ios') }}</p>
 
@@ -384,7 +407,7 @@
                                                 <base-button tag="a"
                                                         href="https://go.blokada.org/appstore"
                                                         class="mb-3 mb-sm-0"
-                                                        type="danger"
+                                                        type="warning"
                                                         icon="fab fa-apple">
                                                     {{ $t('homepage download action ios') }}
                                                 </base-button>
