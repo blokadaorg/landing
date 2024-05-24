@@ -317,56 +317,6 @@
                         <tabs fill class="flex-column flex-md-row">
                             <card shadow slot-scope="{activeTabIndex}">
                                 <tab-pane key="tab1" color="default">
-                                    <template slot="title" color="default">
-                                        <i class="fab fa-android mr-2" color="default"></i>Android
-                                    </template>
-
-                                    <div class="d-flex px-md-3">
-                                        <div class="d-none d-lg-block">
-                                            <icon name="fab fa-google-play" gradient="warning" color="white" shadow
-                                                rounded></icon>
-                                        </div>
-                                        <div class="pl-md-4">
-                                            <h4 class="title">{{ $t('homepage download option android cloud') }}</h4>
-                                            <p v-html="$t('homepage download desc android cloud')">{{ $t('homepage download desc android cloud') }}</p>
-
-                                            <div class="btn-wrapper">
-                                                <base-button tag="a"
-                                                        href="https://go.blokada.org/play_cloud"
-                                                        class="mb-3 mb-sm-0"
-                                                        type="warning"
-                                                        icon="fab fa-google-play">
-                                                    {{ $t('homepage download action android slim') }}
-                                                </base-button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <hr/>
-
-                                    <div class="d-flex px-md-3">
-                                        <div class="d-none d-lg-block">
-                                            <icon name="fab fa-android" gradient="success" color="white" shadow
-                                                rounded></icon>
-                                        </div>
-                                        <div class="pl-md-4">
-                                            <h4 class="title">{{ $t('homepage download option android five') }}</h4>
-                                            <p v-html="$t('homepage download desc android five')">{{ $t('homepage download desc android five') }} <a href="https://go.blokada.org/blokada5_vs_blokada4" class="text-warning">{{ $t('universal action learn more') }}</a></p>
-
-                                            <div class="btn-wrapper">
-                                                <base-button tag="a"
-                                                        href="https://go.blokada.org/apk5"
-                                                        class="mb-3 mb-sm-0"
-                                                        type="success"
-                                                        icon="ni ni-cloud-download-95">
-                                                    {{ $t('homepage download action android five') }}
-                                                </base-button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </tab-pane>
-
-                                <tab-pane key="tab2" color="default">
                                     <template slot="title">
                                         <i class="fab fa-apple mr-2"></i>iOS
                                     </template>
@@ -410,6 +360,56 @@
                                                         type="warning"
                                                         icon="fab fa-apple">
                                                     {{ $t('homepage download action ios') }}
+                                                </base-button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tab-pane>
+
+                                <tab-pane key="tab2" color="default">
+                                    <template slot="title" color="default">
+                                        <i class="fab fa-android mr-2" color="default"></i>Android
+                                    </template>
+
+                                    <div class="d-flex px-md-3">
+                                        <div class="d-none d-lg-block">
+                                            <icon name="fab fa-google-play" gradient="warning" color="white" shadow
+                                                rounded></icon>
+                                        </div>
+                                        <div class="pl-md-4">
+                                            <h4 class="title">{{ $t('homepage download option android cloud') }}</h4>
+                                            <p v-html="$t('homepage download desc android cloud')">{{ $t('homepage download desc android cloud') }}</p>
+
+                                            <div class="btn-wrapper">
+                                                <base-button tag="a"
+                                                        href="https://go.blokada.org/play_cloud"
+                                                        class="mb-3 mb-sm-0"
+                                                        type="warning"
+                                                        icon="fab fa-google-play">
+                                                    {{ $t('homepage download action android slim') }}
+                                                </base-button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr/>
+
+                                    <div class="d-flex px-md-3">
+                                        <div class="d-none d-lg-block">
+                                            <icon name="fab fa-android" gradient="success" color="white" shadow
+                                                rounded></icon>
+                                        </div>
+                                        <div class="pl-md-4">
+                                            <h4 class="title">{{ $t('homepage download option android five') }}</h4>
+                                            <p v-html="$t('homepage download desc android five')">{{ $t('homepage download desc android five') }} <a href="https://go.blokada.org/blokada5_vs_blokada4" class="text-warning">{{ $t('universal action learn more') }}</a></p>
+
+                                            <div class="btn-wrapper">
+                                                <base-button tag="a"
+                                                        href="https://go.blokada.org/apk5"
+                                                        class="mb-3 mb-sm-0"
+                                                        type="success"
+                                                        icon="ni ni-cloud-download-95">
+                                                    {{ $t('homepage download action android five') }}
                                                 </base-button>
                                             </div>
                                         </div>
