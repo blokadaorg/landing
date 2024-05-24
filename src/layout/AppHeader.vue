@@ -70,6 +70,7 @@
                     </a>
                     <a href="https://go.blokada.org/newsletter" class="dropdown-item">{{ $t('homepage action newsletter') }}</a>
                     <a href="#faq" class="dropdown-item">{{ $t('homepage action faq') }}</a>
+                    <a href="#family" class="dropdown-item">Blokada Family</a>
                     <a href="#cloud" class="dropdown-item">Blokada 6 (Cloud)</a>
                     <a href="#vpn" class="dropdown-item">Blokada Plus (VPN)</a>
                     <a href="#opinions" class="dropdown-item">{{ $t('homepage action opinions') }}</a>

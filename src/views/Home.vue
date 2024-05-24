@@ -45,6 +45,68 @@
             </section>
             <!-- 1st Hero Variation -->
         </div>
+        <section class="section section-lg" id="family">
+            <div class="container">
+                <div class="row row-grid align-items-center">
+                    <div class="col-md-5 col-lg-6 order-md-2">
+                        <img src="img/ill/blokada-family.png" class="img-fluid floating">
+                    </div>
+                    <div class="col-md-7 col-lg-6 order-md-1">
+                        <div class="pl-md-5">
+                            <h3>{{ $t('homepage family title') }}</h3>
+                            <p>{{ $t('homepage family desc') }}</p>
+                            <ul class="list-unstyled mt-5">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage family point one') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage family point two') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage family point three') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage family point four') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point one') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage cloud point four') }}</h6>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="warning" circle class="mr-3" icon="fas fa-check"></badge>
+                                        <h6 class="mb-0">{{ $t('homepage vpn point one') }}</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="mt-5"><a href="#faq" class="text-warning">{{ $t('homepage about action faq') }}</a></h6>
+                </div>
+            </div>
+        </section>
         <section class="section section-lg" id="cloud">
             <div class="container">
                 <div class="row row-grid align-items-center">
@@ -468,6 +530,10 @@
 
                             <h3>{{ $t('homepage faq title 7') }}</h3>
                             <p>{{ $t('homepage faq desc 7') }}</p>
+                            <br/>
+
+                            <h3>{{ $t('homepage faq title 8') }}</h3>
+                            <p>{{ $t('homepage faq desc 8') }}</p>
                             <br/>
 
                             <h3>{{ $t('homepage faq title 3') }}</h3>
