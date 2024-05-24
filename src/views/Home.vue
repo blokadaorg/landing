@@ -382,7 +382,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://go.blokada.org/family/appstore"
+                                                        href="https://go.blokada.org/appstore/family"
                                                         class="mb-3 mb-sm-0"
                                                         type="danger"
                                                         icon="fab fa-apple">
