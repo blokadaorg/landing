@@ -556,7 +556,7 @@
                             <br/>
 
                             <h3>{{ $t('homepage faq title 8') }}</h3>
-                            <p>{{ $t('homepage faq desc 8') }}</p>
+                            <p class="newlines">{{ translateAndReplaceBr('homepage faq desc 8') }}</p>
                             <br/>
 
                             <h3>{{ $t('homepage faq title 3') }}</h3>
@@ -730,6 +730,10 @@
       paymentText() {
         let price = `${this.donateAmount} €`;
         return this.$t("payment action pay", [price]);
+      },
+      translateAndReplaceBr(key) {
+        const translatedText = this.$t(key);
+       return translatedText.replace(/<br\s*\/?>/gi, '\n');
       }
     },
     created() {
@@ -739,3 +743,9 @@
     }
   };
 </script>
+
+<style>
+.newlines {
+  white-space: pre-wrap; /* CSS to ensure that newlines are displayed */
+}
+</style>
