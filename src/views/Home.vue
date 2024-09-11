@@ -405,7 +405,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://go.blokada.org/play/cloud"
+                                                        href="https://go.blokada.org/play/v6"
                                                         class="mb-3 mb-sm-0"
                                                         type="warning"
                                                         icon="fab fa-google-play">
