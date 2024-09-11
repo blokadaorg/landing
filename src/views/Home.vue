@@ -373,6 +373,29 @@
 
                                     <div class="d-flex px-md-3">
                                         <div class="d-none d-lg-block">
+                                            <icon name="fab fa-google-play" gradient="danger" color="white" shadow
+                                                rounded></icon>
+                                        </div>
+                                        <div class="pl-md-4">
+                                            <h4 class="title">{{ $t('homepage download option android family') }}</h4>
+                                            <p>{{ $t('homepage download desc android family') }}</p>
+
+                                            <div class="btn-wrapper">
+                                                <base-button tag="a"
+                                                        href="https://go.blokada.org/play/family"
+                                                        class="mb-3 mb-sm-0"
+                                                        type="danger"
+                                                        icon="fab fa-apple">
+                                                    {{ $t('homepage download action android slim') }}
+                                                </base-button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr/>
+
+                                    <div class="d-flex px-md-3">
+                                        <div class="d-none d-lg-block">
                                             <icon name="fab fa-google-play" gradient="warning" color="white" shadow
                                                 rounded></icon>
                                         </div>
@@ -382,7 +405,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://go.blokada.org/play_cloud"
+                                                        href="https://go.blokada.org/play/cloud"
                                                         class="mb-3 mb-sm-0"
                                                         type="warning"
                                                         icon="fab fa-google-play">
