@@ -328,7 +328,7 @@
                                         </div>
                                         <div class="pl-md-4">
                                             <h4 class="title">{{ $t('homepage download option ios family') }}</h4>
-                                            <p>{{ $t('homepage download desc ios family') }}</p>
+                                            <p>{{ $t('homepage download desc new') }}</p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
@@ -378,7 +378,7 @@
                                         </div>
                                         <div class="pl-md-4">
                                             <h4 class="title">{{ $t('homepage download option android family') }}</h4>
-                                            <p>{{ $t('homepage download desc android family') }}</p>
+                                            <p>{{ $t('homepage download desc new') }}</p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
@@ -401,7 +401,7 @@
                                         </div>
                                         <div class="pl-md-4">
                                             <h4 class="title">{{ $t('homepage download option android cloud') }}</h4>
-                                            <p v-html="$t('homepage download desc android cloud')">{{ $t('homepage download desc android cloud') }}</p>
+                                            <p>{{ $t('homepage download desc android') }}</p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
