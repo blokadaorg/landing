@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+---
+{%- set s = t[lang] -%}
+<article class="guide">
+  <nav class="crumbs"><a href="{{ site.prefix[lang] }}/guides/">{{ s.guides }}</a></nav>
+  <h1>{{ title }}</h1>
+  <p class="lead">{{ description }}</p>
+  <p class="meta">{{ s.updated }} <time datetime="{{ updated | isoDate }}">{{ updated | isoDate }}</time></p>
+
+  {%- if personalised !== false %}
+  <aside class="device">
+    <p class="if-no-device">{{ s.deviceNone | safe }}
+      <a href="{{ site.dashboard }}/setup?src=guides">{{ s.deviceFind }}</a></p>
+    <p class="if-device">{{ s.deviceSet }}</p>
+  </aside>
+  {%- endif %}
+
+  {{ content | safe }}
+
+  {% include "partials/cta.njk" %}
+</article>
+
+<section class="comments">
+  <h2>{{ s.comments }}</h2>
+  {% include "partials/discourse.njk" %}
+</section>
+
+<script>{{ personaliseScript | safe }}</script>
