@@ -1,0 +1,16 @@
+---
+key: index
+layout: layouts/base.njk
+permalink: /de/guides/
+eleventyComputed:
+  title: "{{ t.de.indexTitle }}"
+  description: "{{ t.de.indexDescription }}"
+---
+{%- set s = t[lang] -%}
+<p class="intro">{{ s.indexIntro }}</p>
+<ul class="cards">
+  {%- for guide in collections.guides | byLang(lang) %}
+  <li><a href="{{ guide.url }}"><strong>{{ guide.data.title }}</strong>{{ guide.data.description }}</a></li>
+  {%- endfor %}
+</ul>
+{% include "partials/cta.njk" %}
