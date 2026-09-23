@@ -2,9 +2,16 @@
 {%- set canonical = site.origin + page.url -%}
 {%- set alts = collections.all | alternates(key) -%}
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ lang }}" data-label-copy="{{ s.copy }}" data-label-copied="{{ s.copied }}">
 <head>
   <meta charset="utf-8">
+  <script>
+    // Before first paint, so a chosen theme never flashes the other one.
+    try {
+      var theme = localStorage.getItem('blokada_guides_theme');
+      if (theme === 'dark' || theme === 'light') document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }} · Blokada</title>
   <meta name="description" content="{{ description }}">
@@ -37,6 +44,10 @@
         <span class="topbar-links">
           <a href="{{ site.prefix[lang] }}/guides/">{{ s.guides }}</a>
           <a href="{{ site.dashboard }}/?src=guides">{{ s.dashboard }}</a>
+          <button type="button" class="theme-toggle" aria-label="{{ s.darkMode }}" title="{{ s.darkMode }}" aria-pressed="false" hidden>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
           <a class="btn btn-white topbar-cta" href="{{ site.dashboard }}/activate?tier=cloud&amp;src=guides">{{ s.ctaBuy }}</a>
         </span>
       </nav>
@@ -77,5 +88,6 @@
       </p>
     </div>
   </footer>
+  <script>{{ uiScript | safe }}</script>
 </body>
 </html>

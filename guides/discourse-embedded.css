@@ -1,0 +1,216 @@
+/*
+ * Embedded CSS for the Blokada forum theme (community.blokada.org).
+ *
+ * Paste into Admin → Appearance → Themes → <active theme> → Edit CSS/HTML →
+ * Common → Embedded CSS. It styles only the comment box on blokada.org
+ * guides: the guides set `blokada-guides theme-light|theme-dark` on the
+ * frame's <html> (see src/_includes/partials/discourse.njk), so nothing else
+ * the forum embeds changes.
+ *
+ * The frame is transparent and uses the guide's colours, so it sits on the
+ * page like the rest of the guide in both light and dark mode.
+ */
+
+html.blokada-guides {
+  --g-ink: #1c1c1e;
+  --g-muted: #5f6368;
+  --g-line: #e6e6e8;
+  --g-soft: #f6f6f7;
+  --g-accent: #ff9400;
+  color-scheme: light;
+  background: transparent;
+  color: var(--g-ink);
+  font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* The page's dark mode. A matching color-scheme keeps the browser from
+   painting an opaque backdrop behind the transparent frame. */
+html.blokada-guides.theme-dark {
+  --g-ink: #ececef;
+  --g-muted: #a1a1aa;
+  --g-line: #2e2e33;
+  --g-soft: #1c1c1f;
+  color-scheme: dark;
+}
+
+html.blokada-guides body {
+  margin: 0;
+  padding: 2px;
+  background: transparent;
+  color: var(--g-ink);
+}
+
+html.blokada-guides a {
+  color: var(--g-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--g-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Top bar: the call to join in and the reply count. */
+html.blokada-guides header.discourse,
+html.blokada-guides footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 16px 18px;
+  background: var(--g-soft);
+  border: 1px solid var(--g-line);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+html.blokada-guides footer {
+  margin-top: 16px;
+}
+
+/* The forum logo next to the footer button: the page has its own. */
+html.blokada-guides footer > a:has(> img.logo),
+html.blokada-guides footer img.logo {
+  display: none;
+}
+
+html.blokada-guides .replies {
+  color: var(--g-muted);
+  font-size: 0.9rem;
+}
+
+/* Buttons as on the guides and the homepage. */
+html.blokada-guides a.button,
+html.blokada-guides .button {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--g-accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+html.blokada-guides a.button:hover,
+html.blokada-guides .button:hover {
+  opacity: 0.9;
+}
+
+/* Replies. Discourse's order is date, "in reply to", avatar, then the
+   body with the username as its heading; placed here as avatar on the
+   left, date on the right. */
+html.blokada-guides article.post {
+  position: relative;
+  min-height: 40px;
+  margin: 0;
+  padding: 18px 0 18px 54px;
+  border-bottom: 1px solid var(--g-line);
+  background: transparent;
+}
+
+html.blokada-guides article.post:last-of-type {
+  border-bottom: 0;
+}
+
+html.blokada-guides article.post .author {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 40px;
+  margin: 0;
+  float: none;
+}
+
+html.blokada-guides article.post .author img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+html.blokada-guides article.post .post-date {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  float: none;
+  color: var(--g-muted);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+html.blokada-guides article.post .in-reply-to {
+  display: block;
+  float: none;
+  text-align: left;
+  margin: 0 64px 2px 0;
+  color: var(--g-muted);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+html.blokada-guides .cooked {
+  margin: 0;
+  padding: 0;
+  color: var(--g-ink);
+}
+
+html.blokada-guides .cooked h3.username {
+  margin: 0 64px 4px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+html.blokada-guides .cooked h3.username a,
+html.blokada-guides .cooked h3.username a.staff,
+html.blokada-guides .cooked h3.username a.new-user {
+  padding: 0;
+  background: none;
+  color: var(--g-ink);
+  text-decoration: none;
+}
+
+html.blokada-guides .cooked h3.username .title {
+  margin-left: 6px;
+  color: var(--g-muted);
+  font-weight: 400;
+}
+
+html.blokada-guides .cooked p {
+  margin: 0 0 10px;
+}
+
+html.blokada-guides .cooked p:last-child {
+  margin-bottom: 0;
+}
+
+html.blokada-guides .cooked code,
+html.blokada-guides .cooked pre {
+  background: var(--g-soft);
+  border-radius: 4px;
+}
+
+html.blokada-guides .cooked img {
+  max-width: 100%;
+  height: auto;
+}
+
+html.blokada-guides .post-replies.button {
+  margin-top: 6px;
+  padding: 4px 0;
+  background: transparent;
+  color: var(--g-muted);
+  box-shadow: none;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.85rem;
+}

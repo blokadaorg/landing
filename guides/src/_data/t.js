@@ -3,6 +3,9 @@
 export default {
   en: {
     languageName: 'English',
+    copy: 'Copy',
+    copied: 'Copied',
+    darkMode: 'Dark mode',
     placeholder: '&lt;your-id&gt;',
     home: 'Home',
     guides: 'Guides',
@@ -36,6 +39,9 @@ export default {
   },
   de: {
     languageName: 'Deutsch',
+    copy: 'Kopieren',
+    copied: 'Kopiert',
+    darkMode: 'Dunkler Modus',
     placeholder: '&lt;deine-id&gt;',
     home: 'Startseite',
     guides: 'Anleitungen',
@@ -69,6 +75,9 @@ export default {
   },
   sv: {
     languageName: 'Svenska',
+    copy: 'Kopiera',
+    copied: 'Kopierat',
+    darkMode: 'Mörkt läge',
     placeholder: '&lt;ditt-id&gt;',
     home: 'Start',
     guides: 'Guider',

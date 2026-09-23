@@ -29,7 +29,7 @@ Knappen öppnar dashboarden om du inte kom till den här sidan via länken i din
 
 Apple TV kan inte öppna webbsidor, så du ger den profilens adress i stället.
 
-1. Din profiladress är: <code data-dns="apple">https://api.cloud.blokada.org/apple?device_tag={{ t[lang].placeholder | safe }}</code>
+1. Din profiladress är: {% appleUrl %}
 2. Öppna *Inställningar → Allmänt → Integritet och säkerhet* på Apple TV.
 3. Markera *Send to Apple* (*Share Apple TV Analytics* i äldre tvOS). Välj den inte, utan tryck på Spela/Paus-knappen på fjärrkontrollen i stället.
 4. Välj *Add Profile* och ange profiladressen. Enklast är att skriva med tangentbordsaviseringen på din iPhone, där du kan klistra in adressen. Installera profilen och bekräfta.
