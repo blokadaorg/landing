@@ -8,11 +8,12 @@
 
 set -e
 
-target="$1"
-if [ -z "$target" ] || [ ! -f "$target/CNAME" ]; then
+if [ -z "$1" ] || [ ! -f "$1/CNAME" ]; then
   echo "usage: $0 <path to landing-github-pages checkout>" >&2
   exit 1
 fi
+# Absolute before the cd below, or a relative path would resolve elsewhere.
+target=$(cd "$1" && pwd)
 
 cd "$(dirname "$0")"
 rm -rf dist

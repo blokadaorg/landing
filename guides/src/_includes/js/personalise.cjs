@@ -19,10 +19,14 @@
   var LABEL_MAX = 63;
   var STORAGE_KEY = 'blokada_guide_device';
 
+  // The name ends up URL-encoded (DoH, profile) or as text, never as markup,
+  // so it only loses control characters and gets a length limit. Counted in
+  // code points: cutting a surrogate pair in half would make
+  // encodeURIComponent throw.
   function cleanName(name) {
     if (typeof name !== 'string') return '';
-    var cleaned = name.replace(/[^\p{L}\p{N} ._-]/gu, '').trim();
-    return cleaned.slice(0, NAME_MAX).trim();
+    var cleaned = name.replace(/[\p{Cc}\p{Cf}]/gu, '').trim();
+    return Array.from(cleaned).slice(0, NAME_MAX).join('').trim();
   }
 
   function parseDevice(hash) {
@@ -109,7 +113,12 @@
       getItem: function () { return null; },
       setItem: function () {},
     });
-    if (device) fill(root.document, addresses(device));
+    if (!device) return;
+    try {
+      fill(root.document, addresses(device));
+    } catch (e) {
+      // A name we could not encode: leave the placeholders rather than break.
+    }
   }
 
   run();

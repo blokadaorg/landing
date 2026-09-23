@@ -22,7 +22,7 @@ Knappen öppnar dashboarden om du inte kom till den här sidan via länken i din
 ## Mac
 
 1. Klicka på knappen ovan för att hämta profilen.
-2. Öppna *Systeminställningar → Allmänt → Enhetshantering*. På macOS 12 och tidigare heter det *Systeminställningar → Profiler*.
+2. Öppna listan med profiler: *Systeminställningar → Allmänt → Enhetshantering* på macOS 15 och senare, *Systeminställningar → Integritet och säkerhet → Profiler* på macOS 13 och 14, eller *Systeminställningar → Profiler* på macOS 12 och tidigare.
 3. Dubbelklicka på Blokada-profilen och klicka på *Installera*.
 
 ## Apple TV

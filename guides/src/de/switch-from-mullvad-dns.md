@@ -40,7 +40,7 @@ Laut der Mullvad-Anleitung hast du einen Hostnamen unter *Privates DNS* eingetra
 Die Mullvad-Einrichtung nutzte ein Konfigurationsprofil. Entferne es zuerst:
 
 - **iPhone und iPad:** *Einstellungen → Allgemein → VPN und Geräteverwaltung*, tippe auf das Mullvad-DNS-Profil und dann auf *Profil entfernen*.
-- **Mac:** *Systemeinstellungen → Allgemein → Geräteverwaltung* (auf älterem macOS *Datenschutz & Sicherheit → Profile*), wähle das Mullvad-DNS-Profil aus und klicke auf *−*.
+- **Mac:** öffne die Liste der Profile (*Systemeinstellungen → Allgemein → Geräteverwaltung* ab macOS 15, *Systemeinstellungen → Datenschutz & Sicherheit → Profile* unter macOS 13 und 14, *Systemeinstellungen → Profile* unter macOS 12 und älter), wähle das Mullvad-DNS-Profil aus und klicke auf *−*.
 
 Installiere dann das Blokada-Profil aus der [Apple-Anleitung](../apple-devices/).
 

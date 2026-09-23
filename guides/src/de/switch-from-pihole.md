@@ -39,10 +39,11 @@ Möchtest du deine lokale Einrichtung behalten, etwa lokale Hostnamen, DHCP oder
 
 <pre><code>[Unit]
 Description=Encrypted DNS forwarder to Blokada Cloud
+Wants=network-online.target
 After=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/dnsproxy -l 127.0.0.1 -p 5335 -u tls://<span data-dns="dot">{{ t[lang].placeholder | safe }}.cloud.blokada.org</span> -b 9.9.9.9
+ExecStart=/usr/local/bin/dnsproxy -l 127.0.0.1 -p 5054 -u tls://<span data-dns="dot">{{ t[lang].placeholder | safe }}.cloud.blokada.org</span> -b 9.9.9.9
 Restart=always
 DynamicUser=yes
 
@@ -50,7 +51,7 @@ DynamicUser=yes
 WantedBy=multi-user.target</code></pre>
 
 3. Starte sie: `sudo systemctl enable --now dnsproxy`
-4. Öffne im Pi-hole-Admin *Settings → DNS*. Entferne die Haken bei allen Upstream-Servern und füge `127.0.0.1#5335` als eigenen Upstream-Server hinzu. Speichere.
+4. Öffne im Pi-hole-Admin *Settings → DNS*. Entferne die Haken bei allen Upstream-Servern und füge `127.0.0.1#5054` als eigenen Upstream-Server hinzu. Speichere.
 5. Sieh dir die Seite *Activity* im Dashboard an. Anfragen aus deinem Netzwerk erscheinen jetzt dort.
 
 Du kannst die Blocklisten des Pi-hole ausschalten und die Blockierung im Dashboard verwalten, oder beides behalten.

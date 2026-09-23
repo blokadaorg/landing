@@ -22,7 +22,7 @@ The button opens the dashboard if this page wasn't opened from your dashboard li
 ## Mac
 
 1. Click the button above to download the profile.
-2. Open *System Settings → General → Device Management*. On macOS 12 and earlier, this is *System Preferences → Profiles*.
+2. Open the list of profiles: *System Settings → General → Device Management* on macOS 15 and later, *System Settings → Privacy & Security → Profiles* on macOS 13 and 14, or *System Preferences → Profiles* on macOS 12 and earlier.
 3. Double-click the Blokada profile and click *Install*.
 
 ## Apple TV

@@ -22,7 +22,7 @@ Hast du diese Seite nicht über den Link in deinem Dashboard geöffnet, führt d
 ## Mac
 
 1. Klicke auf den Button oben, um das Profil zu laden.
-2. Öffne *Systemeinstellungen → Allgemein → Geräteverwaltung*. Unter macOS 12 und älter ist das *Systemeinstellungen → Profile*.
+2. Öffne die Liste der Profile: *Systemeinstellungen → Allgemein → Geräteverwaltung* ab macOS 15, *Systemeinstellungen → Datenschutz & Sicherheit → Profile* unter macOS 13 und 14 oder *Systemeinstellungen → Profile* unter macOS 12 und älter.
 3. Doppelklicke auf das Blokada-Profil und klicke auf *Installieren*.
 
 ## Apple TV

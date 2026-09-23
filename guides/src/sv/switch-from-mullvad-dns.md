@@ -40,7 +40,7 @@ Enligt Mullvads guide angav du ett värdnamn under *Privat DNS*. Byt ut det mot 
 Mullvads installation använde en konfigurationsprofil. Ta bort den först:
 
 - **iPhone och iPad:** *Inställningar → Allmänt → VPN och enhetshantering*, tryck på Mullvads DNS-profil och sedan på *Ta bort profil*.
-- **Mac:** *Systeminställningar → Allmänt → Enhetshantering* (i äldre macOS *Integritet och säkerhet → Profiler*), markera Mullvads DNS-profil och klicka på *−*.
+- **Mac:** öppna listan med profiler (*Systeminställningar → Allmänt → Enhetshantering* på macOS 15 och senare, *Systeminställningar → Integritet och säkerhet → Profiler* på macOS 13 och 14, *Systeminställningar → Profiler* på macOS 12 och tidigare), markera Mullvads DNS-profil och klicka på *−*.
 
 Installera sedan Blokada-profilen enligt [Apple-guiden](../apple-devices/).
 

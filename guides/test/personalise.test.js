@@ -34,10 +34,28 @@ test('parseDevice refuses anything that is not a device tag', () => {
   }
 });
 
-test('parseDevice strips markup and limits the name', () => {
-  const device = parseDevice(`#tag=${TAG}&name=${encodeURIComponent('<b>TV</b>' + 'x'.repeat(50))}`);
-  assert.equal(device.name.includes('<'), false);
-  assert.equal(device.name.length <= 32, true);
+test('parseDevice limits the name and drops control characters', () => {
+  const device = parseDevice(`#tag=${TAG}&name=${encodeURIComponent('TV\u0000\u202e' + 'x'.repeat(50))}`);
+  assert.equal(/[\u0000\u202e]/.test(device.name), false);
+  assert.equal(Array.from(device.name).length <= 32, true);
+});
+
+// Cutting in the middle of a surrogate pair would leave a lone half, and
+// encodeURIComponent throws on those.
+test('a long name with astral characters still encodes', () => {
+  const device = parseDevice(`#tag=${TAG}&name=${encodeURIComponent('a'.repeat(31) + '\u{1D40A}x')}`);
+  assert.doesNotThrow(() => addresses(device));
+});
+
+// The dashboard's own default names, e.g. "Bronze Tiger (Android)", have to
+// come out the same as on its setup screen.
+test('a dashboard default name is kept for DoH and the profile', () => {
+  const device = parseDevice(`#tag=${TAG}&name=${encodeURIComponent('Bronze Tiger (Android)')}`);
+  const a = addresses(device);
+  assert.equal(a.doh, `https://cloud.blokada.org/${TAG}/${encodeURIComponent('Bronze Tiger (Android)')}`);
+  assert.equal(a.apple.endsWith(`device_name=${encodeURIComponent('Bronze Tiger (Android)')}`), true);
+  // Not a valid DNS label, so DoT goes without the name.
+  assert.equal(a.dot, `${TAG}.cloud.blokada.org`);
 });
 
 // The formats the dashboard shows today (SetupAndroid.vue, SetupBrowsers.vue,

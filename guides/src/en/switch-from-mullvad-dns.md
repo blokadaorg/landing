@@ -40,7 +40,7 @@ Mullvad's guide had you enter a hostname under *Private DNS*. Replace it with yo
 Mullvad's setup used a configuration profile. Remove it first:
 
 - **iPhone and iPad:** *Settings → General → VPN & Device Management*, tap the Mullvad DNS profile, then *Remove Profile*.
-- **Mac:** *System Settings → General → Device Management* (on older macOS, *Privacy & Security → Profiles*), select the Mullvad DNS profile and click *−*.
+- **Mac:** open the list of profiles (*System Settings → General → Device Management* on macOS 15 and later, *System Settings → Privacy & Security → Profiles* on macOS 13 and 14, *System Preferences → Profiles* on macOS 12 and earlier), select the Mullvad DNS profile and click *−*.
 
 Then install the Blokada profile from the [Apple guide](../apple-devices/).
 
