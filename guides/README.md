@@ -27,3 +27,13 @@ Vue app in `../src`) is not involved.
 Every guide ends with the Blokada Cloud call to action (links carry
 `src=guides` for attribution) and forum comments embedded from
 community.blokada.org.
+
+## Forum comments
+
+Discourse creates one topic per guide URL (so each language has its own) the
+first time the page is viewed, from the page's own text. The comment box is an
+iframe the forum renders and styles: the guides tag it with
+`blokada-guides theme-light|theme-dark`, and `discourse-embedded.css` is the
+matching stylesheet. Paste it into the forum theme under Admin → Appearance →
+Themes → (active theme) → Edit CSS/HTML → Common → Embedded CSS whenever it
+changes; it only applies to frames with that class.
