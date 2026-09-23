@@ -29,7 +29,7 @@ The button opens the dashboard if this page wasn't opened from your dashboard li
 
 The Apple TV cannot open web pages, so you give it the profile's address.
 
-1. Your profile address is: <code data-dns="apple">https://api.cloud.blokada.org/apple?device_tag={{ t[lang].placeholder | safe }}</code>
+1. Your profile address is: {% appleUrl %}
 2. On the Apple TV, open *Settings → General → Privacy & Security*.
 3. Highlight *Send to Apple* (called *Share Apple TV Analytics* on older tvOS). Don't select it. Press the Play/Pause button on the remote instead.
 4. Choose *Add Profile* and enter the profile address. Typing is easiest with the keyboard prompt on your iPhone, where you can paste it. Install the profile and confirm.

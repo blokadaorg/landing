@@ -29,7 +29,7 @@ Hast du diese Seite nicht über den Link in deinem Dashboard geöffnet, führt d
 
 Das Apple TV kann keine Webseiten öffnen, deshalb gibst du ihm die Adresse des Profils.
 
-1. Deine Profiladresse: <code data-dns="apple">https://api.cloud.blokada.org/apple?device_tag={{ t[lang].placeholder | safe }}</code>
+1. Deine Profiladresse: {% appleUrl %}
 2. Öffne auf dem Apple TV *Einstellungen → Allgemein → Datenschutz & Sicherheit*.
 3. Markiere *Send to Apple* (auf älterem tvOS *Share Apple TV Analytics*). Wähle es nicht aus. Drücke stattdessen die Play/Pause-Taste auf der Fernbedienung.
 4. Wähle *Add Profile* und gib die Profiladresse ein. Am einfachsten tippst du über die Tastatur-Mitteilung auf deinem iPhone, dort kannst du die Adresse einfügen. Installiere das Profil und bestätige.

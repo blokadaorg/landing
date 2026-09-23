@@ -11,6 +11,10 @@ export default function (eleventyConfig) {
     'personaliseScript',
     fs.readFileSync(new URL('./src/_includes/js/personalise.cjs', import.meta.url), 'utf8'),
   );
+  eleventyConfig.addGlobalData(
+    'uiScript',
+    fs.readFileSync(new URL('./src/_includes/js/ui.js', import.meta.url), 'utf8'),
+  );
 
   eleventyConfig.addCollection('guides', api =>
     api.getFilteredByGlob('src/*/*.md').sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)),
@@ -32,11 +36,15 @@ export default function (eleventyConfig) {
   // Placeholders the personalise script replaces when the page was opened
   // with a device tag. Without one they read as instructions.
   const placeholder = ctx => ctx.t[ctx.lang].placeholder;
+  // Wrapped in .copy so ui.js can give each a copy button.
   eleventyConfig.addShortcode('dot', function () {
-    return `<code data-dns="dot">${placeholder(this.ctx)}.cloud.blokada.org</code>`;
+    return `<span class="copy"><code data-dns="dot">${placeholder(this.ctx)}.cloud.blokada.org</code></span>`;
   });
   eleventyConfig.addShortcode('doh', function () {
-    return `<code data-dns="doh">https://cloud.blokada.org/${placeholder(this.ctx)}</code>`;
+    return `<span class="copy"><code data-dns="doh">https://cloud.blokada.org/${placeholder(this.ctx)}</code></span>`;
+  });
+  eleventyConfig.addShortcode('appleUrl', function () {
+    return `<span class="copy"><code data-dns="apple">https://api.cloud.blokada.org/apple?device_tag=${placeholder(this.ctx)}</code></span>`;
   });
   eleventyConfig.addPairedShortcode('appleProfile', function (label) {
     return `<a class="btn" data-dns="apple" href="${this.ctx.site.dashboard}/setup?src=guides">${label.trim()}</a>`;
