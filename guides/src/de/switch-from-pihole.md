@@ -1,6 +1,6 @@
 ---
 title: Eine Pi-hole Alternative ohne eigene Hardware
-description: Die Pi-hole Alternative ohne Hardware. Verlege den Werbeblocker für dein Zuhause zu Blokada Cloud, oder behalte den Pi-hole und leite seine Anfragen über Blokada.
+description: Verlege den Werbeblocker für dein Zuhause vom Pi-hole zu Blokada Cloud, oder behalte den Pi-hole und leite seine Anfragen über Blokada.
 updated: 2026-09-23
 order: 1
 ---

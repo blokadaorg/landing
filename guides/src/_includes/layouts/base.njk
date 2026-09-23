@@ -26,17 +26,30 @@
   <meta name="referrer" content="no-referrer-when-downgrade">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/guides/assets/guides.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="hero">
     <div class="wrap">
-      <a class="brand" href="/"><img src="/img/brand/blue.png" alt="Blokada" height="32"></a>
-      <nav>
-        <a href="{{ site.prefix[lang] }}/guides/">{{ s.guides }}</a>
-        <a href="{{ site.dashboard }}/?src=guides">{{ s.dashboard }}</a>
+      <nav class="topbar">
+        <a class="brand" href="/"><img src="/img/brand/white.png" alt="Blokada" height="40"></a>
+        <span class="topbar-links">
+          <a href="{{ site.prefix[lang] }}/guides/">{{ s.guides }}</a>
+          <a href="{{ site.dashboard }}/?src=guides">{{ s.dashboard }}</a>
+          <a class="btn btn-white topbar-cta" href="{{ site.dashboard }}/activate?tier=cloud&amp;src=guides">{{ s.ctaBuy }}</a>
+        </span>
       </nav>
+      <div class="hero-text">
+        {%- if key != 'index' %}
+        <p class="crumbs"><a href="{{ site.prefix[lang] }}/guides/">{{ s.guides }}</a></p>
+        {%- endif %}
+        <h1>{{ title }}</h1>
+        <p class="lead">{{ description }}</p>
+        {%- if updated %}
+        <p class="meta">{{ s.updated }} <time datetime="{{ updated | isoDate }}">{{ updated | isoDate }}</time></p>
+        {%- endif %}
+      </div>
     </div>
   </header>
 

@@ -1,6 +1,6 @@
 ---
 title: Werbung im ganzen Netzwerk blockieren mit einem Router-Werbeblocker
-description: Router Werbeblocker ohne Zusatzgerät. Richte Blokada Cloud einmal im Router ein und blockiere Werbung auf allen Geräten, auch auf Smart-TV und Konsole.
+description: Richte Blokada Cloud einmal im Router ein und blockiere Werbung auf allen Geräten in deinem Zuhause, auch auf Smart-TV, Spielkonsole und Smart Speaker.
 updated: 2026-09-23
 order: 3
 ---

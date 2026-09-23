@@ -7,8 +7,7 @@ eleventyComputed:
   description: "{{ t.de.indexDescription }}"
 ---
 {%- set s = t[lang] -%}
-<h1>{{ s.indexTitle }}</h1>
-<p class="lead">{{ s.indexIntro }}</p>
+<p class="intro">{{ s.indexIntro }}</p>
 <ul class="cards">
   {%- for guide in collections.guides | byLang(lang) %}
   <li><a href="{{ guide.url }}"><strong>{{ guide.data.title }}</strong>{{ guide.data.description }}</a></li>
