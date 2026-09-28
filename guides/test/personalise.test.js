@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
-const { parseDevice, addresses, takeDevice } = require('../src/_includes/js/personalise.cjs');
+const { parseDevice, addresses, takeDevice, pageLink, isIosOtherBrowser } = require('../src/_includes/js/personalise.cjs');
 
 const TAG = '2ee63b78627';
 
@@ -112,4 +112,26 @@ test('takeDevice leaves the URL alone without a valid tag', () => {
 test('takeDevice ignores a tampered stored device', () => {
   const storage = fakeStorage({ blokada_guide_device: JSON.stringify({ tag: 'nope' }) });
   assert.equal(takeDevice({ pathname: '/', search: '', hash: '' }, fakeHistory(), storage), null);
+});
+
+test('pageLink puts the device back in the fragment', () => {
+  const location = { origin: 'https://blokada.org', pathname: '/guides/apple-devices/' };
+  assert.equal(pageLink(location, { tag: TAG, name: '' }), `https://blokada.org/guides/apple-devices/#tag=${TAG}`);
+  const withName = new URL(pageLink(location, { tag: TAG, name: 'My iPhone' }));
+  assert.deepEqual(parseDevice(withName.hash), { tag: TAG, name: 'My iPhone' });
+});
+
+test('isIosOtherBrowser tells Safari from other iPhone browsers', () => {
+  const safari = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
+  const chrome = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/129.0 Mobile/15E148 Safari/604.1';
+  const firefox = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/131.0 Mobile/15E148 Safari/605.1.15';
+  const inApp = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148';
+  const macSafari = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15';
+  const android = 'Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Mobile Safari/537.36';
+  assert.equal(isIosOtherBrowser(safari), false);
+  assert.equal(isIosOtherBrowser(chrome), true);
+  assert.equal(isIosOtherBrowser(firefox), true);
+  assert.equal(isIosOtherBrowser(inApp), true);
+  assert.equal(isIosOtherBrowser(macSafari), false);
+  assert.equal(isIosOtherBrowser(android), false);
 });

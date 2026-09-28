@@ -1,38 +1,62 @@
 ---
-title: Blockera reklam på iPhone, iPad, Mac och Apple TV
-description: Installera en DNS-profil för Blokada Cloud och blockera reklam och spårare i hela systemet på iPhone, iPad, Mac och Apple TV, med krypterad DNS och utan app.
-updated: 2026-09-23
-order: 5
+title: Blockera reklam på Mac och Apple TV med en DNS-profil från Blokada
+description: Installera en DNS-profil för Blokada Cloud och blockera reklam och spårare i hela systemet på Mac eller Apple TV, med krypterad DNS och inget i bakgrunden.
+updated: 2026-09-28
+order: 6
 ---
 
-Apple-enheter kan använda krypterad DNS för hela systemet via en konfigurationsprofil. Blokada-profilen ställer in enheten på att använda Blokada Cloud, som blockerar reklam och spårare i alla appar och webbläsare.
+Apple-enheter kan använda krypterad DNS för hela systemet via en konfigurationsprofil. Blokada-profilen pekar enheten mot Blokada Cloud, som blockerar reklam och spårare i alla appar och webbläsare.
 
-Det fungerar på iOS och iPadOS 14, macOS 11 (Big Sur), tvOS 14 och senare.
+Det fungerar på macOS 11 (Big Sur), tvOS 14, iOS och iPadOS 14 och senare.
 
-{% appleProfile %}Hämta Blokada-profilen{% endappleProfile %}
+<div class="if-no-device">
 
-Knappen öppnar dashboarden om du inte kom till den här sidan via länken i din dashboard. Där får du profilen för din enhet.
+Den här sidan känner inte till din enhet än, så den kan inte erbjuda din profil. Logga in i dashboarden, öppna *Inställningar*, välj din enhet och öppna den här guiden med *Öppna på en annan enhet*.
+
+<p><a class="btn btn-outline" href="https://app.blokada.org/setup?src=guides">Hämta min profillänk</a></p>
+
+</div>
 
 ## iPhone och iPad
 
-1. Öppna den här sidan i **Safari** på enheten och tryck på knappen ovan. Tryck på *Tillåt* för att hämta profilen.
+Det enklaste sättet är appen. [Blokada 6](https://go.blokada.org/appstore) ställer in allt åt dig, slår på och av blockeringen med ett tryck och visar vad som blockerats direkt i telefonen. Logga in med ditt konto-ID, så är du klar.
+
+<p><a class="btn btn-primary" href="https://go.blokada.org/appstore">Hämta Blokada 6 i App Store</a></p>
+
+### Utan appen
+
+Du kan installera profilen i stället. iPhone och iPad installerar profiler bara från **Safari**.
+
+<div class="if-device">
+<div class="if-other-browser note">
+
+Den här sidan är öppen i en annan webbläsare. Kopiera din länk och öppna den i Safari för att fortsätta där: {% pageLink %}
+
+</div>
+</div>
+
+1. Tryck på knappen nedan i Safari och sedan på *Tillåt* för att hämta profilen.
 2. Öppna *Inställningar*. Tryck på *Profil hämtad* högst upp. Du hittar den också under *Allmänt → VPN och enhetshantering*.
 3. Tryck på *Installera*, ange din lösenkod och bekräfta.
 
+<p class="if-device">{% appleProfile %}Hämta min profil{% endappleProfile %}</p>
+
 ## Mac
 
-1. Klicka på knappen ovan för att hämta profilen.
+1. Klicka på knappen nedan för att hämta profilen.
 2. Öppna listan med profiler: *Systeminställningar → Allmänt → Enhetshantering* på macOS 15 och senare, *Systeminställningar → Integritet och säkerhet → Profiler* på macOS 13 och 14, eller *Systeminställningar → Profiler* på macOS 12 och tidigare.
 3. Dubbelklicka på Blokada-profilen och klicka på *Installera*.
 
+<p class="if-device">{% appleProfile %}Hämta min profil{% endappleProfile %}</p>
+
 ## Apple TV
 
-Apple TV kan inte öppna webbsidor, så du ger den profilens adress i stället.
+Apple TV kan inte öppna webbsidor, så du skriver in din profillänk på den.
 
-1. Din profiladress är: {% appleUrl %}
+1. Din profillänk: {% appleUrl %}
 2. Öppna *Inställningar → Allmänt → Integritet och säkerhet* på Apple TV.
 3. Markera *Send to Apple* (*Share Apple TV Analytics* i äldre tvOS). Välj den inte, utan tryck på Spela/Paus-knappen på fjärrkontrollen i stället.
-4. Välj *Add Profile* och ange profiladressen. Enklast är att skriva med tangentbordsaviseringen på din iPhone, där du kan klistra in adressen. Installera profilen och bekräfta.
+4. Välj *Add Profile* och ange din profillänk. Enklast är att skriva med tangentbordsaviseringen på din iPhone, där du kan klistra in den. Installera profilen och bekräfta.
 
 <div class="note">
 
@@ -42,12 +66,6 @@ Apple TV kan inte öppna webbsidor, så du ger den profilens adress i stället.
 
 ## Kontrollera att det fungerar
 
-Surfa en stund och öppna sedan sidan *Activity* i [dashboarden](https://app.blokada.org/stats?src=guides). Enhetens uppslag visas där.
+Surfa en stund och öppna sedan sidan *Aktivitet* i [dashboarden](https://app.blokada.org/stats?src=guides). Enhetens uppslag visas där.
 
 Vill du ta bort Blokada senare raderar du profilen där du installerade den.
-
-<div class="note">
-
-På iPhone ställer [Blokada 6](https://blokada.org/#download) in det här åt dig och visar aktiviteten direkt i telefonen.
-
-</div>

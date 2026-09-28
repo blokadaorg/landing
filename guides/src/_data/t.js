@@ -12,11 +12,11 @@ export default {
     dashboard: 'Dashboard',
     updated: 'Updated',
     deviceNone:
-      'The addresses on this page contain <code>&lt;your-id&gt;</code>, a short code for your device. ' +
+      'The DNS names and links on this page contain <code>&lt;your-id&gt;</code>, a short code for your device. ' +
       'Sign in to the dashboard to see yours. If you open this guide with the dashboard’s ' +
       '“Open on another device” link, it is filled in for you.',
-    deviceFind: 'Find my address',
-    deviceSet: 'This guide is filled in with the addresses of your device.',
+    deviceFind: 'Fill in my details',
+    deviceSet: 'This guide is filled in with the details of your device.',
     ctaTitle: 'Blokada Cloud',
     ctaText:
       'Blocks ads and trackers for every device in your home. You set it up once in the DNS settings, ' +
@@ -36,6 +36,7 @@ export default {
     terms: 'Terms',
     privacy: 'Privacy',
     otherLanguages: 'Other languages',
+    moreGuides: 'More guides on the forum',
   },
   de: {
     languageName: 'Deutsch',
@@ -48,11 +49,11 @@ export default {
     dashboard: 'Dashboard',
     updated: 'Aktualisiert',
     deviceNone:
-      'Die Adressen auf dieser Seite enthalten <code>&lt;deine-id&gt;</code>, einen kurzen Code für dein Gerät. ' +
+      'Die DNS-Namen und Links auf dieser Seite enthalten <code>&lt;deine-id&gt;</code>, einen kurzen Code für dein Gerät. ' +
       'Melde dich im Dashboard an, um deinen zu sehen. Öffnest du diese Anleitung über den Link ' +
       '„Auf einem anderen Gerät öffnen“ im Dashboard, wird er automatisch eingesetzt.',
-    deviceFind: 'Meine Adresse finden',
-    deviceSet: 'Diese Anleitung zeigt die Adressen deines Geräts.',
+    deviceFind: 'Meine Daten einsetzen',
+    deviceSet: 'Diese Anleitung zeigt die Daten deines Geräts.',
     ctaTitle: 'Blokada Cloud',
     ctaText:
       'Blockiert Werbung und Tracker auf allen Geräten in deinem Zuhause. Einmal in den DNS-Einstellungen ' +
@@ -72,6 +73,7 @@ export default {
     terms: 'AGB',
     privacy: 'Datenschutz',
     otherLanguages: 'Andere Sprachen',
+    moreGuides: 'Weitere Anleitungen im Forum',
   },
   sv: {
     languageName: 'Svenska',
@@ -84,11 +86,11 @@ export default {
     dashboard: 'Dashboard',
     updated: 'Uppdaterad',
     deviceNone:
-      'Adresserna på den här sidan innehåller <code>&lt;ditt-id&gt;</code>, en kort kod för din enhet. ' +
+      'DNS-namnen och länkarna på den här sidan innehåller <code>&lt;ditt-id&gt;</code>, en kort kod för din enhet. ' +
       'Logga in i dashboarden för att se din. Om du öppnar guiden via länken ' +
       '”Öppna på en annan enhet” i dashboarden fylls den i åt dig.',
-    deviceFind: 'Hitta min adress',
-    deviceSet: 'Guiden visar adresserna för din enhet.',
+    deviceFind: 'Fyll i mina uppgifter',
+    deviceSet: 'Guiden visar uppgifterna för din enhet.',
     ctaTitle: 'Blokada Cloud',
     ctaText:
       'Blockerar reklam och spårare på alla enheter i hemmet. Du ställer in det en gång i DNS-inställningarna, ' +
@@ -108,5 +110,6 @@ export default {
     terms: 'Villkor',
     privacy: 'Integritet',
     otherLanguages: 'Andra språk',
+    moreGuides: 'Fler guider på forumet',
   },
 };

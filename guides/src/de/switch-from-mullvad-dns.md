@@ -22,18 +22,18 @@ Diese Seite behandelt die öffentlichen DNS-Adressen, die auf `dns.mullvad.net` 
 
 Blocklisten wählst du im Dashboard unter *Blocklists*. Du kannst sie jederzeit ändern, und die Änderung gilt für alle deine Geräte.
 
-## Deine Blokada-Adressen
+## Deine Blokada-Daten
 
-Blokada gibt dir deine eigene Adresse, damit das Dashboard die Aktivität pro Gerät zeigen kann:
+Blokada gibt jedem Gerät einen eigenen Namen, damit das Dashboard die Aktivität pro Gerät zeigen kann:
 
-- DNS over TLS (Android, Router): {% dot %}
-- DNS over HTTPS (Browser, manche Router): {% doh %}
+- Dein Blokada-DNS-Name, für DNS over TLS (Android, Router): {% dot %}
+- Dein DoH-Link, für DNS over HTTPS (Browser, manche Router): {% doh %}
 
 ## Jedes Gerät umstellen
 
 ### Android
 
-Laut der Mullvad-Anleitung hast du einen Hostnamen unter *Privates DNS* eingetragen. Ersetze ihn durch deine Blokada-Adresse. Die Schritte stehen in der [Android-Anleitung](../android-private-dns/).
+Laut der Mullvad-Anleitung hast du einen Hostnamen unter *Privates DNS* eingetragen. Ersetze ihn durch deinen Blokada-DNS-Namen. Die Schritte stehen in der [Android-Anleitung](../android-private-dns/).
 
 ### iPhone, iPad und Mac
 
@@ -46,12 +46,12 @@ Installiere dann das Blokada-Profil aus der [Apple-Anleitung](../apple-devices/)
 
 ### Browser
 
-Hast du unter *sicheres DNS* oder *DNS over HTTPS* eine Mullvad-Adresse wie `https://adblock.dns.mullvad.net/dns-query` eingetragen, ersetze sie durch deine Blokada-Adresse. Die [Browser-Anleitung](../browser-dns-over-https/) enthält die Schritte für jeden Browser.
+Hast du unter *sicheres DNS* oder *DNS over HTTPS* eine Mullvad-Adresse wie `https://adblock.dns.mullvad.net/dns-query` eingetragen, ersetze sie durch deinen DoH-Link. Die [Browser-Anleitung](../browser-dns-over-https/) enthält die Schritte für jeden Browser.
 
 ### Router
 
-Nutzt dein Router Mullvad über DNS over TLS, ersetze den Mullvad-Hostnamen durch deine Blokada-Adresse für DNS over TLS und entferne die IP-Adressen von Mullvad. Die [Router-Anleitung](../router-ad-blocking/) behandelt gängige Modelle.
+Nutzt dein Router Mullvad über DNS over TLS, ersetze den Mullvad-Hostnamen durch deinen Blokada-DNS-Namen und entferne die IP-Adressen von Mullvad. Die [Router-Anleitung](../router-ad-blocking/) behandelt gängige Modelle.
 
 ## Prüfen, ob es funktioniert
 
-Öffne ein paar Websites und sieh dir dann die Seite *Activity* im Dashboard an. Dort siehst du die Anfragen deiner Geräte, blockierte sind markiert. Taucht ein Gerät nicht auf, nutzt es noch einen anderen DNS-Server.
+Öffne ein paar Websites und sieh dir dann die Seite *Aktivität* im Dashboard an. Dort siehst du die Anfragen deiner Geräte, blockierte sind markiert. Taucht ein Gerät nicht auf, nutzt es noch einen anderen DNS-Server.

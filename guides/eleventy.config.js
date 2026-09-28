@@ -43,6 +43,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode('doh', function () {
     return `<span class="copy"><code data-dns="doh">https://cloud.blokada.org/${placeholder(this.ctx)}</code></span>`;
   });
+  // This page's own link with the reader's device in it, to open in Safari.
+  eleventyConfig.addShortcode('pageLink', function () {
+    return `<span class="copy"><code data-dns="page">${this.ctx.site.origin}${this.page.url}</code></span>`;
+  });
+  eleventyConfig.addShortcode('ip', function (which) {
+    const ip = this.ctx.site.dnsIps[which];
+    if (!ip) throw new Error(`Unknown resolver IP: ${which}`);
+    return `<span class="copy"><code>${ip}</code></span>`;
+  });
   eleventyConfig.addShortcode('appleUrl', function () {
     return `<span class="copy"><code data-dns="apple">https://api.cloud.blokada.org/apple?device_tag=${placeholder(this.ctx)}</code></span>`;
   });
