@@ -35,11 +35,15 @@ This page is open in another browser. Copy your link and open it in Safari to co
 </div>
 </div>
 
+<div class="if-safari">
+
 1. In Safari, tap the button below, then *Allow* to download the profile.
 2. Open *Settings*. Tap *Profile Downloaded* near the top. You can also find it under *General → VPN & Device Management*.
 3. Tap *Install*, enter your passcode, and confirm.
 
-<p class="if-device">{% appleProfile %}Download my profile{% endappleProfile %}</p>
+</div>
+
+<p class="if-device if-safari">{% appleProfile %}Download my profile{% endappleProfile %}</p>
 
 ## Mac
 

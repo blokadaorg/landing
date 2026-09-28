@@ -26,7 +26,7 @@ There are two ways to switch. Replace the Pi-hole completely, or keep it and use
 
 <div class="note">
 
-Your Pi-hole showed every device on the network by its IP address. With Blokada each device shows up by its own name, as long as it uses its own Blokada DNS name. A router set up with one address shows up as one device.
+Your Pi-hole showed every device on the network by its IP address. With Blokada each device shows up by its own name, as long as it uses its own Blokada DNS name. A router set up with one Blokada DNS name shows up as one device.
 
 </div>
 

@@ -26,7 +26,7 @@ Det finns två sätt att byta. Ersätt Pi-hole helt, eller behåll den och anvä
 
 <div class="note">
 
-Din Pi-hole visade varje enhet i nätverket med dess IP-adress. Med Blokada visas varje enhet med sitt eget namn, så länge den använder sitt eget Blokada-DNS-namn. En router som är inställd med en adress visas som en enhet.
+Din Pi-hole visade varje enhet i nätverket med dess IP-adress. Med Blokada visas varje enhet med sitt eget namn, så länge den använder sitt eget Blokada-DNS-namn. En router som är inställd med ett Blokada-DNS-namn visas som en enhet.
 
 </div>
 

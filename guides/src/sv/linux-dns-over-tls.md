@@ -5,7 +5,7 @@ updated: 2026-09-28
 order: 9
 ---
 
-De flesta aktuella Linux-distributioner, bland annat Ubuntu, Fedora och Debian 12, slår upp namn via *systemd-resolved*, som har stöd för DNS över TLS. Peka den mot Blokada Cloud, så blockeras reklam och spårare för alla appar på datorn.
+De flesta aktuella Linux-distributioner, bland annat Ubuntu och Fedora, slår upp namn via *systemd-resolved*, som har stöd för DNS över TLS. På Debian installerar du det först med `sudo apt install systemd-resolved`. Peka den mot Blokada Cloud, så blockeras reklam och spårare för alla appar på datorn.
 
 ## Ställ in systemd-resolved
 

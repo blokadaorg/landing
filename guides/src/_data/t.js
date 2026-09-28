@@ -51,7 +51,7 @@ export default {
     deviceNone:
       'Die DNS-Namen und Links auf dieser Seite enthalten <code>&lt;deine-id&gt;</code>, einen kurzen Code für dein Gerät. ' +
       'Melde dich im Dashboard an, um deinen zu sehen. Öffnest du diese Anleitung über den Link ' +
-      '„Auf einem anderen Gerät öffnen“ im Dashboard, wird er automatisch eingesetzt.',
+      'zum Öffnen auf einem anderen Gerät im Dashboard, wird er automatisch eingesetzt.',
     deviceFind: 'Meine Daten einsetzen',
     deviceSet: 'Diese Anleitung zeigt die Daten deines Geräts.',
     ctaTitle: 'Blokada Cloud',
@@ -87,8 +87,8 @@ export default {
     updated: 'Uppdaterad',
     deviceNone:
       'DNS-namnen och länkarna på den här sidan innehåller <code>&lt;ditt-id&gt;</code>, en kort kod för din enhet. ' +
-      'Logga in i dashboarden för att se din. Om du öppnar guiden via länken ' +
-      '”Öppna på en annan enhet” i dashboarden fylls den i åt dig.',
+      'Logga in i dashboarden för att se din. Om du öppnar guiden via dashboardens länk ' +
+      'för att öppna på en annan enhet fylls den i åt dig.',
     deviceFind: 'Fyll i mina uppgifter',
     deviceSet: 'Guiden visar uppgifterna för din enhet.',
     ctaTitle: 'Blokada Cloud',

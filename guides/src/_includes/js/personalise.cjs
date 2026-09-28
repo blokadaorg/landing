@@ -88,9 +88,13 @@
 
   // iPhone and iPad install configuration profiles from Safari only. Other
   // browsers there (Chrome, Firefox, Edge, in-app views) identify themselves
-  // in the user agent, or leave out "Safari" entirely.
-  function isIosOtherBrowser(userAgent) {
-    if (!/iPhone|iPad|iPod/.test(userAgent)) return false;
+  // in the user agent, or leave out "Safari" entirely. An iPad asks for
+  // desktop sites by default and says "Macintosh", but unlike a Mac it has a
+  // touch screen. Browsers that copy Safari's user agent exactly (Brave) can't
+  // be told apart; they see the Safari steps.
+  function isIosOtherBrowser(userAgent, maxTouchPoints) {
+    var ipad = /Macintosh/.test(userAgent) && maxTouchPoints > 1;
+    if (!/iPhone|iPad|iPod/.test(userAgent) && !ipad) return false;
     if (/CriOS|FxiOS|EdgiOS|OPiOS|OPT\/|DuckDuckGo|GSA\/|FBAN|FBAV|Instagram|Line\//.test(userAgent)) return true;
     return !/Safari\//.test(userAgent);
   }
@@ -132,7 +136,7 @@
       getItem: function () { return null; },
       setItem: function () {},
     });
-    if (isIosOtherBrowser(root.navigator.userAgent || '')) {
+    if (isIosOtherBrowser(root.navigator.userAgent || '', root.navigator.maxTouchPoints || 0)) {
       root.document.documentElement.classList.add('is-ios-other-browser');
     }
     if (!device) return;

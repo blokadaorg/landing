@@ -26,7 +26,7 @@ Es gibt zwei Wege zum Wechsel: Ersetze den Pi-hole ganz, oder behalte ihn und nu
 
 <div class="note">
 
-Dein Pi-hole zeigte jedes Gerät im Netzwerk mit seiner IP-Adresse. Bei Blokada erscheint jedes Gerät mit seinem eigenen Namen, solange es seinen eigenen Blokada-DNS-Namen nutzt. Ein Router, der mit einer Adresse eingerichtet ist, erscheint als ein Gerät.
+Dein Pi-hole zeigte jedes Gerät im Netzwerk mit seiner IP-Adresse. Bei Blokada erscheint jedes Gerät mit seinem eigenen Namen, solange es seinen eigenen Blokada-DNS-Namen nutzt. Ein Router, der mit einem Blokada-DNS-Namen eingerichtet ist, erscheint als ein Gerät.
 
 </div>
 

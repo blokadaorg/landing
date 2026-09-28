@@ -182,6 +182,9 @@ pre.copy-block .copy-btn {
 /* Shown only on an iPhone or iPad browser that isn't Safari (ui script). */
 .if-other-browser { display: none; }
 .is-ios-other-browser .if-other-browser { display: block; }
+/* Steps and buttons that only work in Safari. `html.` so this wins over
+   `.has-device .if-device` on elements that carry both. */
+html.is-ios-other-browser .if-safari { display: none; }
 
 /* The personalise script adds .has-device once it has filled the page. */
 .if-device { display: none; }

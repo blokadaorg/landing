@@ -135,3 +135,13 @@ test('isIosOtherBrowser tells Safari from other iPhone browsers', () => {
   assert.equal(isIosOtherBrowser(macSafari), false);
   assert.equal(isIosOtherBrowser(android), false);
 });
+
+// An iPad reports itself as a Mac, but has a touch screen.
+test('isIosOtherBrowser recognises an iPad asking for desktop sites', () => {
+  const ipadChrome = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/129.0 Version/18.0 Safari/605.1.15';
+  const ipadSafari = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15';
+  assert.equal(isIosOtherBrowser(ipadChrome, 5), true);
+  assert.equal(isIosOtherBrowser(ipadSafari, 5), false);
+  // The same user agent on a Mac, which has no touch screen.
+  assert.equal(isIosOtherBrowser(ipadChrome, 0), false);
+});

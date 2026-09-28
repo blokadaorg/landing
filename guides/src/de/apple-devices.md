@@ -11,7 +11,7 @@ Das funktioniert ab macOS 11 (Big Sur), tvOS 14 sowie iOS und iPadOS 14.
 
 <div class="if-no-device">
 
-Diese Seite kennt dein Gerät noch nicht und kann dir deshalb dein Profil nicht anbieten. Melde dich im Dashboard an, öffne *Einrichtung*, wähle dein Gerät und öffne diese Anleitung über *Auf einem anderen Gerät öffnen*.
+Diese Seite kennt dein Gerät noch nicht und kann dir deshalb dein Profil nicht anbieten. Melde dich im Dashboard an, öffne *Einrichtung*, wähle dein Gerät und öffne diese Anleitung über den Link zum Öffnen auf einem anderen Gerät.
 
 <p><a class="btn btn-outline" href="https://app.blokada.org/setup?src=guides">Meinen Profil-Link holen</a></p>
 
@@ -35,11 +35,15 @@ Diese Seite ist in einem anderen Browser geöffnet. Kopiere deinen Link und öff
 </div>
 </div>
 
+<div class="if-safari">
+
 1. Tippe in Safari auf den Button unten und dann auf *Erlauben*, um das Profil zu laden.
 2. Öffne die *Einstellungen*. Tippe oben auf *Profil geladen*. Du findest es auch unter *Allgemein → VPN und Geräteverwaltung*.
 3. Tippe auf *Installieren*, gib deinen Code ein und bestätige.
 
-<p class="if-device">{% appleProfile %}Mein Profil laden{% endappleProfile %}</p>
+</div>
+
+<p class="if-device if-safari">{% appleProfile %}Mein Profil laden{% endappleProfile %}</p>
 
 ## Mac
 

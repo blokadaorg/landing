@@ -5,13 +5,13 @@ updated: 2026-09-23
 order: 2
 ---
 
-Mullvad stellt seinen kostenlosen öffentlichen DNS-Dienst am **2. November 2026** ein und empfiehlt stattdessen Quad9. Quad9 blockiert Malware, aber **keine** Werbung und keine Tracker. Hast du eine der Filteradressen von Mullvad genutzt, kommt die Werbung an diesem Tag zurück, wenn du nicht wechselst.
+Mullvad stellt seinen kostenlosen öffentlichen DNS-Dienst am **2. November 2026** ein und empfiehlt stattdessen Quad9. Quad9 blockiert Malware, aber **keine** Werbung und keine Tracker. Hast du einen der filternden DNS-Namen von Mullvad genutzt, kommt die Werbung an diesem Tag zurück, wenn du nicht wechselst.
 
-Diese Seite behandelt die öffentlichen DNS-Adressen, die auf `dns.mullvad.net` enden. Um die Mullvad-VPN-App geht es hier nicht.
+Diese Seite behandelt die öffentlichen DNS-Namen, die auf `dns.mullvad.net` enden. Um die Mullvad-VPN-App geht es hier nicht.
 
 ## Was du genutzt hast und was du in Blokada wählst
 
-| Mullvad-Adresse | Was sie blockiert hat | Im Blokada-Dashboard |
+| Mullvad-DNS-Name | Was sie blockiert hat | Im Blokada-Dashboard |
 |---|---|---|
 | `dns.mullvad.net` | nichts | Blokada ist ein Filterdienst. Wenn du keine Filterung möchtest, ist Quad9 oder das DNS deines Anbieters die einfachere Wahl. |
 | `adblock.dns.mullvad.net` | Werbung, Tracker | eine Blockliste für Werbung und Tracker |
@@ -46,7 +46,7 @@ Installiere dann das Blokada-Profil aus der [Apple-Anleitung](../apple-devices/)
 
 ### Browser
 
-Hast du unter *sicheres DNS* oder *DNS over HTTPS* eine Mullvad-Adresse wie `https://adblock.dns.mullvad.net/dns-query` eingetragen, ersetze sie durch deinen DoH-Link. Die [Browser-Anleitung](../browser-dns-over-https/) enthält die Schritte für jeden Browser.
+Hast du unter *sicheres DNS* oder *DNS over HTTPS* einen Mullvad-DoH-Link wie `https://adblock.dns.mullvad.net/dns-query` eingetragen, ersetze sie durch deinen DoH-Link. Die [Browser-Anleitung](../browser-dns-over-https/) enthält die Schritte für jeden Browser.
 
 ### Router
 

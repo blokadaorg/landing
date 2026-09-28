@@ -5,7 +5,7 @@ updated: 2026-09-28
 order: 9
 ---
 
-Most current Linux distributions, including Ubuntu, Fedora and Debian 12, resolve names through *systemd-resolved*, which supports DNS over TLS. Point it at Blokada Cloud, and ads and trackers are blocked for every app on the computer.
+Most current Linux distributions, including Ubuntu and Fedora, resolve names through *systemd-resolved*, which supports DNS over TLS. On Debian, install it first with `sudo apt install systemd-resolved`. Point it at Blokada Cloud, and ads and trackers are blocked for every app on the computer.
 
 ## Set up systemd-resolved
 

@@ -5,13 +5,13 @@ updated: 2026-09-23
 order: 2
 ---
 
-Mullvad stänger sin kostnadsfria publika DNS-tjänst den **2 november 2026** och rekommenderar Quad9 i stället. Quad9 blockerar skadlig kod men blockerar **inte** reklam eller spårare. Om du använde någon av Mullvads filtrerande adresser kommer reklamen tillbaka det datumet, om du inte byter.
+Mullvad stänger sin kostnadsfria publika DNS-tjänst den **2 november 2026** och rekommenderar Quad9 i stället. Quad9 blockerar skadlig kod men blockerar **inte** reklam eller spårare. Om du använde något av Mullvads filtrerande DNS-namn kommer reklamen tillbaka det datumet, om du inte byter.
 
-Den här sidan gäller de publika DNS-adresserna som slutar på `dns.mullvad.net`. Den gäller inte Mullvads VPN-app.
+Den här sidan gäller de publika DNS-namnen som slutar på `dns.mullvad.net`. Den gäller inte Mullvads VPN-app.
 
 ## Det du använde och vad du väljer i Blokada
 
-| Mullvad-adress | Det här blockerades | I Blokadas dashboard |
+| Mullvads DNS-namn | Det här blockerades | I Blokadas dashboard |
 |---|---|---|
 | `dns.mullvad.net` | ingenting | Blokada är en filtreringstjänst. Vill du inte ha någon filtrering är Quad9 eller din leverantörs DNS det enklare valet. |
 | `adblock.dns.mullvad.net` | reklam, spårare | en blocklista för reklam och spårare |
@@ -46,7 +46,7 @@ Installera sedan Blokada-profilen enligt [Apple-guiden](../apple-devices/).
 
 ### Webbläsare
 
-Om du angav en Mullvad-adress som `https://adblock.dns.mullvad.net/dns-query` under *säker DNS* eller *DNS över HTTPS* byter du ut den mot din DoH-länk. [Webbläsarguiden](../browser-dns-over-https/) visar stegen för varje webbläsare.
+Om du angav en Mullvad-DoH-länk som `https://adblock.dns.mullvad.net/dns-query` under *säker DNS* eller *DNS över HTTPS* byter du ut den mot din DoH-länk. [Webbläsarguiden](../browser-dns-over-https/) visar stegen för varje webbläsare.
 
 ### Router
 

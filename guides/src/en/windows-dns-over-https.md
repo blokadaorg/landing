@@ -27,6 +27,10 @@ If the computer uses both Wi-Fi and Ethernet, repeat this for the other connecti
 
 Leave *Alternate DNS* empty. Windows uses both servers, and any other one lets ads through.
 
+No *On (manual template)* option? Your Windows 11 is older. Update Windows, or use the [browser guide](../browser-dns-over-https/) meanwhile.
+
+If some ads still get through on a network with IPv6, Windows may also be asking your router's IPv6 DNS server. Turn off *Internet Protocol Version 6 (TCP/IPv6)* in the adapter's properties (*Control Panel → Network Connections*), or set up your [router](../router-ad-blocking/).
+
 </div>
 
 ## Windows 10

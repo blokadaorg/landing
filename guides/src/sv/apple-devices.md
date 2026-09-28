@@ -11,7 +11,7 @@ Det fungerar på macOS 11 (Big Sur), tvOS 14, iOS och iPadOS 14 och senare.
 
 <div class="if-no-device">
 
-Den här sidan känner inte till din enhet än, så den kan inte erbjuda din profil. Logga in i dashboarden, öppna *Inställningar*, välj din enhet och öppna den här guiden med *Öppna på en annan enhet*.
+Den här sidan känner inte till din enhet än, så den kan inte erbjuda din profil. Logga in i dashboarden, öppna *Inställningar*, välj din enhet och öppna den här guiden via länken för att öppna på en annan enhet.
 
 <p><a class="btn btn-outline" href="https://app.blokada.org/setup?src=guides">Hämta min profillänk</a></p>
 
@@ -35,11 +35,15 @@ Den här sidan är öppen i en annan webbläsare. Kopiera din länk och öppna d
 </div>
 </div>
 
+<div class="if-safari">
+
 1. Tryck på knappen nedan i Safari och sedan på *Tillåt* för att hämta profilen.
 2. Öppna *Inställningar*. Tryck på *Profil hämtad* högst upp. Du hittar den också under *Allmänt → VPN och enhetshantering*.
 3. Tryck på *Installera*, ange din lösenkod och bekräfta.
 
-<p class="if-device">{% appleProfile %}Hämta min profil{% endappleProfile %}</p>
+</div>
+
+<p class="if-device if-safari">{% appleProfile %}Hämta min profil{% endappleProfile %}</p>
 
 ## Mac
 

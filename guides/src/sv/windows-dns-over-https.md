@@ -27,6 +27,10 @@ Om datorn använder både Wi-Fi och Ethernet upprepar du detta för den andra an
 
 Lämna *Alternativ DNS* tom. Windows använder båda servrarna, och varje annan server släpper igenom reklam.
 
+Finns inte alternativet *På (manuell mall)*? Då är ditt Windows 11 äldre. Uppdatera Windows, eller använd [webbläsarguiden](../browser-dns-over-https/) så länge.
+
+Om reklam fortfarande slinker igenom i ett nätverk med IPv6 kan Windows även fråga routerns IPv6-DNS-server. Stäng av *Internet Protocol Version 6 (TCP/IPv6)* i nätverkskortets egenskaper (*Kontrollpanelen → Nätverksanslutningar*), eller ställ in din [router](../router-ad-blocking/).
+
 </div>
 
 ## Windows 10

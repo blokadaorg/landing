@@ -27,6 +27,10 @@ Nutzt der Computer sowohl WLAN als auch Ethernet, wiederhole das für die andere
 
 Lass *Alternativer DNS* leer. Windows nutzt beide Server, und jeder andere lässt Werbung durch.
 
+Keine Option *Ein (manuelle Vorlage)*? Dann ist dein Windows 11 älter. Aktualisiere Windows, oder nutze solange die [Browser-Anleitung](../browser-dns-over-https/).
+
+Kommt in einem Netzwerk mit IPv6 noch Werbung durch, fragt Windows womöglich auch den IPv6-DNS-Server deines Routers. Schalte *Internetprotokoll, Version 6 (TCP/IPv6)* in den Eigenschaften des Adapters aus (*Systemsteuerung → Netzwerkverbindungen*), oder richte deinen [Router](../router-ad-blocking/) ein.
+
 </div>
 
 ## Windows 10
