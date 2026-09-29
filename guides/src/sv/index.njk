@@ -13,4 +13,5 @@ eleventyComputed:
   <li><a href="{{ guide.url }}"><strong>{{ guide.data.title }}</strong>{{ guide.data.description }}</a></li>
   {%- endfor %}
 </ul>
+<p class="more-guides"><a href="{{ site.forum }}c/guides">{{ s.moreGuides }}</a></p>
 {% include "partials/cta.njk" %}

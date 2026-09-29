@@ -16,17 +16,17 @@ Es gibt zwei Wege zum Wechsel: Ersetze den Pi-hole ganz, oder behalte ihn und nu
 
 ## Option 1: den Pi-hole ersetzen
 
-1. **Hol dir Blokada Cloud** und öffne das Dashboard. Unter *Setup* findest du deine persönlichen Adressen:
-   - DNS over TLS: {% dot %}
-   - DNS over HTTPS: {% doh %}
-2. **Stelle deinen Router auf Blokada statt auf den Pi-hole um.** Folge der [Router-Anleitung](../router-ad-blocking/). Akzeptiert dein Router als DNS-Server nur eine einfache IP-Adresse, richte stattdessen deine Geräte einzeln ein: [Android](../android-private-dns/), [iPhone, iPad, Mac und Apple TV](../apple-devices/) und [Browser](../browser-dns-over-https/).
+1. **Hol dir Blokada Cloud** und öffne das Dashboard. Unter *Einrichtung* findest du deine Daten:
+   - Dein Blokada-DNS-Name, für DNS over TLS: {% dot %}
+   - Dein DoH-Link, für DNS over HTTPS: {% doh %}
+2. **Stelle deinen Router auf Blokada statt auf den Pi-hole um.** Folge der [Router-Anleitung](../router-ad-blocking/). Akzeptiert dein Router als DNS-Server nur eine einfache IP-Adresse, richte stattdessen deine Geräte einzeln ein: [Android](../android-private-dns/), [Mac und Apple TV](../apple-devices/), [Windows](../windows-dns-over-https/), [Linux](../linux-dns-over-tls/) und [Browser](../browser-dns-over-https/).
 3. **War dein Pi-hole der DHCP-Server,** schalte DHCP in deinem Router wieder ein, *bevor* du den Pi ausschaltest. Sonst bekommen deine Geräte keine Netzwerkadressen mehr.
-4. **Übertrage deine Listen.** Wähle im Dashboard unter *Blocklists* deine Blocklisten und füge unter *My blocklists* eigene erlaubte oder blockierte Domains hinzu.
+4. **Übertrage deine Listen.** Wähle im Dashboard unter *Blocklists* deine Blocklisten und füge unter *Ausnahmen* eigene erlaubte oder blockierte Domains hinzu.
 5. **Schalte den Pi-hole aus,** oder nutze ihn für etwas anderes.
 
 <div class="note">
 
-Dein Pi-hole zeigte jedes Gerät im Netzwerk mit seiner IP-Adresse. Bei Blokada erscheint jedes Gerät mit seinem eigenen Namen, solange es seine eigene Adresse nutzt. Ein Router, der mit einer Adresse eingerichtet ist, erscheint als ein Gerät.
+Dein Pi-hole zeigte jedes Gerät im Netzwerk mit seiner IP-Adresse. Bei Blokada erscheint jedes Gerät mit seinem eigenen Namen, solange es seinen eigenen Blokada-DNS-Namen nutzt. Ein Router, der mit einem Blokada-DNS-Namen eingerichtet ist, erscheint als ein Gerät.
 
 </div>
 
@@ -52,7 +52,7 @@ WantedBy=multi-user.target</code></pre>
 
 3. Starte sie: `sudo systemctl enable --now dnsproxy`
 4. Öffne im Pi-hole-Admin *Settings → DNS*. Entferne die Haken bei allen Upstream-Servern und füge `127.0.0.1#5054` als eigenen Upstream-Server hinzu. Speichere.
-5. Sieh dir die Seite *Activity* im Dashboard an. Anfragen aus deinem Netzwerk erscheinen jetzt dort.
+5. Sieh dir die Seite *Aktivität* im Dashboard an. Anfragen aus deinem Netzwerk erscheinen jetzt dort.
 
 Du kannst die Blocklisten des Pi-hole ausschalten und die Blockierung im Dashboard verwalten, oder beides behalten.
 

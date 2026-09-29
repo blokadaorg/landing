@@ -16,17 +16,17 @@ There are two ways to switch. Replace the Pi-hole completely, or keep it and use
 
 ## Option 1: replace the Pi-hole
 
-1. **Get Blokada Cloud** and open the dashboard. Under *Setup* you find your personal addresses:
-   - DNS over TLS: {% dot %}
-   - DNS over HTTPS: {% doh %}
-2. **Point your router at Blokada instead of the Pi-hole.** Follow the [router guide](../router-ad-blocking/). If your router only accepts a plain IP address as DNS server, set up your devices one by one instead: [Android](../android-private-dns/), [iPhone, iPad, Mac and Apple TV](../apple-devices/), and [browsers](../browser-dns-over-https/).
+1. **Get Blokada Cloud** and open the dashboard. Under *Setup* you find your details:
+   - Your Blokada DNS name, for DNS over TLS: {% dot %}
+   - Your DoH link, for DNS over HTTPS: {% doh %}
+2. **Point your router at Blokada instead of the Pi-hole.** Follow the [router guide](../router-ad-blocking/). If your router only accepts a plain IP address as DNS server, set up your devices one by one instead: [Android](../android-private-dns/), [Mac and Apple TV](../apple-devices/), [Windows](../windows-dns-over-https/), [Linux](../linux-dns-over-tls/), and [browsers](../browser-dns-over-https/).
 3. **If your Pi-hole was the DHCP server,** turn DHCP back on in your router *before* you switch the Pi off. Otherwise your devices stop getting network addresses.
-4. **Move your lists.** In the dashboard, choose blocklists under *Blocklists*, and add your own allowed or blocked domains under *My blocklists*.
+4. **Move your lists.** In the dashboard, choose blocklists under *Blocklists*, and add your own allowed or blocked domains under *Exceptions*.
 5. **Switch the Pi-hole off,** or keep it for something else.
 
 <div class="note">
 
-Your Pi-hole showed every device on the network by its IP address. With Blokada each device shows up by its own name, as long as it uses its own address. A router set up with one address shows up as one device.
+Your Pi-hole showed every device on the network by its IP address. With Blokada each device shows up by its own name, as long as it uses its own Blokada DNS name. A router set up with one Blokada DNS name shows up as one device.
 
 </div>
 
