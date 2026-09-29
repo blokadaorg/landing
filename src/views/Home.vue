@@ -461,6 +461,13 @@
                                                         icon="fas fa-user-circle">
                                                     {{ $t('homepage download action open dashboard') }}
                                                 </base-button>
+                                                <base-button tag="a"
+                                                        :href="guidesUrl"
+                                                        class="mb-3 mb-sm-0"
+                                                        type="secondary"
+                                                        icon="fas fa-book-open">
+                                                    {{ $t('homepage download action setup guides') }}
+                                                </base-button>
                                             </div>
                                         </div>
                                     </div>
@@ -743,6 +750,12 @@
       }
     },
     computed: {
+      // The setup guides exist in English, German and Swedish; other
+      // languages get the English ones.
+      guidesUrl() {
+        const lang = String(this.$i18n.locale || '').slice(0, 2);
+        return ['de', 'sv'].includes(lang) ? `/${lang}/guides/` : '/guides/';
+      },
       opinionsToShow() {
         const size = this.opinions.length
         const startIndex = Math.floor(Math.random() * (size - 3 + 1));
