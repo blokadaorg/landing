@@ -28,6 +28,22 @@ Every guide ends with the Blokada Cloud call to action (links carry
 `src=guides` for attribution) and forum comments embedded from
 community.blokada.org.
 
+## Translations (Crowdin)
+
+English is written here, in `src/en/`. German and Swedish come from Crowdin
+through the translate repo (the `translate` submodule of this repo):
+
+1. After changing English guides: `./scripts/crowdin.sh export`, then commit
+   and push `guides/` in the translate repo. Crowdin's GitHub integration
+   picks it up.
+2. When Crowdin has translated (it commits to `build/guides/de_DE` and
+   `sv_SE` in the translate repo): update the submodule, run
+   `./scripts/crowdin.sh import`, then `npm test`.
+
+`npm test` checks that every translation keeps the English page's
+shortcodes, `data-dns` spans, HTML blocks, classes and guide links, and the
+same `updated` and `order`. Fix a failing file by hand, or in Crowdin.
+
 ## Forum comments
 
 Discourse creates one topic per guide URL (so each language has its own) the
