@@ -14,22 +14,22 @@ Du brauchst zwei Werte:
 
 ## Windows 11
 
-1. Öffne *Einstellungen → Netzwerk und Internet* und dann *WLAN* oder *Ethernet*, je nachdem, wie der Computer verbunden ist.
-2. Öffne die *Hardwareeigenschaften* deiner Verbindung. Wähle bei WLAN *Bekannte Netzwerke verwalten* und dann das Netzwerk, oder oben auf der WLAN-Seite *Hardwareeigenschaften*.
-3. Wähle neben *DNS-Serverzuweisung* die Option *Bearbeiten*. Wähle *Manuell* und schalte *IPv4* ein.
-4. Gib unter *Bevorzugter DNS* den DNS-Server {% ip "doh" %} ein.
-5. Stelle *DNS über HTTPS* auf *Ein (manuelle Vorlage)* und füge deinen DoH-Link {% doh %} als *DoH-Vorlage* ein.
-6. Schalte *Fallback auf Klartext* aus und wähle *Speichern*.
+1. Öffne *Einstellungen → Netzwerk & Internet* und dann *WLAN* oder *Ethernet*, je nachdem, wie der Computer verbunden ist.
+2. Öffne die *Hardwareeigenschaften* (*Hardware properties*) deiner Verbindung. Wähle bei WLAN *Bekannte Netzwerke verwalten* und dann das Netzwerk, oder oben auf der WLAN-Seite *Hardwareeigenschaften*.
+3. Wähle neben *DNS-Serverzuweisung* (*DNS server assignment*) die Option *Bearbeiten*. Wähle *Manuell* und schalte *IPv4* ein.
+4. Gib unter *Bevorzugter DNS-Server* den DNS-Server {% ip "doh" %} ein.
+5. Stelle *DNS über HTTPS* auf *An (manuelle Vorlage)* und füge deinen DoH-Link {% doh %} in das Vorlagenfeld *DNS über HTTPS* ein.
+6. Schalte *Fallback auf Nurtext* aus und wähle *Speichern*.
 
 Nutzt der Computer sowohl WLAN als auch Ethernet, wiederhole das für die andere Verbindung.
 
 <div class="note">
 
-Lass *Alternativer DNS* leer. Windows nutzt beide Server, und jeder andere lässt Werbung durch.
+Lass *Alternativer DNS-Server* leer. Windows nutzt beide Server, und jeder andere lässt Werbung durch.
 
-Keine Option *Ein (manuelle Vorlage)*? Dann ist dein Windows 11 älter. Aktualisiere Windows, oder nutze solange die [Browser-Anleitung](../browser-dns-over-https/).
+Keine Option *An (manuelle Vorlage)*? Dann ist dein Windows 11 älter. Aktualisiere Windows, oder nutze solange die [Browser-Anleitung](../browser-dns-over-https/).
 
-Kommt in einem Netzwerk mit IPv6 noch Werbung durch, fragt Windows womöglich auch den IPv6-DNS-Server deines Routers. Schalte *Internetprotokoll, Version 6 (TCP/IPv6)* in den Eigenschaften des Adapters aus (*Systemsteuerung → Netzwerkverbindungen*), oder richte deinen [Router](../router-ad-blocking/) ein.
+Kommt in einem Netzwerk mit IPv6 noch Werbung durch, fragt Windows womöglich auch den IPv6-DNS-Server deines Routers. Schalte *Internetprotokoll Version 6 (TCP/IPv6)* in den Eigenschaften des Adapters aus (*Systemsteuerung → Netzwerkverbindungen*), oder richte deinen [Router](../router-ad-blocking/) ein.
 
 </div>
 

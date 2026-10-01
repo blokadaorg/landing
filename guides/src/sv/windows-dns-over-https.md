@@ -14,18 +14,18 @@ Du behöver två värden:
 
 ## Windows 11
 
-1. Öppna *Inställningar → Nätverk och Internet* och sedan *Wi-Fi* eller *Ethernet*, beroende på hur datorn är ansluten.
-2. Öppna anslutningens *Maskinvaruegenskaper*. För Wi-Fi väljer du *Hantera kända nätverk* och sedan nätverket, eller *Maskinvaruegenskaper* högst upp på Wi-Fi-sidan.
-3. Välj *Redigera* bredvid *DNS-servertilldelning*. Välj *Manuell* och aktivera *IPv4*.
-4. Ange DNS-servern {% ip "doh" %} under *Önskad DNS*.
-5. Ställ in *DNS över HTTPS* på *På (manuell mall)* och klistra in din DoH-länk {% doh %} som *DoH-mall*.
-6. Stäng av *Återgång till oformaterad text* och välj *Spara*.
+1. Öppna *Inställningar → Nätverk & Internet* och sedan *Wi-Fi* eller *Ethernet*, beroende på hur datorn är ansluten.
+2. Öppna anslutningens *Maskinvaruegenskaper* (*Hardware properties*). För Wi-Fi väljer du *Hantera kända nätverk* och sedan nätverket, eller *Maskinvaruegenskaper* högst upp på Wi-Fi-sidan.
+3. Välj *Redigera* bredvid *DNS-servertilldelning* (*DNS server assignment*). Välj *Manuellt* och aktivera *IPv4*.
+4. Ange DNS-servern {% ip "doh" %} under *Önskad DNS-server*.
+5. Ställ in *DNS över HTTPS* på *På (manuell mall)* och klistra in din DoH-länk {% doh %} i mallrutan *DNS över HTTPS*.
+6. Stäng av *Återställning till oformaterad text* och välj *Spara*.
 
 Om datorn använder både Wi-Fi och Ethernet upprepar du detta för den andra anslutningen.
 
 <div class="note">
 
-Lämna *Alternativ DNS* tom. Windows använder båda servrarna, och varje annan server släpper igenom reklam.
+Lämna *Alternativ DNS-server* tom. Windows använder båda servrarna, och varje annan server släpper igenom reklam.
 
 Finns inte alternativet *På (manuell mall)*? Då är ditt Windows 11 äldre. Uppdatera Windows, eller använd [webbläsarguiden](../browser-dns-over-https/) så länge.
 
