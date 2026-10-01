@@ -1,7 +1,7 @@
 ---
 title: Blockera reklam i hela nätverket med reklamblockering i routern
 description: Ställ in Blokada Cloud i routern en gång och skydda alla enheter hemma, även tv, spelkonsoler och smarta högtalare som inte kan köra en annonsblockerare.
-updated: 2026-09-23
+updated: 2026-10-01
 order: 4
 ---
 
@@ -22,18 +22,18 @@ Routern måste ha stöd för **krypterad DNS med värdnamn**, alltså DNS över 
 
 ## FRITZ!Box
 
-FRITZ!OS 7.20 eller senare.
+FRITZ!OS 7.20 eller senare. FRITZ!OS finns inte på svenska, så stegen använder de engelska namnen.
 
-1. Öppna `http://fritz.box` och gå till *Internet → Account Information → DNS Server*.
-2. Under *Encrypted Name Resolution on the Internet (DNS over TLS)* kryssar du i *Use encrypted name resolution*.
-3. Kryssa i *Enforce certificate verification for encrypted name resolution*.
-4. Avmarkera *Allow fallback to unencrypted name resolution*.
-5. Ange bara {% dot %} under *Resolver names*. **Ta bort alla andra poster.** FRITZ!Box använder alla resolvers i listan, och varje annan resolver släpper igenom reklam.
+1. Öppna `http://fritz.box`, gå till *Internet → Account Information* och sedan fliken *DNS Server*.
+2. Aktivera *Encrypted name resolution in the internet (DNS over TLS)*.
+3. Ange bara {% dot %} under *Resolved Names of the DNS Server*. **Ta bort alla andra poster.** FRITZ!Box använder alla resolvers i listan, och varje annan resolver släpper igenom reklam.
+4. Kryssa i alternativet som kräver certifikatkontroll och avmarkera det som tillåter återgång till okrypterad namnupplösning.
+5. Om du ser *Failover to public DNS servers when DNS disrupted* stänger du av det.
 6. Klicka på *Apply*.
 
 ## ASUS
 
-Nyare ASUS-firmware (3.0.0.4.388 eller senare) och Asuswrt-Merlin.
+ASUS-firmware senare än 3.0.0.4.386.4xxxx och Asuswrt-Merlin.
 
 1. Öppna routerns administrationssida och gå till *WAN → Internet Connection*.
 2. Under *WAN DNS Setting* ställer du in *DNS Privacy Protocol* på *DNS-over-TLS (DoT)* och *DNS-over-TLS Profile* på *Strict*.
