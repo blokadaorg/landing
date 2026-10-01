@@ -1,7 +1,7 @@
 ---
 title: Ställ in privat DNS på Android med Blokada Cloud
 description: Använd Androids inbyggda privata DNS med Blokada Cloud och blockera reklam och spårare i alla appar, på wifi och mobildata. Eller låt appen Blokada 6 göra det.
-updated: 2026-09-28
+updated: 2026-10-01
 order: 5
 ---
 
@@ -32,4 +32,4 @@ Hittar du det inte kan du söka efter ”Privat DNS” i appen Inställningar.
 
 - **”Det gick inte att ansluta” eller inget internet:** kontrollera att ditt Blokada-DNS-namn inte har några stavfel. Det måste vara exakt som ovan, utan `https://`.
 - **En annan VPN-app är aktiv:** vissa VPN-appar använder egen DNS och kringgår privat DNS. Stäng av VPN-appens DNS- eller reklamblockeringsinställning, eller använd Blokada 6 i stället.
-- **Chrome visar fortfarande reklam:** öppna *Inställningar → Integritet och säkerhet → Använd säker DNS* i Chrome och välj *Use current service provider*.
+- **Chrome visar fortfarande reklam:** Chrome kan vara inställt på en egen leverantör för säker DNS och då gå förbi privat DNS. Öppna *Inställningar → Integritet och säkerhet → Använd säker DNS* i Chrome och välj *Använd den nuvarande DNS-leverantören*. Då följer Chrome privat DNS.

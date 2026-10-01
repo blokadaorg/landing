@@ -1,7 +1,7 @@
 ---
 title: Werbung unter Windows mit DNS over HTTPS blockieren
 description: Nutze das in Windows 11 eingebaute verschlüsselte DNS mit Blokada Cloud und blockiere Werbung und Tracker in allen Apps und Browsern, ohne Software.
-updated: 2026-09-28
+updated: 2026-10-01
 order: 8
 ---
 
@@ -41,7 +41,12 @@ Windows 10 hat kein eingebautes verschlüsseltes DNS. Richte stattdessen sichere
 
 Öffne ein paar Websites und sieh dir dann die Seite *Aktivität* im [Dashboard](https://app.blokada.org/stats?src=guides) an. Dort erscheinen die Anfragen dieses Computers.
 
-Browser mit eigener Einstellung für *sicheres DNS* umgehen Windows. Stelle sie in Chrome und Edge auf den aktuellen Dienstanbieter oder auf deinen DoH-Link ein.
+Chrome und Edge haben eine eigene Einstellung für *sicheres DNS*, die Windows umgeht. Im automatischen Modus kann sie auf unverschlüsseltes DNS zurückfallen, das Blokada ablehnt. Stelle sie stattdessen auf deinen DoH-Link:
+
+- **Chrome:** Öffne `chrome://settings/security`, schalte *Sicheres DNS verwenden* ein und wähle unter *DNS-Anbieter auswählen* die Option *Benutzerdefinierten DNS-Dienstanbieter hinzufügen*.
+- **Edge:** Öffne `edge://settings/privacy`, schalte sicheres DNS ein und wähle *Dienstanbieter auswählen* (*Choose a service provider*).
+
+Füge dann deinen DoH-Link {% doh %} ein.
 
 <div class="note">
 
