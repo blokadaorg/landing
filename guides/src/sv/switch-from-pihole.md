@@ -1,7 +1,7 @@
 ---
 title: Ett alternativ till Pi-hole som inte kräver någon hårdvara
 description: Flytta hemmets reklamblockering från Pi-hole till Blokada Cloud, eller behåll din Pi-hole och skicka dess uppslag via Blokada.
-updated: 2026-09-23
+updated: 2026-10-01
 order: 1
 ---
 
@@ -21,7 +21,7 @@ Det finns två sätt att byta. Ersätt Pi-hole helt, eller behåll den och anvä
    - Din DoH-länk, för DNS över HTTPS: {% doh %}
 2. **Peka routern mot Blokada i stället för Pi-hole.** Följ [routerguiden](../router-ad-blocking/). Om routern bara accepterar en vanlig IP-adress som DNS-server ställer du in enheterna en i taget i stället: [Android](../android-private-dns/), [Mac och Apple TV](../apple-devices/), [Windows](../windows-dns-over-https/), [Linux](../linux-dns-over-tls/) och [webbläsare](../browser-dns-over-https/).
 3. **Om din Pi-hole var DHCP-server** aktiverar du DHCP i routern igen *innan* du stänger av Pi:n. Annars slutar dina enheter att få nätverksadresser.
-4. **Flytta dina listor.** I dashboarden väljer du blocklistor under *Blocklists* och lägger till egna tillåtna eller blockerade domäner under *Undantag*.
+4. **Flytta dina listor.** I dashboarden väljer du blocklistor under *Blocklistor* och lägger till egna tillåtna eller blockerade domäner under *Undantag*.
 5. **Stäng av Pi-hole,** eller använd den till något annat.
 
 <div class="note">

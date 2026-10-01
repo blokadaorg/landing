@@ -11,7 +11,7 @@ Det fungerar på macOS 11 (Big Sur), tvOS 14, iOS och iPadOS 14 och senare.
 
 <div class="if-no-device">
 
-Den här sidan känner inte till din enhet än, så den kan inte erbjuda din profil. Logga in i dashboarden, öppna *Inställningar*, välj din enhet och öppna den här guiden via länken för att öppna på en annan enhet.
+Den här sidan känner inte till din enhet än, så den kan inte erbjuda din profil. Logga in i dashboarden, öppna *Inställningar*, välj din enhet och öppna den här guiden via *Öppna på en annan enhet*.
 
 <p><a class="btn btn-outline" href="https://app.blokada.org/setup?src=guides">Hämta min profillänk</a></p>
 

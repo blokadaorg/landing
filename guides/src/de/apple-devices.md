@@ -11,7 +11,7 @@ Das funktioniert ab macOS 11 (Big Sur), tvOS 14 sowie iOS und iPadOS 14.
 
 <div class="if-no-device">
 
-Diese Seite kennt dein Gerät noch nicht und kann dir deshalb dein Profil nicht anbieten. Melde dich im Dashboard an, öffne *Einrichtung*, wähle dein Gerät und öffne diese Anleitung über den Link zum Öffnen auf einem anderen Gerät.
+Diese Seite kennt dein Gerät noch nicht und kann dir deshalb dein Profil nicht anbieten. Melde dich im Dashboard an, öffne *Einrichtung*, wähle dein Gerät und öffne diese Anleitung über *Auf einem anderen Gerät öffnen*.
 
 <p><a class="btn btn-outline" href="https://app.blokada.org/setup?src=guides">Meinen Profil-Link holen</a></p>
 

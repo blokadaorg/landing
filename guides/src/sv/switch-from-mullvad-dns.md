@@ -20,7 +20,7 @@ Den här sidan gäller de publika DNS-namnen som slutar på `dns.mullvad.net`. D
 | `family.dns.mullvad.net` | base plus vuxeninnehåll och spel om pengar | lägg till listor för vuxeninnehåll och spel om pengar |
 | `all.dns.mullvad.net` | allt ovan | aktivera alla |
 
-Du väljer blocklistor i dashboarden under *Blocklists*. Du kan ändra dem när som helst, och ändringen gäller alla dina enheter.
+Du väljer blocklistor i dashboarden under *Blocklistor*. Du kan ändra dem när som helst, och ändringen gäller alla dina enheter.
 
 ## Dina Blokada-uppgifter
 

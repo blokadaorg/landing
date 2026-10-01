@@ -14,13 +14,13 @@ Diese Seite behandelt die öffentlichen DNS-Namen, die auf `dns.mullvad.net` end
 | Mullvad-DNS-Name | Was sie blockiert hat | Im Blokada-Dashboard |
 |---|---|---|
 | `dns.mullvad.net` | nichts | Blokada ist ein Filterdienst. Wenn du keine Filterung möchtest, ist Quad9 oder das DNS deines Anbieters die einfachere Wahl. |
-| `adblock.dns.mullvad.net` | Werbung, Tracker | eine Blockliste für Werbung und Tracker |
+| `adblock.dns.mullvad.net` | Werbung, Tracker | eine Sperrliste für Werbung und Tracker |
 | `base.dns.mullvad.net` | Werbung, Tracker, Malware | zusätzlich eine Malware-Liste |
 | `extended.dns.mullvad.net` | base plus soziale Medien | zusätzlich eine Liste für soziale Medien |
 | `family.dns.mullvad.net` | base plus Inhalte für Erwachsene und Glücksspiel | zusätzlich Listen für Erwachseneninhalte und Glücksspiel |
 | `all.dns.mullvad.net` | alles oben Genannte | alle diese Listen einschalten |
 
-Blocklisten wählst du im Dashboard unter *Blocklists*. Du kannst sie jederzeit ändern, und die Änderung gilt für alle deine Geräte.
+Sperrlisten wählst du im Dashboard unter *Sperrlisten*. Du kannst sie jederzeit ändern, und die Änderung gilt für alle deine Geräte.
 
 ## Deine Blokada-Daten
 
