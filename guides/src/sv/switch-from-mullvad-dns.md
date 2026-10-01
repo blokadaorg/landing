@@ -1,11 +1,11 @@
 ---
 title: Mullvad DNS läggs ner. Behåll reklamblockeringen med Blokada Cloud
 description: Mullvad stänger sin publika DNS den 2 november 2026. Så flyttar du telefon, dator och router till Blokada Cloud innan dess och behåller reklamblockeringen.
-updated: 2026-09-23
+updated: 2026-10-01
 order: 2
 ---
 
-Mullvad stänger sin kostnadsfria publika DNS-tjänst den **2 november 2026** och rekommenderar Quad9 i stället. Quad9 blockerar skadlig kod men blockerar **inte** reklam eller spårare. Om du använde något av Mullvads filtrerande DNS-namn kommer reklamen tillbaka det datumet, om du inte byter.
+Mullvad stänger sin kostnadsfria publika DNS-tjänst den **2 november 2026** och rekommenderar Quad9 i stället. Quad9 blockerar skadlig kod men blockerar **inte** reklam eller spårare. När Mullvads DNS stängs slutar enheter som är inställda på den att ladda webbplatser och appar. Om en enhet får falla tillbaka på en annan DNS-server kommer reklamen tillbaka i stället. Byt före det datumet.
 
 Den här sidan gäller de publika DNS-namnen som slutar på `dns.mullvad.net`. Den gäller inte Mullvads VPN-app.
 
