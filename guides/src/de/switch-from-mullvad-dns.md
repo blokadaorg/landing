@@ -1,11 +1,11 @@
 ---
 title: Mullvad DNS wird eingestellt. Werbung weiter blockieren mit Blokada Cloud
 description: Mullvad schaltet sein öffentliches DNS am 2. November 2026 ab. So stellst du Handy, Computer und Router rechtzeitig um und blockierst weiter Werbung.
-updated: 2026-09-23
+updated: 2026-10-01
 order: 2
 ---
 
-Mullvad stellt seinen kostenlosen öffentlichen DNS-Dienst am **2. November 2026** ein und empfiehlt stattdessen Quad9. Quad9 blockiert Malware, aber **keine** Werbung und keine Tracker. Hast du einen der filternden DNS-Namen von Mullvad genutzt, kommt die Werbung an diesem Tag zurück, wenn du nicht wechselst.
+Mullvad stellt seinen kostenlosen öffentlichen DNS-Dienst am **2. November 2026** ein und empfiehlt stattdessen Quad9. Quad9 blockiert Malware, aber **keine** Werbung und keine Tracker. Sobald Mullvads DNS abgeschaltet ist, laden Geräte, die darauf eingestellt sind, keine Websites und Apps mehr. Darf ein Gerät auf einen anderen DNS-Server ausweichen, kommt stattdessen die Werbung zurück. Wechsle vor diesem Tag.
 
 Diese Seite behandelt die öffentlichen DNS-Namen, die auf `dns.mullvad.net` enden. Um die Mullvad-VPN-App geht es hier nicht.
 
@@ -14,13 +14,13 @@ Diese Seite behandelt die öffentlichen DNS-Namen, die auf `dns.mullvad.net` end
 | Mullvad-DNS-Name | Was sie blockiert hat | Im Blokada-Dashboard |
 |---|---|---|
 | `dns.mullvad.net` | nichts | Blokada ist ein Filterdienst. Wenn du keine Filterung möchtest, ist Quad9 oder das DNS deines Anbieters die einfachere Wahl. |
-| `adblock.dns.mullvad.net` | Werbung, Tracker | eine Blockliste für Werbung und Tracker |
+| `adblock.dns.mullvad.net` | Werbung, Tracker | eine Sperrliste für Werbung und Tracker |
 | `base.dns.mullvad.net` | Werbung, Tracker, Malware | zusätzlich eine Malware-Liste |
 | `extended.dns.mullvad.net` | base plus soziale Medien | zusätzlich eine Liste für soziale Medien |
 | `family.dns.mullvad.net` | base plus Inhalte für Erwachsene und Glücksspiel | zusätzlich Listen für Erwachseneninhalte und Glücksspiel |
 | `all.dns.mullvad.net` | alles oben Genannte | alle diese Listen einschalten |
 
-Blocklisten wählst du im Dashboard unter *Blocklists*. Du kannst sie jederzeit ändern, und die Änderung gilt für alle deine Geräte.
+Sperrlisten wählst du im Dashboard unter *Sperrlisten*. Du kannst sie jederzeit ändern, und die Änderung gilt für alle deine Geräte.
 
 ## Deine Blokada-Daten
 

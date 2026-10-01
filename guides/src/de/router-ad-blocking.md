@@ -1,7 +1,7 @@
 ---
 title: Werbung im ganzen Netzwerk blockieren mit einem Router-Werbeblocker
 description: Richte Blokada Cloud einmal im Router ein und blockiere Werbung auf allen Geräten in deinem Zuhause, auch auf Smart-TV, Spielkonsole und Smart Speaker.
-updated: 2026-09-23
+updated: 2026-10-01
 order: 4
 ---
 
@@ -24,16 +24,16 @@ Dein Router muss **verschlüsseltes DNS mit Hostnamen** unterstützen, also DNS 
 
 FRITZ!OS 7.20 oder neuer.
 
-1. Öffne `http://fritz.box` und gehe zu *Internet → Zugangsdaten → DNS-Server*.
-2. Setze unter *Verschlüsselte Namensauflösung im Internet (DNS over TLS)* den Haken bei *Verschlüsselte Namensauflösung verwenden*.
-3. Setze den Haken bei *Zertifikatsprüfung für verschlüsselte Namensauflösung im Internet erzwingen*.
-4. Entferne den Haken bei *Fallback auf unverschlüsselte Namensauflösung im Internet erlauben*.
-5. Trage unter *Auflösungsnamen* nur {% dot %} ein. **Entferne alle anderen Einträge.** Die FRITZ!Box nutzt alle eingetragenen Resolver, und jeder andere lässt Werbung durch.
+1. Öffne `http://fritz.box`, gehe zu *Internet → Zugangsdaten* und dann auf die Registerkarte *DNS-Server*.
+2. Aktiviere die Option *Verschlüsselte Namensauflösung im Internet (DNS over TLS)*.
+3. Trage im Eingabefeld *Auflösungsnamen der DNS-Server* nur {% dot %} ein. **Entferne alle anderen Einträge.** Die FRITZ!Box nutzt alle eingetragenen Resolver, und jeder andere lässt Werbung durch.
+4. Setze den Haken bei *Zertifikatsprüfung für verschlüsselte Namensauflösung im Internet erzwingen* und entferne ihn bei *Fallback auf unverschlüsselte Namensauflösung im Internet zulassen*.
+5. Siehst du die Option *Bei DNS-Störungen auf öffentliche DNS-Server zurückgreifen*, deaktiviere sie.
 6. Klicke auf *Übernehmen*.
 
 ## ASUS
 
-Aktuelle ASUS-Firmware (3.0.0.4.388 oder neuer) und Asuswrt-Merlin.
+ASUS-Firmware neuer als 3.0.0.4.386.4xxxx und Asuswrt-Merlin.
 
 1. Öffne die Admin-Seite des Routers und gehe zu *WAN → Internet Connection*.
 2. Stelle unter *WAN DNS Setting* das *DNS Privacy Protocol* auf *DNS-over-TLS (DoT)* und das *DNS-over-TLS Profile* auf *Strict*.

@@ -1,7 +1,7 @@
 ---
 title: Eine NextDNS-Alternative mit derselben Einrichtung auf jedem Gerät
 description: Wechsle von NextDNS zu Blokada Cloud. Ersetze NextDNS-DNS-Name, DoH-Link oder Profil auf Handy, Computer und Router und blockiere weiter Werbung.
-updated: 2026-09-28
+updated: 2026-10-01
 order: 3
 ---
 
@@ -12,11 +12,11 @@ NextDNS und Blokada Cloud funktionieren gleich: ein verschlüsselter DNS-Dienst,
 | In NextDNS | In Blokada Cloud |
 |---|---|
 | Deine Konfigurations-ID, z. B. `abc123` | Dein Geräte-Tag, Teil deines Blokada-DNS-Namens und deines DoH-Links |
-| *Privacy*-Blocklisten | *Blocklists* im Dashboard |
-| *Security* (Malware, Phishing) | eine Malware-Liste unter *Blocklists* |
-| *Parental control* | Listen für Erwachseneninhalte und Glücksspiel unter *Blocklists* |
+| *Privacy*-Blocklisten | *Sperrlisten* im Dashboard |
+| *Security* (Malware, Phishing) | eine Malware-Liste unter *Sperrlisten* |
+| *Parental control* | Listen für Erwachseneninhalte und Glücksspiel unter *Sperrlisten* |
 | *Allowlist* und *Denylist* | *Ausnahmen* im Dashboard |
-| *Logs* und *Analytics* | *Aktivität* und *Stats* im Dashboard |
+| *Logs* und *Analytics* | *Aktivität* und *Statistik* im Dashboard |
 
 ## Deine Blokada-Daten
 

@@ -1,7 +1,7 @@
 ---
 title: Blockera reklam i Windows med DNS över HTTPS
 description: Använd den inbyggda krypterade DNS:en i Windows 11 med Blokada Cloud och blockera reklam och spårare i alla appar och webbläsare, utan att installera något.
-updated: 2026-09-28
+updated: 2026-10-01
 order: 8
 ---
 
@@ -14,18 +14,18 @@ Du behöver två värden:
 
 ## Windows 11
 
-1. Öppna *Inställningar → Nätverk och Internet* och sedan *Wi-Fi* eller *Ethernet*, beroende på hur datorn är ansluten.
-2. Öppna anslutningens *Maskinvaruegenskaper*. För Wi-Fi väljer du *Hantera kända nätverk* och sedan nätverket, eller *Maskinvaruegenskaper* högst upp på Wi-Fi-sidan.
-3. Välj *Redigera* bredvid *DNS-servertilldelning*. Välj *Manuell* och aktivera *IPv4*.
-4. Ange DNS-servern {% ip "doh" %} under *Önskad DNS*.
-5. Ställ in *DNS över HTTPS* på *På (manuell mall)* och klistra in din DoH-länk {% doh %} som *DoH-mall*.
-6. Stäng av *Återgång till oformaterad text* och välj *Spara*.
+1. Öppna *Inställningar → Nätverk & Internet* och sedan *Wi-Fi* eller *Ethernet*, beroende på hur datorn är ansluten.
+2. Öppna anslutningens *Maskinvaruegenskaper* (*Hardware properties*). För Wi-Fi väljer du *Hantera kända nätverk* och sedan nätverket, eller *Maskinvaruegenskaper* högst upp på Wi-Fi-sidan.
+3. Välj *Redigera* bredvid *DNS-servertilldelning* (*DNS server assignment*). Välj *Manuellt* och aktivera *IPv4*.
+4. Ange DNS-servern {% ip "doh" %} under *Önskad DNS-server*.
+5. Ställ in *DNS över HTTPS* på *På (manuell mall)* och klistra in din DoH-länk {% doh %} i mallrutan *DNS över HTTPS*.
+6. Stäng av *Återställning till oformaterad text* och välj *Spara*.
 
 Om datorn använder både Wi-Fi och Ethernet upprepar du detta för den andra anslutningen.
 
 <div class="note">
 
-Lämna *Alternativ DNS* tom. Windows använder båda servrarna, och varje annan server släpper igenom reklam.
+Lämna *Alternativ DNS-server* tom. Windows använder båda servrarna, och varje annan server släpper igenom reklam.
 
 Finns inte alternativet *På (manuell mall)*? Då är ditt Windows 11 äldre. Uppdatera Windows, eller använd [webbläsarguiden](../browser-dns-over-https/) så länge.
 
@@ -41,7 +41,12 @@ Windows 10 har ingen inbyggd krypterad DNS. Ställ in säker DNS i webbläsaren 
 
 Öppna några webbplatser och titta sedan på sidan *Aktivitet* i [dashboarden](https://app.blokada.org/stats?src=guides). Datorns uppslag visas där.
 
-Webbläsare med en egen inställning för *säker DNS* går förbi Windows. I Chrome och Edge ställer du in den på att använda den aktuella tjänsteleverantören, eller på din DoH-länk.
+Chrome och Edge har en egen inställning för *säker DNS*, som går förbi Windows. I automatiskt läge kan den falla tillbaka på okrypterad DNS, som Blokada nekar. Ställ in den på din DoH-länk i stället:
+
+- **Chrome:** öppna `chrome://settings/security`, aktivera *Använd säker DNS* och välj *Lägg till en anpassad DNS-tjänsteleverantör* under *Välj DNS-leverantör*.
+- **Edge:** öppna `edge://settings/privacy`, aktivera säker DNS och välj *Välj en tjänsteleverantör* (*Choose a service provider*).
+
+Klistra sedan in din DoH-länk {% doh %}
 
 <div class="note">
 
