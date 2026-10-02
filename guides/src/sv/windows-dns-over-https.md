@@ -1,16 +1,13 @@
 ---
 title: Blockera reklam i Windows med DNS över HTTPS
 description: Använd den inbyggda krypterade DNS:en i Windows 11 med Blokada Cloud och blockera reklam och spårare i alla appar och webbläsare, utan att installera något.
-updated: 2026-10-01
+updated: 2026-10-02
 order: 8
 ---
 
 Windows 11 kan skicka alla sina DNS-uppslag krypterat, via DNS över HTTPS. Peka Windows mot Blokada Cloud, så blockeras reklam och spårare i alla appar och webbläsare på datorn, utan något att installera.
 
-Du behöver två värden:
-
-- DNS-server (IP-adress): {% ip "doh" %}
-- Din DoH-länk: {% doh %}
+Du behöver DNS-serverns IP-adress och din DoH-länk. Båda finns under *Dina uppgifter* ovan.
 
 ## Windows 11
 
@@ -23,13 +20,15 @@ Du behöver två värden:
 
 Om datorn använder både Wi-Fi och Ethernet upprepar du detta för den andra anslutningen.
 
-<div class="note">
+<div class="note important">
 
 Lämna *Alternativ DNS-server* tom. Windows använder båda servrarna, och varje annan server släpper igenom reklam.
 
-Finns inte alternativet *På (manuell mall)*? Då är ditt Windows 11 äldre. Uppdatera Windows, eller använd [webbläsarguiden](../browser-dns-over-https/) så länge.
+</div>
 
-Om reklam fortfarande slinker igenom i ett nätverk med IPv6 kan Windows även fråga routerns IPv6-DNS-server. Stäng av *Internet Protocol Version 6 (TCP/IPv6)* i nätverkskortets egenskaper (*Kontrollpanelen → Nätverksanslutningar*), eller ställ in din [router](../router-ad-blocking/).
+<div class="note tip">
+
+Finns inte alternativet *På (manuell mall)*? Då är ditt Windows 11 äldre. Uppdatera Windows, eller använd [webbläsarguiden](../browser-dns-over-https/) så länge.
 
 </div>
 
@@ -41,6 +40,14 @@ Windows 10 har ingen inbyggd krypterad DNS. Ställ in säker DNS i webbläsaren 
 
 Öppna några webbplatser och titta sedan på sidan *Aktivitet* i [dashboarden](https://app.blokada.org/stats?src=guides). Datorns uppslag visas där.
 
+<div class="note aside">
+
+Vill du också ha en VPN på den här datorn? [Blokada Plus](https://app.blokada.org/activate?tier=plus&src=guides) innehåller en WireGuard-konfiguration som krypterar all trafik, med samma blockering.
+
+</div>
+
+## Om något inte fungerar
+
 Chrome och Edge har en egen inställning för *säker DNS*, som går förbi Windows. I automatiskt läge kan den falla tillbaka på okrypterad DNS, som Blokada nekar. Ställ in den på din DoH-länk i stället:
 
 - **Chrome:** öppna `chrome://settings/security`, aktivera *Använd säker DNS* och välj *Lägg till en anpassad DNS-tjänsteleverantör* under *Välj DNS-leverantör*.
@@ -48,8 +55,4 @@ Chrome och Edge har en egen inställning för *säker DNS*, som går förbi Wind
 
 Klistra sedan in din DoH-länk {% doh %}
 
-<div class="note">
-
-Vill du också ha en VPN på den här datorn? [Blokada Plus](https://app.blokada.org/activate?tier=plus&src=guides) innehåller en WireGuard-konfiguration som krypterar all trafik, med samma blockering.
-
-</div>
+Om reklam fortfarande slinker igenom i ett nätverk med IPv6 kan Windows även fråga routerns IPv6-DNS-server. Stäng av *Internet Protocol Version 6 (TCP/IPv6)* i nätverkskortets egenskaper (*Kontrollpanelen → Nätverksanslutningar*), eller ställ in din [router](../router-ad-blocking/).

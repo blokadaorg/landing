@@ -1,7 +1,7 @@
 ---
 title: Ställ in privat DNS på Android med Blokada Cloud
 description: Använd Androids inbyggda privata DNS med Blokada Cloud och blockera reklam och spårare i alla appar, på wifi och mobildata. Eller låt appen Blokada 6 göra det.
-updated: 2026-10-01
+updated: 2026-10-02
 order: 5
 ---
 
@@ -14,8 +14,6 @@ order: 5
 ## Utan appen: privat DNS
 
 Android 9 och senare har inställningen *Privat DNS*. Ställ in den på Blokada Cloud, så blockeras reklam och spårare i alla appar, på alla nätverk, utan att något körs i bakgrunden.
-
-Ditt Blokada-DNS-namn: {% dot %}
 
 1. Öppna *Inställningar → Nätverk och internet*. På vissa telefoner heter det *Anslutningar* eller *Anslutning och delning*.
 2. Tryck på *Privat DNS*. På Samsung-telefoner finns det under *Fler anslutningsinställningar*.

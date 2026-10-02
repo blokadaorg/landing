@@ -1,7 +1,7 @@
 ---
 title: Ett alternativ till NextDNS med samma inställning på alla enheter
 description: Byt från NextDNS till Blokada Cloud. Ersätt NextDNS-namnet, DoH-länken eller profilen med Blokadas på telefon, dator och router och behåll reklamblockeringen.
-updated: 2026-10-01
+updated: 2026-10-02
 order: 3
 ---
 
@@ -18,12 +18,9 @@ NextDNS och Blokada Cloud fungerar på samma sätt: en krypterad DNS-tjänst som
 | *Allowlist* och *Denylist* | *Undantag* i dashboarden |
 | *Logs* och *Analytics* | *Aktivitet* och *Statistik* i dashboarden |
 
-## Dina Blokada-uppgifter
-
-- Ditt Blokada-DNS-namn, för DNS över TLS: {% dot %}
-- Din DoH-länk, för DNS över HTTPS: {% doh %}
-
 ## Byt på varje enhet
+
+Beroende på enhet behöver du ditt DNS-namn eller din DoH-länk. Båda finns under *Dina uppgifter* ovan.
 
 ### Android
 

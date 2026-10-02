@@ -18,6 +18,8 @@ const PATTERNS = {
   classes: /class="[^"]*"/g,
   htmlBlocks: /<\/?(?:div|pre|code|span|ol|p)\b/g,
   guideLinks: /\]\(\.\.\/[^)]*\)/g,
+  // Sections and the "On this page" list are built from the headings.
+  headings: /^#{2,3} /gm,
 };
 
 function signature(text) {

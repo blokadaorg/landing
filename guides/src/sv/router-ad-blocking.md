@@ -1,7 +1,7 @@
 ---
 title: Blockera reklam i hela nätverket med reklamblockering i routern
 description: Ställ in Blokada Cloud i routern en gång och skydda alla enheter hemma, även tv, spelkonsoler och smarta högtalare som inte kan köra en annonsblockerare.
-updated: 2026-10-01
+updated: 2026-10-02
 order: 4
 ---
 
@@ -9,12 +9,9 @@ Alla enheter i nätverket frågar routern vilken DNS-server de ska använda. Pek
 
 ## Det här behöver din router
 
-Routern måste ha stöd för **krypterad DNS med värdnamn**, alltså DNS över TLS (DoT) eller DNS över HTTPS (DoH). Många nyare routrar har det, bland annat modellerna nedan. Beroende på vad din router har stöd för behöver du:
+Routern måste ha stöd för **krypterad DNS med värdnamn**, alltså DNS över TLS (DoT) eller DNS över HTTPS (DoH). Många nyare routrar har det, bland annat modellerna nedan. Beroende på vad din router har stöd för behöver du ditt DNS-namn eller din DoH-länk. Båda finns under *Dina uppgifter* ovan.
 
-- För DNS över TLS, ditt Blokada-DNS-namn: {% dot %}
-- För DNS över HTTPS, din DoH-länk: {% doh %}
-
-<div class="note">
+<div class="note important">
 
 **Bara vanliga IP-adresser?** Många routrar från internetleverantörer accepterar bara vanliga IP-adresser som DNS. Stöd för det är på väg. Till dess kan du ställa in dina enheter en i taget: [Android](../android-private-dns/), [Mac och Apple TV](../apple-devices/), [Windows](../windows-dns-over-https/), [Linux](../linux-dns-over-tls/) och [webbläsare](../browser-dns-over-https/). Du kan också köra en liten vidarebefordrare på en Raspberry Pi, som beskrivs i [Pi-hole-guiden](../switch-from-pihole/).
 
@@ -58,9 +55,11 @@ Leta efter en inställning som heter *DNS over TLS*, *Private DNS*, *Encrypted D
 1. Starta om en enhet, eller stäng av och slå på dess wifi, så att den får den nya inställningen.
 2. Surfa en stund och öppna sedan sidan *Aktivitet* i dashboarden. Nätverkets uppslag visas där.
 
+## Om vissa enheter fortfarande visar reklam
+
 Vissa enheter går förbi routern: telefoner med *privat DNS* inställd, webbläsare med *säker DNS* inställd på en annan leverantör och enheter med egen, hårdkodad DNS. Ställ in dem direkt på enheten, eller stäng av deras egen DNS-inställning.
 
-<div class="note">
+<div class="note tip">
 
 Bakom routern delar alla enheter en adress, så dashboarden visar ditt nätverk som en enda enhet. Ställ in telefoner och datorer med ett eget Blokada-DNS-namn om du vill se dem var för sig. Då behåller de också blockeringen när de lämnar hemmet.
 
