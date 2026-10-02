@@ -2,6 +2,18 @@ import fs from 'node:fs';
 
 const LANGS = ['en', 'de', 'sv'];
 
+// Heading ids that read well in any of the languages: "FRITZ!Box" is
+// "fritz-box", "Was dein Router können muss" is "was-dein-router-konnen-muss".
+function slug(text) {
+  return text
+    .replace(/&[a-z]+;|&#\d+;/g, ' ')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'guides/assets' });
 
@@ -29,6 +41,38 @@ export default function (eleventyConfig) {
       .sort((a, b) => LANGS.indexOf(a.data.lang) - LANGS.indexOf(b.data.lang))
       .map(p => ({ lang: p.data.lang, url: p.url })),
   );
+
+  // Splits a rendered guide at its h2 headings: each heading gets an id, each
+  // part becomes a <section>, and the headings make the "On this page" list.
+  eleventyConfig.addFilter('outline', html => {
+    const used = new Set();
+    const toc = [];
+    const withIds = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, inner) => {
+      const text = inner.replace(/<[^>]+>/g, '').trim();
+      const base = slug(text) || 'section';
+      let id = base;
+      for (let n = 2; used.has(id); n += 1) id = `${base}-${n}`;
+      used.add(id);
+      toc.push({ id, text });
+      return `<h2 id="${id}">${inner}</h2>`;
+    });
+    const [intro, ...parts] = withIds.split(/(?=<h2 id=")/);
+    const head = intro.trim() ? `<div class="guide-intro">${intro}</div>` : '';
+    return {
+      html: head + parts.map(part => `<section class="guide-section">${part}</section>`).join(''),
+      toc,
+    };
+  });
+
+  // A copy box followed by punctuation ("enter only <box>.") keeps the two
+  // together, so a narrow screen never starts a line with a lone full stop.
+  eleventyConfig.addTransform('copyPunctuation', function (html) {
+    if (!(this.page.outputPath || '').endsWith('.html')) return html;
+    return html.replace(
+      /(<span class="copy"><code[^>]*>[^<]*<\/code><\/span>)([.,;:!?)]+)/g,
+      '<span class="copy-tail">$1<span>$2</span></span>',
+    );
+  });
 
   eleventyConfig.addFilter('byLang', (items, lang) => items.filter(p => p.data.lang === lang));
   eleventyConfig.addFilter('isoDate', date => new Date(date).toISOString().slice(0, 10));

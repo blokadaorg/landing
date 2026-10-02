@@ -17,6 +17,15 @@ export default {
       '“Open on another device” link, it is filled in for you.',
     deviceFind: 'Fill in my details',
     deviceSet: 'This guide is filled in with the details of your device.',
+    details: 'Your details',
+    detailLabels: {
+      dot: 'DNS name (DNS over TLS)',
+      doh: 'DoH link (DNS over HTTPS)',
+      ipDoh: 'DNS server (IP address)',
+      ipDot: 'DNS over TLS server (IP address)',
+      apple: 'Profile link',
+    },
+    onThisPage: 'On this page',
     ctaTitle: 'Blokada Cloud',
     ctaText:
       'Blocks ads and trackers for every device in your home. You set it up once in the DNS settings, ' +
@@ -54,6 +63,15 @@ export default {
       'zum Öffnen auf einem anderen Gerät im Dashboard, wird er automatisch eingesetzt.',
     deviceFind: 'Meine Daten einsetzen',
     deviceSet: 'Diese Anleitung zeigt die Daten deines Geräts.',
+    details: 'Deine Daten',
+    detailLabels: {
+      dot: 'DNS-Name (DNS over TLS)',
+      doh: 'DoH-Link (DNS over HTTPS)',
+      ipDoh: 'DNS-Server (IP-Adresse)',
+      ipDot: 'DNS-over-TLS-Server (IP-Adresse)',
+      apple: 'Profil-Link',
+    },
+    onThisPage: 'Auf dieser Seite',
     ctaTitle: 'Blokada Cloud',
     ctaText:
       'Blockiert Werbung und Tracker auf allen Geräten in deinem Zuhause. Einmal in den DNS-Einstellungen ' +
@@ -91,6 +109,15 @@ export default {
       'för att öppna på en annan enhet fylls den i åt dig.',
     deviceFind: 'Fyll i mina uppgifter',
     deviceSet: 'Guiden visar uppgifterna för din enhet.',
+    details: 'Dina uppgifter',
+    detailLabels: {
+      dot: 'DNS-namn (DNS över TLS)',
+      doh: 'DoH-länk (DNS över HTTPS)',
+      ipDoh: 'DNS-server (IP-adress)',
+      ipDot: 'Server för DNS över TLS (IP-adress)',
+      apple: 'Profillänk',
+    },
+    onThisPage: 'På den här sidan',
     ctaTitle: 'Blokada Cloud',
     ctaText:
       'Blockerar reklam och spårare på alla enheter i hemmet. Du ställer in det en gång i DNS-inställningarna, ' +

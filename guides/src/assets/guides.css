@@ -9,6 +9,7 @@
   --soft: #f6f6f7;
   --code-bg: #f1f1f3;
   --filled: #fff0d9;
+  --important: #fff6e8;
   --bg: #ffffff;
   --hero: linear-gradient(150deg, #121212 15%, #1c1c1e 70%, #5a5a5a 94%);
 }
@@ -23,6 +24,7 @@
     --soft: #1c1c1f;
     --code-bg: #26262b;
     --filled: #4a3614;
+    --important: #2b2111;
     --bg: #121214;
     color-scheme: dark;
   }
@@ -34,6 +36,7 @@
   --soft: #1c1c1f;
   --code-bg: #26262b;
   --filled: #4a3614;
+  --important: #2b2111;
   --bg: #121214;
   color-scheme: dark;
 }
@@ -132,7 +135,13 @@ ol li, ul li { margin: 4px 0; }
 }
 .device { background: var(--soft); border: 1px solid var(--line); }
 .device p { margin: 0; }
-.note { border-left: 4px solid var(--ink); background: var(--soft); border-radius: 0 6px 6px 0; }
+.note { border-left: 4px solid var(--muted); background: var(--soft); border-radius: 0 6px 6px 0; }
+/* Something the setup fails without. */
+.note.important { border-left-color: var(--accent); background: var(--important); }
+/* Help for when something is off. */
+.note.tip { border-left-color: var(--ink); }
+/* Good to know, not needed for the setup. */
+.note.aside { border: 1px solid var(--line); background: transparent; border-radius: 6px; color: var(--muted); font-size: 0.95rem; }
 .note > :first-child { margin-top: 0; }
 .note > :last-child { margin-bottom: 0; }
 
@@ -167,6 +176,11 @@ ol li, ul li { margin: 4px 0; }
 /* Copying a placeholder helps nobody: only once the page has a device. */
 .copy .copy-btn { display: none; }
 .has-device .copy .copy-btn { display: inline-flex; }
+
+.copy-tail { display: inline-flex; align-items: center; max-width: 100%; vertical-align: middle; }
+.copy-tail .copy { min-width: 0; }
+.copy-tail > span:last-child { flex: none; }
+.copy code { word-break: break-all; }
 
 pre.copy-block { position: relative; padding-right: 48px; }
 pre.copy-block .copy-btn {
@@ -240,10 +254,92 @@ a.btn[data-dns] { background: var(--accent); color: #fff; }
   .topbar-cta { display: none; }
   .topbar-links { gap: 18px; }
   .hero { padding-bottom: 56px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 36px), 0 100%); }
-  .hero-text { padding: 16px 0 24px; }
-  .hero h1 { font-size: 1.75rem; }
-  .hero .lead { font-size: 1.05rem; }
+  .hero { padding-bottom: 44px; }
+  .hero-text { padding: 8px 0 16px; }
+  .hero h1 { font-size: 1.4rem; margin-bottom: 8px; }
+  .hero .lead { font-size: 0.95rem; line-height: 1.5; margin-bottom: 8px; }
+  .details { padding: 16px; }
 }
+
+/* "Your details": the values the guide asks for, filled in for the reader's
+   device, at the top where the steps can refer to them. */
+.details {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--soft);
+  padding: 18px 20px 20px;
+  margin: 24px 0 8px;
+}
+.details-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; }
+.details h2 { font-size: 1.1rem; margin: 0; }
+.details-status { margin: 0; font-size: 0.85rem; color: var(--muted); }
+.details-status::before { content: "✓ "; color: #1f9d55; font-weight: 700; }
+.details dl { display: grid; gap: 14px; margin: 14px 0 0; }
+.details dt { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.details dd { margin: 0; }
+.details .copy { display: flex; width: 100%; background: var(--bg); }
+.details .copy code { flex: 1; padding: 9px 12px; font-size: 0.95rem; word-break: break-all; }
+.details-empty { margin-top: 16px; }
+.details-empty p { margin: 0 0 12px; font-size: 0.92rem; color: var(--muted); }
+
+/* "On this page": chips under the details, a sticky column on wide screens. */
+.guide-layout { position: relative; }
+.toc { margin: 20px 0 8px; }
+.toc-title { margin: 0 0 8px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.toc li { margin: 0; }
+.toc a {
+  display: block;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.toc a:hover { border-color: var(--ink); opacity: 1; }
+@media (min-width: 1240px) {
+  .toc { position: absolute; top: 0; bottom: 0; left: -248px; width: 208px; margin: 0; }
+  .toc-inner { position: sticky; top: 24px; padding-top: 24px; }
+  .toc ol { display: block; }
+  .toc a { border: 0; border-left: 2px solid var(--line); border-radius: 0; padding: 5px 0 5px 14px; color: var(--muted); }
+  .toc a:hover { color: var(--ink); }
+  .toc a.is-active { border-left-color: var(--accent); color: var(--ink); font-weight: 600; }
+}
+
+/* Sections: one per heading, with room between them. */
+.guide-section { border-top: 1px solid var(--line); margin-top: 36px; }
+.guide-section > h2 { margin-top: 28px; scroll-margin-top: 16px; }
+.guide-intro > :first-child { margin-top: 24px; }
+
+/* Steps: numbered circles joined by a line, so each one reads as one action. */
+.guide-section > ol, .guide-intro > ol { list-style: none; counter-reset: step; padding: 0; margin: 18px 0; }
+.guide-section > ol > li, .guide-intro > ol > li { counter-increment: step; position: relative; margin: 0; padding: 2px 0 18px 44px; }
+.guide-section > ol > li::before, .guide-intro > ol > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+}
+.guide-section > ol > li:not(:last-child)::after, .guide-intro > ol > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 13.5px;
+  top: 34px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--line);
+}
+.guide-section > ol > li:last-child { padding-bottom: 0; }
 
 /* The forum frame; its inside is styled by discourse-embedded.css on the forum. */
 #discourse-comments iframe { display: block; }

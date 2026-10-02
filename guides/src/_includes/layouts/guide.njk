@@ -2,19 +2,55 @@
 layout: layouts/base.njk
 ---
 {%- set s = t[lang] -%}
-<article class="guide">
-  {%- if personalised !== false %}
-  <aside class="device">
-    <p class="if-no-device">{{ s.deviceNone | safe }}
-      <a href="{{ site.dashboard }}/setup?src=guides">{{ s.deviceFind }}</a></p>
-    <p class="if-device">{{ s.deviceSet }}</p>
-  </aside>
-  {%- endif %}
+{%- set doc = content | outline -%}
+{%- set kinds = guideDetails[key] -%}
+<div class="guide-layout">
+  <article class="guide">
+    {%- if kinds %}
+    <section class="details" aria-labelledby="details-title">
+      <div class="details-head">
+        <h2 id="details-title">{{ s.details }}</h2>
+        <p class="details-status if-device">{{ s.deviceSet }}</p>
+      </div>
+      <dl>
+        {%- for kind in kinds %}
+        <div class="detail">
+          <dt>{{ s.detailLabels[kind] }}</dt>
+          <dd>{% if kind == 'dot' %}{% dot %}{% elif kind == 'doh' %}{% doh %}{% elif kind == 'ipDoh' %}{% ip "doh" %}{% elif kind == 'ipDot' %}{% ip "dot" %}{% elif kind == 'apple' %}{% appleUrl %}{% endif %}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+      <div class="details-empty if-no-device">
+        <p>{{ s.deviceNone | safe }}</p>
+        <a class="btn btn-primary" href="{{ site.dashboard }}/setup?src=guides">{{ s.deviceFind }}</a>
+      </div>
+    </section>
+    {%- elif personalised !== false %}
+    <aside class="device">
+      <p class="if-no-device">{{ s.deviceNone | safe }}
+        <a href="{{ site.dashboard }}/setup?src=guides">{{ s.deviceFind }}</a></p>
+      <p class="if-device">{{ s.deviceSet }}</p>
+    </aside>
+    {%- endif %}
 
-  {{ content | safe }}
+    {%- if doc.toc.length > 2 %}
+    <nav class="toc" aria-label="{{ s.onThisPage }}">
+      <div class="toc-inner">
+        <p class="toc-title">{{ s.onThisPage }}</p>
+        <ol>
+          {%- for item in doc.toc %}
+          <li><a href="#{{ item.id }}">{{ item.text | safe }}</a></li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </nav>
+    {%- endif %}
 
-  {% include "partials/cta.njk" %}
-</article>
+    {{ doc.html | safe }}
+
+    {% include "partials/cta.njk" %}
+  </article>
+</div>
 
 <section class="comments">
   <h2>{{ s.comments }}</h2>
