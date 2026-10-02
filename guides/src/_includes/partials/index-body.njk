@@ -1,0 +1,44 @@
+{%- set s = t[lang] -%}
+{%- set icons = {
+  router: '<rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 16.5h.01M11 16.5h.01M8 13V9M16 13V9M5.5 6.5a9 9 0 0 1 13 0M8.5 9.5a5 5 0 0 1 7 0"/>',
+  phone: '<rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18h2"/>',
+  tv: '<rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  desktop: '<rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M2.5 13h19M9 20.5h6M12 16.5v4"/>',
+  terminal: '<rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M6.5 9l3 3-3 3M12 15h5"/>',
+  browser: '<rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 9h19M6 6.5h.01M9 6.5h.01"/>',
+  switch: '<path d="M4 8h13l-3-3M20 16H7l3 3"/>'
+} -%}
+{%- macro card(guide, info, s, icons, today) -%}
+<li class="guide-card{% if info.featured %} is-featured{% endif %}">
+  <a href="{{ guide.url }}">
+    <span class="guide-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{{ icons[info.icon] | safe }}</svg></span>
+    <span class="guide-card-body">
+      <span class="guide-card-name">{{ s.guideNames[guide.data.key] }}</span>
+      {%- if info.featured %}<span class="badge">{{ s.recommended }}</span>{% endif %}
+      {%- if info.until and today <= info.until %}<span class="badge badge-urgent">{{ s.deadline }}</span>{% endif %}
+      <span class="guide-card-desc">{{ guide.data.description }}</span>
+    </span>
+  </a>
+</li>
+{%- endmacro -%}
+
+<p class="intro">{{ s.indexIntro }}</p>
+
+{%- for group in ['device', 'switch'] %}
+<section class="guide-group">
+  <h2>{{ s.indexGroups[group] }}</h2>
+  <ul class="guide-cards">
+    {#- In the index's own order, then the guides' order. -#}
+    {%- for key, info in guideIndex %}
+    {%- if info.group == group %}
+    {%- for guide in collections.guides | byLang(lang) %}
+    {%- if guide.data.key == key %}{{ card(guide, info, s, icons, buildDate) }}{% endif %}
+    {%- endfor %}
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+</section>
+{%- endfor %}
+
+<p class="more-guides"><a href="{{ site.forum }}c/guides">{{ s.moreGuides }}</a></p>
+{% include "partials/cta.njk" %}

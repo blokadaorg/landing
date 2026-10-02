@@ -34,19 +34,24 @@ layout: layouts/base.njk
     {%- endif %}
 
     {%- if doc.toc.length > 2 %}
+    {#- Folded on narrow screens; ui.js keeps it open in the wide-screen column. #}
     <nav class="toc" aria-label="{{ s.onThisPage }}">
-      <div class="toc-inner">
-        <p class="toc-title">{{ s.onThisPage }}</p>
+      <details class="toc-inner">
+        <summary class="toc-title">{{ s.onThisPage }}</summary>
         <ol>
           {%- for item in doc.toc %}
           <li><a href="#{{ item.id }}">{{ item.text | safe }}</a></li>
           {%- endfor %}
         </ol>
-      </div>
+      </details>
     </nav>
     {%- endif %}
 
     {{ doc.html | safe }}
+
+    {%- if updated %}
+    <p class="updated">{{ s.updated }} <time datetime="{{ updated | isoDate }}">{{ updated | isoDate }}</time></p>
+    {%- endif %}
 
     {% include "partials/cta.njk" %}
   </article>

@@ -6,12 +6,4 @@ eleventyComputed:
   title: "{{ t.de.indexTitle }}"
   description: "{{ t.de.indexDescription }}"
 ---
-{%- set s = t[lang] -%}
-<p class="intro">{{ s.indexIntro }}</p>
-<ul class="cards">
-  {%- for guide in collections.guides | byLang(lang) %}
-  <li><a href="{{ guide.url }}"><strong>{{ guide.data.title }}</strong>{{ guide.data.description }}</a></li>
-  {%- endfor %}
-</ul>
-<p class="more-guides"><a href="{{ site.forum }}c/guides">{{ s.moreGuides }}</a></p>
-{% include "partials/cta.njk" %}
+{% include "partials/index-body.njk" %}

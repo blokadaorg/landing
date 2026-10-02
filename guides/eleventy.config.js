@@ -28,6 +28,9 @@ export default function (eleventyConfig) {
     fs.readFileSync(new URL('./src/_includes/js/ui.js', import.meta.url), 'utf8'),
   );
 
+  // For notices that end on a date, such as the Mullvad shutdown.
+  eleventyConfig.addGlobalData('buildDate', new Date().toISOString().slice(0, 10));
+
   eleventyConfig.addCollection('guides', api =>
     api.getFilteredByGlob('src/*/*.md').sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)),
   );
