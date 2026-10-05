@@ -8,9 +8,10 @@
 #   ./scripts/crowdin.sh export [translate dir]   English -> translate/guides/
 #   ./scripts/crowdin.sh import [translate dir]   translations -> src/de, src/sv
 #
-# After export, commit and push in the translate repo so Crowdin picks it up.
-# After import, run `npm test`: it fails if a translation lost a shortcode,
-# a device detail or a link.
+# After export, open a translate PR with guides/ only; Crowdin reads sources
+# from master and never reads build/guides/. After import, run `npm test`: it
+# fails if a translation lost a shortcode, a device detail, a link or a
+# heading. The README has the steps for fixing a translation in Crowdin.
 
 set -e
 

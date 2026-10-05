@@ -5,7 +5,7 @@ updated: 2026-10-02
 order: 9
 ---
 
-De flesta aktuella Linux-distributioner, bland annat Ubuntu och Fedora, slår upp namn via *systemd-resolved*, som har stöd för DNS över TLS. På Debian installerar du det först med `sudo apt install systemd-resolved`. Peka den mot Blokada Cloud, så blockeras reklam och spårare för alla appar på datorn.
+De flesta aktuella Linux-distributioner, bland annat Ubuntu och Fedora, slår upp namn via _systemd-resolved_, som har stöd för DNS över TLS. På Debian installerar du det först med `sudo apt install systemd-resolved`. Peka den mot Blokada Cloud, så blockeras reklam och spårare för alla appar på datorn.
 
 ## Ställ in systemd-resolved
 
@@ -25,7 +25,7 @@ Delen efter `#` är ditt Blokada-DNS-namn: {% dot %} systemd-resolved kontroller
 
 <div class="note important">
 
-**NetworkManager** skickar också vidare nätverkets DNS-servrar. `Domains=~.` skickar alla uppslag till Blokada, men om `resolvectl status` fortfarande visar en annan server för en anslutning stänger du av automatisk DNS för den anslutningen (reglaget *Automatic* bredvid *DNS* i dess IPv4- och IPv6-inställningar).
+**NetworkManager** skickar också med nätverkets DNS-servrar. `Domains=~.` skickar alla uppslag till Blokada, men om `resolvectl status` ändå visar en annan server på en anslutning, stäng av automatisk DNS för den anslutningen (brytaren _Automatisk_ bredvid _DNS_ i IPv4- och IPv6-inställningarna).
 
 </div>
 
@@ -35,7 +35,7 @@ Om `resolvectl` inte hittas slår din distribution upp namn på ett annat sätt.
 
 ## Kontrollera att det fungerar
 
-Öppna några webbplatser och titta sedan på sidan *Aktivitet* i [dashboarden](https://app.blokada.org/stats?src=guides). Datorns uppslag visas där.
+Öppna några webbplatser och titta sedan på sidan _Aktivitet_ i [dashboarden](https://app.blokada.org/stats?src=guides). Den här datorns uppslag visas där.
 
 <div class="note aside">
 
