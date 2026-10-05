@@ -33,16 +33,43 @@ community.blokada.org.
 English is written here, in `src/en/`. German and Swedish come from Crowdin
 through the translate repo (the `translate` submodule of this repo):
 
-1. After changing English guides: `./scripts/crowdin.sh export`, then commit
-   and push `guides/` in the translate repo. Crowdin's GitHub integration
-   picks it up.
-2. When Crowdin has translated (it commits to `build/guides/de_DE` and
-   `sv_SE` in the translate repo): update the submodule, run
-   `./scripts/crowdin.sh import`, then `npm test`.
+1. After changing English guides: `./scripts/crowdin.sh export`, then open a
+   translate PR with `guides/` only. Crowdin's GitHub integration reads the
+   sources from `master`. Leave `build/guides/` alone: Crowdin writes it and
+   never reads it.
+2. Crowdin keeps the approved translation of every paragraph that didn't
+   change, pre-translates the rest, and opens a "New Crowdin updates" PR with
+   `build/guides/de_DE` and `sv_SE`.
+3. Update the submodule, run `./scripts/crowdin.sh import`, then `npm test`.
+   Read the German and Swedish diff before publishing.
 
 `npm test` checks that every translation keeps the English page's
-shortcodes, `data-dns` spans, HTML blocks, classes and guide links, and the
-same `updated` and `order`. Fix a failing file by hand, or in Crowdin.
+shortcodes, `data-dns` spans, HTML blocks, classes, guide links and headings,
+and the same `updated` and `order`. It does not check wording.
+
+### Fixing a translation
+
+Crowdin exports its own pre-translation for any string without an approved
+translation, so a fix made only here or in `build/guides/` is overwritten by
+the next export. Fix it in Crowdin's editor, or upload the files from the
+translate repo:
+
+    cp src/de/*.md ../translate/build/guides/de_DE/    # same for sv, sv_SE
+    cd ../translate
+    crowdin upload translations --config crowdin-guides.yml -b master \
+      -i <project id> -T <token> -l de --auto-approve-imported
+    git checkout -- build/guides
+
+- One language per run: `-l de`, then `-l sv-SE`. A second `-l` replaces the
+  first, and without `-l` every language's untranslated copy is uploaded as
+  an approved translation.
+- The guides are stored as one string per paragraph, list item or heading
+  (`content_segmentation: 0` in the translate repo's `crowdin.yml`). An upload
+  matches block by block, so keep the same blocks as the English.
+- A line that stays the same as the English (a date, a host name, a config
+  block) is skipped by the upload. Approve it in the editor.
+- Afterwards, check in Crowdin that every string of the file is approved.
+  The next "New Crowdin updates" PR should then leave the file unchanged.
 
 ## Forum comments
 
