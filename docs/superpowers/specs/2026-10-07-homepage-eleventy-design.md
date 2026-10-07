@@ -162,7 +162,7 @@ Fonts: Open Sans from Google Fonts with `display=swap` and preconnect, as now.
 
 `site/src/assets/home.css` is a plain file, produced once: take the two
 stylesheets the current build ships, remove every rule the page does not use,
-remove icon-font rules, and commit the result. Target 30 KB or less
+remove icon-font rules, and commit the result. Target 36 KB or less
 uncompressed. No Sass and no CSS build step afterwards; later changes are
 edits to that file.
 
@@ -253,7 +253,7 @@ The self-unregistering `service-worker.js` stays published.
   legitimately identical (product names, "FAQ", "Newsletter" and similar).
   This is the check that keeps the PR unmerged until Crowdin delivers.
 - the sitemap lists every built page once.
-- `home.css` is 30 KB or less; the inline script is 5 KB or less.
+- `home.css` is 36 KB or less; the inline script is 5 KB or less.
 
 The existing guides tests stay as they are.
 

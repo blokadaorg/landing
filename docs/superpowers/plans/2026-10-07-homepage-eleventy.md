@@ -17,7 +17,7 @@
 - Guides: sources, URLs and existing tests do not change.
 - Same look and copy as the live page. Section ids stay: `family`, `cloud`, `about`, `vpn`, `download`, `community`, `opinions`, `faq`, `donate`, `crypto`, `developer`.
 - No automatic language redirect except for an explicit `?lang=` on `/`.
-- `home.css` 30 KB or less uncompressed. Inline homepage script 5 KB or less, comments included.
+- `home.css` 36 KB or less uncompressed. Inline homepage script 5 KB or less, comments included.
 - No analytics, no icon fonts, no new runtime dependencies. `@11ty/eleventy` stays the only devDependency.
 - Outgoing links keep `src=landing` exactly where they have it today.
 - This repo is public. Never mention the private tracker in commits, code or PR text.

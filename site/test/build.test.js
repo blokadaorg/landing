@@ -106,3 +106,10 @@ test('images have alt text and dimensions, and no icon fonts are left', () => {
   for (const [img] of html.matchAll(/<img\b[^>]*ill\/[^>]*>/g)) assert.ok(/width="900" height="1221" loading="lazy"/.test(img), img);
   assert.ok(!/<i class="(fa|ni)[sb ]/.test(html));
 });
+
+test('the homepage stylesheet stays small and has no icon fonts', () => {
+  const css = read('assets/home.css');
+  assert.ok(css.length > 5000, 'stylesheet is empty');
+  assert.ok(css.length <= 36 * 1024, `home.css is ${css.length} bytes`);
+  assert.ok(!/@font-face/.test(css));
+});

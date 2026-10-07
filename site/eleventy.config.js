@@ -107,6 +107,13 @@ export default function (eleventyConfig) {
     );
   });
 
+  // The homepage's styles were written for markup with no whitespace between
+  // tags (inline buttons, icons and stars sit flush), so none is emitted.
+  eleventyConfig.addTransform('homeWhitespace', function (html) {
+    if (!this.page.inputPath.endsWith('/home.njk')) return html;
+    return html.replace(/>\s+</g, '><');
+  });
+
   eleventyConfig.addFilter('byLang', (items, lang) => items.filter(p => p.data.lang === lang));
   eleventyConfig.addFilter('isoDate', date => new Date(date).toISOString().slice(0, 10));
 
