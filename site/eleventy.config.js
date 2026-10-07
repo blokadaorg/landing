@@ -1,6 +1,13 @@
 import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import site from './src/_data/site.js';
+import { loadStrings, translate } from './lib/homeStrings.js';
 
 const LANGS = ['en', 'de', 'sv'];
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const homeStrings = loadStrings(path.join(here, 'src/locales'), site.homeLangs.map(l => l.code));
 
 // Heading ids that read well in any of the languages: "FRITZ!Box" is
 // "fritz-box", "Was dein Router können muss" is "was-dein-router-konnen-muss".
@@ -21,6 +28,17 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/home.css': 'assets/home.css' });
   eleventyConfig.ignores.add('src/locales/**');
+
+  // The homepage's strings come from the translate repo, keyed like the
+  // Vue app's. `hl` is the language of the page being rendered.
+  eleventyConfig.addFilter('tr', function (key, code) {
+    return translate(homeStrings, code || this.ctx.hl.code, key);
+  });
+  // The hero paragraph's first sentence is the search description.
+  eleventyConfig.addFilter('firstSentence', text => {
+    const end = text.search(/[.!?](?=\s)|。|\.$/);
+    return end === -1 ? text : text.slice(0, end + 1);
+  });
 
   // Inlined into every guide: one small script, no extra request, and nothing
   // for a crawler to wait on.
