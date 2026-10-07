@@ -8,9 +8,9 @@
 .btn-reset{background:none;border:0;cursor:pointer}
 .js [data-pane]:not(.active){display:none}
 .newlines{white-space:pre-wrap}
-.lang-prompt{position:fixed;left:0;right:0;bottom:0;z-index:1050;margin:0;padding:10px 16px;background:#1c1c1e;color:#fff;text-align:center;font-size:.875rem;box-shadow:0 -2px 12px rgba(0,0,0,.25)}
+.lang-prompt{position:fixed;left:0;right:0;bottom:0;z-index:1050;margin:0;padding:12px 56px;background:#1c1c1e;color:#fff;text-align:center;font-size:.875rem;box-shadow:0 -2px 12px rgba(0,0,0,.25)}
 .lang-prompt a{color:#fff;text-decoration:underline}
-.lang-prompt button{margin-left:12px;color:#fff}
+.lang-prompt button{position:absolute;top:0;right:0;bottom:0;width:48px;padding:0;color:#fff;font-size:1.75rem;line-height:1}
 .btn-link{font-weight:400;color:#1c1c1e;background-color:transparent}
 .btn-link:hover{color:#000;text-decoration:none;background-color:transparent;border-color:transparent}
 .btn-link.focus,.btn-link:focus{text-decoration:none;border-color:transparent;box-shadow:none}
