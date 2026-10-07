@@ -1,14 +1,38 @@
-# Guides
+# Site
 
-Static setup guides served at `blokada.org/guides/`, `/de/guides/` and
-`/sv/guides/`. They are plain HTML, built with [Eleventy](https://www.11ty.dev/),
-so search engines can read them without running JavaScript. The homepage (the
-Vue app in `../src`) is not involved.
+The homepage at `blokada.org/` and `/<language>/`, and the setup guides at
+`/guides/`, `/de/guides/` and `/sv/guides/`. Everything is plain HTML, built
+with [Eleventy](https://www.11ty.dev/), so search engines can read it without
+running JavaScript.
 
     npm install
-    npm run serve   # http://localhost:8090/guides/
-    npm test        # the device-tag script
-    ./publish.sh ../../landing-github-pages
+    npm run serve   # http://localhost:8090/
+    npm test
+    make deploy     # from the repo root
+
+## Homepage
+
+- One template, `src/home.njk`, renders a page per language in
+  `site.homeLangs` (`src/_data/site.js`). English is `/`, the others are
+  `/<code>/` in lowercase.
+- The sections are in `src/_includes/home/`, the document head in
+  `src/_includes/layouts/home.njk`.
+- Text comes from `src/locales/<code>.json`, written by
+  `../sync-translations.sh` from the translate repo. In templates,
+  `{{ 'key' | tr }}` prints the string in the page's language and falls back
+  to English. Add `| safe` only for strings that contain HTML.
+- `npm test` fails while a string the homepage uses is identical to English
+  in any language. Words a language borrows unchanged ("FAQ", "Newsletter")
+  are listed in `test/untranslated-allow.js`.
+- `src/assets/home.css` is the old homepage's stylesheet stripped to the
+  rules this markup uses, plus a few additions at the end. It expects no
+  whitespace between tags, which a transform in `eleventy.config.js` removes.
+- `src/_includes/js/home.cjs` is inlined: mobile menu, download tabs,
+  language picker, the "read this page in your language" prompt and the old
+  `/?lang=xx` links. The page works without it.
+- `src/static/` is copied to the site root as it is. `service-worker.js`
+  there unregisters the service worker the old homepage installed and has to
+  stay published.
 
 ## Writing a guide
 
