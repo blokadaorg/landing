@@ -7,6 +7,8 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import site from '../src/_data/site.js';
+import { loadStrings, untranslated } from '../lib/homeStrings.js';
+import allow from './untranslated-allow.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = fs.mkdtempSync(path.join(os.tmpdir(), 'blokada-site-'));
@@ -153,4 +155,21 @@ test('the sitemap lists every built page once', () => {
 test('guides link their own language homepage', () => {
   assert.ok(read('de/guides/index.html').includes('<a class="brand" href="/de/">'));
   assert.ok(read('guides/index.html').includes('<a class="brand" href="/">'));
+});
+
+test('every homepage string is translated in every language', () => {
+  const used = new Set();
+  const dir = path.join(ROOT, 'src/_includes');
+  for (const file of [...fs.readdirSync(path.join(dir, 'home')).map(f => `home/${f}`), 'layouts/home.njk']) {
+    for (const [, key] of fs.readFileSync(path.join(dir, file), 'utf8').matchAll(/'([^']+)'\s*\|\s*tr\b/g)) used.add(key);
+  }
+  for (const product of site.products) for (const key of [product.title, product.desc, ...product.points]) used.add(key);
+  assert.ok(used.size > 90, `only ${used.size} strings found`);
+  const strings = loadStrings(path.join(ROOT, 'src/locales'), site.homeLangs.map(l => l.code));
+  const missing = {};
+  for (const { code } of site.homeLangs.slice(1)) {
+    const keys = untranslated(strings, code, [...used]).filter(key => !(allow[key] === '*' || (allow[key] || []).includes(code)));
+    if (keys.length) missing[code] = keys;
+  }
+  assert.deepEqual(missing, {}, 'strings still in English');
 });
