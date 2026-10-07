@@ -68,7 +68,7 @@
                         <i class="ni ni-collection d-lg-none mr-2"></i>
                         <span class="nav-link-inner--text">{{ $t('universal action more') }}</span>
                     </a>
-                    <a href="https://go.blokada.org/newsletter" class="dropdown-item">{{ $t('homepage action newsletter') }}</a>
+                    <a href="https://go.blokada.org/newsletter?src=landing" class="dropdown-item">{{ $t('homepage action newsletter') }}</a>
                     <a href="#faq" class="dropdown-item">{{ $t('homepage action faq') }}</a>
                     <a href="#family" class="dropdown-item">Blokada Family</a>
                     <a href="#cloud" class="dropdown-item">Blokada 6 (Cloud)</a>
@@ -82,7 +82,7 @@
             </ul>
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="https://go.blokada.org/forum" rel="noopener"
+                    <a class="nav-link nav-link-icon" href="https://go.blokada.org/forum?src=landing" rel="noopener"
                        data-toggle="tooltip" :title="$t('homepage action forums')">
                         <i class="fas fa-comments"></i>
                         <span class="nav-link-inner--text d-lg-none ml-2">{{ $t('homepage action forums') }}</span>
