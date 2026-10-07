@@ -49,7 +49,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-2">
-                        <img src="img/ill/blokada-family.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-family.webp" class="img-fluid floating" width="900" height="1221" loading="lazy" decoding="async" :alt="$t('homepage family title')">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-1">
                         <div class="pl-md-5">
@@ -111,7 +111,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-1">
-                        <img src="img/ill/blokada-cloud.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-cloud.webp" class="img-fluid floating" width="900" height="1221" loading="lazy" decoding="async" :alt="$t('homepage cloud title')">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-2">
                         <div class="pl-md-5">
@@ -174,7 +174,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-2">
-                        <img src="img/ill/blokada-libre.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-libre.webp" class="img-fluid floating" width="900" height="1221" loading="lazy" decoding="async" :alt="$t('homepage about title')">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-1">
                         <div class="pr-md-5">
@@ -237,7 +237,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-2">
-                        <img src="img/ill/blokada-plus.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-plus.webp" class="img-fluid floating" width="900" height="1221" loading="lazy" decoding="async" :alt="$t('homepage vpn title')">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-1">
                         <div class="pr-md-5">
@@ -332,7 +332,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://go.blokada.org/appstore/family"
+                                                        href="https://go.blokada.org/appstore/family?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="danger"
                                                         icon="fab fa-apple">
@@ -355,7 +355,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://go.blokada.org/appstore"
+                                                        href="https://go.blokada.org/appstore?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="warning"
                                                         icon="fab fa-apple">
@@ -382,10 +382,10 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://go.blokada.org/play/family"
+                                                        href="https://go.blokada.org/play/family?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="danger"
-                                                        icon="fab fa-apple">
+                                                        icon="fab fa-android">
                                                     {{ $t('homepage download action android slim') }}
                                                 </base-button>
                                             </div>
@@ -405,7 +405,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://go.blokada.org/play/v6"
+                                                        href="https://go.blokada.org/play/v6?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="warning"
                                                         icon="fab fa-google-play">
@@ -424,11 +424,11 @@
                                         </div>
                                         <div class="pl-md-4">
                                             <h4 class="title">{{ $t('homepage download option android five') }}</h4>
-                                            <p v-html="$t('homepage download desc android five')">{{ $t('homepage download desc android five') }} <a href="https://go.blokada.org/blokada5_vs_blokada4" class="text-warning">{{ $t('universal action learn more') }}</a></p>
+                                            <p v-html="$t('homepage download desc android five')"></p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://go.blokada.org/apk5"
+                                                        href="https://go.blokada.org/apk5?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="success"
                                                         icon="ni ni-cloud-download-95">
@@ -455,7 +455,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://app.blokada.org"
+                                                        href="https://app.blokada.org/?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="dark"
                                                         icon="fas fa-user-circle">
@@ -485,7 +485,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://app.blokada.org"
+                                                        href="https://app.blokada.org/?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="dark"
                                                         icon="fas fa-user-circle">
@@ -522,11 +522,11 @@
                                 <p class="lead text-white mt-3">{{ $t('homepage community cta desc')}}</p>
                             </div>
                             <div class="col-lg-3 ml-lg-auto">
-                                <base-button tag="a" href="https://go.blokada.org/forum"
+                                <base-button tag="a" href="https://go.blokada.org/forum?src=landing"
                                              type="white" block size="lg">
                                     {{ $t('homepage community cta action')}}
                                 </base-button>
-                                <base-button tag="a" href="https://go.blokada.org/newsletter"
+                                <base-button tag="a" href="https://go.blokada.org/newsletter?src=landing"
                                              type="white" block size="lg">
                                     {{ $t('homepage action newsletter')}}
                                 </base-button>
@@ -540,7 +540,7 @@
             <div class="container">
                 <div class="row justify-content-center text-center mb-lg">
                     <div class="col-lg-8">
-                        <p class="lead text-muted">{{ $t('homepage community opinions') }}<br/><a href="https://go.blokada.org/opinions" class="text-warning">{{ $t('universal action learn more') }}</a></p>
+                        <p class="lead text-muted">{{ $t('homepage community opinions') }}<br/><a href="https://go.blokada.org/opinions?src=landing" class="text-warning">{{ $t('universal action learn more') }}</a></p>
                     </div>
                 </div>
 
@@ -601,7 +601,7 @@
                             <p>{{ $t('homepage faq desc 6') }}</p>
 
                             <div>
-                                <h6 class="mt-5"><a href="https://go.blokada.org/faq" class="text-warning">{{ $t('homepage faq action more') }}</a></h6>
+                                <h6 class="mt-5"><a href="https://go.blokada.org/faq?src=landing" class="text-warning">{{ $t('homepage faq action more') }}</a></h6>
                             </div>
                         </div>
                     </div>
@@ -636,60 +636,12 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-md-8 mt-3">
-                                    <base-button type="default" round block size="lg" tag="a" href="https://go.blokada.org/donate">
+                                    <base-button type="default" round block size="lg" tag="a" href="https://go.blokada.org/donate?src=landing">
                                         {{ $t('homepage support cta action')}}
                                     </base-button>
                                 </div>
                             </div>
                         </card>
-                        <modal :show.sync="donateModal"
-                            gradient="success"
-                            modal-classes="modal-success modal-dialog-centered">
-                            <h6 slot="header" class="modal-title" id="modal-title-notification">{{ $t('homepage support cta action alt')}}</h6>
-
-                            <div class="text-center">
-                                <p>{{ $t('payment donate disclaimer') }}</p>
-                                <p class="small">{{ $t('payment euro desc') }}</p>
-
-                                <hr />
-                                <div class="row justify-content-center mb-3">
-                                    <base-button class="col-2" type="primary" textColor="white" @click.prevent="donateAmount = 5">5 €</base-button>
-                                    <base-button class="col-2" type="primary" textColor="white" @click.prevent="donateAmount = 10">10 €</base-button>
-                                    <base-button class="col-2" type="primary" textColor="white" @click.prevent="donateAmount = 20">20 €</base-button>
-                                    <base-button class="col-2" type="primary" textColor="white" @click.prevent="donateAmount = 50">50 €</base-button>
-                                </div>
-
-                                <form method="POST"  action="https://btcpay.blocka.net/api/v1/invoices" class="btcpay-form btcpay-form--block">
-                                <input type="hidden" name="storeId" value="9zW6UzCqpL622q1M92tQtodLdug3ChSdLMqjLGmcph7i" />
-                                <input type="hidden" name="price" :value="donateAmount" />
-                                <input type="hidden" name="currency" value="EUR" />
-                                <button type="submit" class="submit" name="submit" style="min-width:209px; min-height:57px; border-radius: 4px;border-style: none;background-color: #0f3b21;" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor"><span style="color:#fff">{{ paymentText() }} &nbsp;&nbsp;</span>
-                                <img src="https://btcpay.blocka.net/img/logo.svg" style="height:57px;display:inline-block;padding: 5% 0 5% 5px;">
-                                </button></form>
-
-                                <hr />
-                                <p class="text-monospace text-left small">
-                                    Ethereum: <a href="https://blokada.argent.xyz/" class="text-white">https://blokada.argent.xyz</a>
-                                </p>
-                                <hr />
-
-                                <p class="text-monospace text-left small">
-                                    IBAN: SE79 5000 0000 0508 0822 7432<br/>
-                                    BIC: ESSESESS<br/>
-                                    Name: Blocka AB<br/>
-                                    Title: Blokada donation
-                                </p>
-                            </div>
-
-                            <template slot="footer">
-                                <base-button type="link"
-                                            text-color="white"
-                                            class="ml-auto"
-                                            @click="donateModal = false">
-                                    {{ $t('universal action close') }}
-                                </base-button>
-                            </template>
-                        </modal>
                     </div>
                 </div>
             </div>
@@ -721,14 +673,12 @@
 <script>
   import Tabs from "@/components/Tabs/Tabs.vue";
   import TabPane from "@/components/Tabs/TabPane.vue";
-  import Modal from "@/components/Modal.vue";
 
   export default {
     name: "home",
     components: {
       Tabs,
-      TabPane,
-      Modal
+      TabPane
     },
     data() {
       return {
@@ -744,9 +694,7 @@
           "Huge reason why I love this app now. Lots of battery left with 3 hours of SOT so far.",
           "By the way VPN works flawlessly. It’s nice to have both working (blocking ads and using vpn).",
           "To the developers: THANK YOU for releasing an iOS version of Blokada! This is the app I missed most when I migrated to iOS, and to top it off this is running on iOS 14 Beta 4!"
-        ],
-        donateModal: false,
-        donateAmount: 10
+        ]
       }
     },
     computed: {
@@ -763,19 +711,10 @@
       }
     },
     methods: {
-      paymentText() {
-        let price = `${this.donateAmount} €`;
-        return this.$t("payment action pay", [price]);
-      },
       translateAndReplaceBr(key) {
         const translatedText = this.$t(key);
        return translatedText.replace(/<br\s*\/?>/gi, '\n');
       }
-    },
-    created() {
-        if (this.$route.hash == "#crypto") {
-            setTimeout(() => this.donateModal = true, 500);
-        }
     }
   };
 </script>

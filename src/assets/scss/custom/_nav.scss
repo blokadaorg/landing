@@ -5,7 +5,7 @@
         color: theme-color("primary");
     }
 
-    i:not(.fa) {
+    i:not(.fa):not(.fas):not(.fab) {
         position: relative;
         top: 2px;
     }

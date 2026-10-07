@@ -43,10 +43,12 @@ router.beforeEach((to, from, next) => {
   if (to.query.lang) {
     var lang = to.query.lang.trim()
     lang = lang.replace(/[^a-zA-Z-]/g, "")
-    lang = lang.substr(0, 5)
-    console.log(`Changed locale from url param: ${lang}`)
-    Vue.i18n.locale = lang
-    sessionStorage.setItem("blokada_locale", lang)
+    // Only languages we ship: anything else used to be stored and then
+    // rendered as English, and the old 5 character cut broke zh-Hant.
+    if (Vue.i18n.availableLocales.includes(lang)) {
+      Vue.i18n.locale = lang
+      sessionStorage.setItem("blokada_locale", lang)
+    }
   }
   next();
 })

@@ -11,18 +11,6 @@ module.exports = {
     ]
   },
 
-  pwa: {
-    name: 'Blokada',
-    themeColor: '#121212',
-    msTileColor: '#121212',
-    appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: '#121212',
-    iconPaths: {
-      favicon32: 'favicon.png',
-      favicon16: 'favicon.png',
-    }
-  },
-
   devServer: {
     disableHostCheck: true
   },

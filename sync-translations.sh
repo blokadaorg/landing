@@ -10,7 +10,8 @@ commit="translate: sync strings to: $hash"
 
 echo $commit
 
-./translate.py -a landing
+# translate.py defaults to a target three levels up, for the app repo layout.
+./translate.py -a landing -t ../..
 
 cd ../../
 
