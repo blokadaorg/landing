@@ -11,6 +11,14 @@
 .lang-prompt{position:fixed;left:0;right:0;bottom:0;z-index:1050;margin:0;padding:10px 16px;background:#1c1c1e;color:#fff;text-align:center;font-size:.875rem;box-shadow:0 -2px 12px rgba(0,0,0,.25)}
 .lang-prompt a{color:#fff;text-decoration:underline}
 .lang-prompt button{margin-left:12px;color:#fff}
+.btn-link{font-weight:400;color:#1c1c1e;background-color:transparent}
+.btn-link:hover{color:#000;text-decoration:none;background-color:transparent;border-color:transparent}
+.btn-link.focus,.btn-link:focus{text-decoration:none;border-color:transparent;box-shadow:none}
+.btn-link.disabled,.btn-link:disabled{color:#8898aa;pointer-events:none}
+.btn-group.show .dropdown-toggle,.btn-group.show .dropdown-toggle.btn-link{box-shadow:none}
+.btn-link{font-weight:600}
+.btn-link,.btn-link:hover{box-shadow:none}
+.btn-link:hover{-webkit-transform:none;transform:none}
 dialog.languages{border:0;border-radius:6px;padding:24px;max-width:420px;width:calc(100% - 32px)}
 dialog.languages::backdrop{background:rgba(0,0,0,.5)}
 dialog.languages ul{list-style:none;margin:0 0 16px;padding:0;columns:2}

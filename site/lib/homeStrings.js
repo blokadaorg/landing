@@ -15,7 +15,8 @@ export function loadStrings(dir, codes) {
 export function translate(strings, code, key) {
   const english = strings.en[key];
   if (english === undefined) throw new Error(`Unknown homepage string: ${key}`);
-  return (strings[code] && strings[code][key]) || english;
+  const own = strings[code] && strings[code][key];
+  return own && own.trim() ? own : english;
 }
 
 export function untranslated(strings, code, keys) {

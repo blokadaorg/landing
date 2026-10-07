@@ -29,20 +29,20 @@
 <div class="nav-wrapper">
 <ul role="tablist" class="nav nav-pills nav-fill">
 <li class="nav-item" role="presentation">
-<a role="tab" href="#download" data-tab="ios" class="nav-link active" aria-selected="true">
+<a role="tab" href="#download" data-tab="ios" id="tab-ios" aria-controls="pane-ios" class="nav-link active" aria-selected="true">
 <div>{% icon "brands-apple", "mr-2" %}iOS
 </div>
 </a>
 </li>
 <li class="nav-item" role="presentation">
-<a role="tab" href="#download" data-tab="android" class="nav-link" aria-selected="false">
+<a role="tab" href="#download" data-tab="android" id="tab-android" aria-controls="pane-android" class="nav-link" aria-selected="false">
 <div>
 {% icon "brands-android", "mr-2" %}Android
 </div>
 </a>
 </li>
 <li class="nav-item" role="presentation">
-<a role="tab" href="#download" data-tab="other" class="nav-link" aria-selected="false">
+<a role="tab" href="#download" data-tab="other" id="tab-other" aria-controls="pane-other" class="nav-link" aria-selected="false">
 <div>{% icon "solid-laptop", "mr-2" %}{{ 'account section header other' | tr }}
 </div>
 </a>
@@ -52,7 +52,7 @@
 <div class="tab-content">
 <div class="card shadow">
 <div class="card-body">
-<div class="tab-pane active" data-pane="ios">
+<div class="tab-pane active" data-pane="ios" id="pane-ios" role="tabpanel" aria-labelledby="tab-ios">
 <div class="d-flex px-md-3">
 <div class="d-none d-lg-block">
 <div class="icon icon-shape bg-gradient-danger shadow rounded-circle text-white">{% icon "brands-apple" %}</div>
@@ -89,7 +89,7 @@
 </div>
 </div>
 </div>
-<div class="tab-pane" data-pane="android">
+<div class="tab-pane" data-pane="android" id="pane-android" role="tabpanel" aria-labelledby="tab-android">
 <div class="d-flex px-md-3">
 <div class="d-none d-lg-block">
 <div class="icon icon-shape bg-gradient-danger shadow rounded-circle text-white">{% icon "brands-google-play" %}</div>
@@ -144,7 +144,7 @@
 </div>
 </div>
 </div>
-<div class="tab-pane" data-pane="other">
+<div class="tab-pane" data-pane="other" id="pane-other" role="tabpanel" aria-labelledby="tab-other">
 <div class="d-flex px-md-3">
 <div class="d-none d-lg-block">
 <div class="icon icon-shape bg-gradient-dark shadow rounded-circle text-white">{% icon "solid-cloud" %}</div>

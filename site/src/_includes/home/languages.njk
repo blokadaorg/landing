@@ -1,4 +1,4 @@
-<p class="lang-prompt" hidden>
+<p class="lang-prompt" role="status" hidden>
 {%- for l in site.homeLangs %}{% if l.code != hl.code %}
 <a href="{{ l.path }}" data-lang="{{ l.code }}" lang="{{ l.tag }}" hreflang="{{ l.tag }}" hidden>{{ 'homepage language prompt' | tr(l.code) }}</a>
 {%- endif %}{% endfor %}

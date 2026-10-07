@@ -14,6 +14,8 @@ export default {
   ].map(([code, name]) => ({
     code,
     tag: code,
+    // Open Graph has no script subtags: Traditional Chinese is zh_TW there.
+    og: code === 'zh-Hant' ? 'zh_TW' : code.replace('-', '_'),
     path: code === 'en' ? '/' : `/${code.toLowerCase()}/`,
     name,
   })),

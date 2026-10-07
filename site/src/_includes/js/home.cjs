@@ -49,7 +49,8 @@
 
   if (current === 'en') {
     var target = langRedirect(root.location.search, root.location.hash, langs);
-    if (target) { root.location.replace(target); return; }
+    // An old link is an explicit choice: no prompt back to English after it.
+    if (target) { store.set('blokada_lang', target.split('/')[1]); root.location.replace(target); return; }
   }
   page.className += ' js';
 
@@ -61,8 +62,12 @@
   }
 
   var menu = doc.getElementById('menu');
-  on('[data-menu-open]', function () { menu.classList.add('show'); });
-  on('[data-menu-close], #menu a:not([data-dropdown])', function () { menu.classList.remove('show'); });
+  function setMenu(open) {
+    menu.classList.toggle('show', open);
+    doc.querySelector('[data-menu-open]').setAttribute('aria-expanded', String(open));
+  }
+  on('[data-menu-open]', function () { setMenu(true); });
+  on('[data-menu-close], #menu a:not([data-dropdown])', function () { setMenu(false); });
 
   function closeDropdowns() {
     all('.dropdown-menu.show').forEach(function (list) { list.classList.remove('show'); });

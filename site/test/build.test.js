@@ -161,7 +161,7 @@ test('every homepage string is translated in every language', () => {
   const used = new Set();
   const dir = path.join(ROOT, 'src/_includes');
   for (const file of [...fs.readdirSync(path.join(dir, 'home')).map(f => `home/${f}`), 'layouts/home.njk']) {
-    for (const [, key] of fs.readFileSync(path.join(dir, file), 'utf8').matchAll(/'([^']+)'\s*\|\s*tr\b/g)) used.add(key);
+    for (const [, key] of fs.readFileSync(path.join(dir, file), 'utf8').matchAll(/['"]([^'"]+)['"]\s*\|\s*tr\b/g)) used.add(key);
   }
   for (const product of site.products) for (const key of [product.title, product.desc, ...product.points]) used.add(key);
   assert.ok(used.size > 90, `only ${used.size} strings found`);
@@ -172,4 +172,39 @@ test('every homepage string is translated in every language', () => {
     if (keys.length) missing[code] = keys;
   }
   assert.deepEqual(missing, {}, 'strings still in English');
+});
+
+test('strings printed as HTML carry only bold and line breaks', () => {
+  // These are output unescaped (| safe) or split on <br>; anything else a
+  // translation brings in would reach the page as markup.
+  const strings = loadStrings(path.join(ROOT, 'src/locales'), site.homeLangs.map(l => l.code));
+  for (const { code } of site.homeLangs) {
+    const value = strings[code]['homepage download desc android five'] || '';
+    assert.deepEqual((value.match(/<[^>]*>/g) || []).filter(tag => !/^<\/?b>$/.test(tag)), [], code);
+    assert.ok(!/>\s+</.test(value), `${code}: adjacent tags lose the space between them`);
+  }
+});
+
+test('controls added for the static page are styled and labelled', () => {
+  const css = read('assets/home.css');
+  for (const selector of ['.btn-link', '.lang-prompt', 'dialog.languages', '.btn-reset']) assert.ok(css.includes(`${selector}{`), selector);
+  for (const lang of site.homeLangs) {
+    const html = page(lang);
+    assert.ok(/<button[^>]*data-menu-open[^>]*>/.test(html));
+    const opener = html.match(/<button[^>]*data-menu-open[^>]*>/)[0];
+    assert.ok(opener.includes('aria-controls="menu"') && opener.includes('aria-expanded="false"'), opener);
+    assert.ok(!opener.includes(`aria-label="${attr(html, /data-dropdown[^>]*>.*?<span class="nav-link-inner--text">([^<]+)</)}"`), 'menu button shares a name with a dropdown');
+    assert.ok(/<p class="lang-prompt" role="status" hidden>/.test(html), lang.code);
+    for (const [, pane] of html.matchAll(/data-tab="[a-z]+"[^>]*aria-controls="([^"]+)"/g)) {
+      assert.ok(new RegExp(`id="${pane}"[^>]*role="tabpanel"|role="tabpanel"[^>]*id="${pane}"`).test(html), pane);
+    }
+    assert.equal((html.match(/data-tab="[a-z]+"[^>]*aria-controls=/g) || []).length, 3, lang.code);
+  }
+});
+
+test('og:locale uses the codes sharing sites know', () => {
+  const by = code => attr(page(site.homeLangs.find(l => l.code === code)), /property="og:locale" content="([^"]+)"/);
+  assert.equal(by('zh-Hant'), 'zh_TW');
+  assert.equal(by('pt-BR'), 'pt_BR');
+  assert.equal(by('de'), 'de');
 });

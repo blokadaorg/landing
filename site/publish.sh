@@ -16,7 +16,8 @@ fi
 target=$(cd "$1" && pwd)
 
 if [ -n "$(git -C "$target" status --porcelain)" ]; then
-  echo "$target has uncommitted changes. Commit or discard them first." >&2
+  echo "$target has uncommitted changes. Commit them, or discard them with:" >&2
+  echo "  git -C $target checkout -- . && git -C $target clean -fd" >&2
   exit 1
 fi
 git -C "$target" fetch --quiet

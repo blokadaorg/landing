@@ -17,6 +17,7 @@ test('translate returns the language string', () => {
 test('translate falls back to English for a missing or empty string', () => {
   assert.equal(translate(strings, 'de', 'only'), 'English only');
   assert.equal(translate({ en: { empty: 'Text' }, de: { empty: '' } }, 'de', 'empty'), 'Text');
+  assert.equal(translate({ en: { blank: 'Text' }, de: { blank: '  ' } }, 'de', 'blank'), 'Text');
 });
 
 test('translate rejects a key English does not have', () => {
@@ -37,7 +38,7 @@ test('every homepage language has a locale file with the hero paragraph', () => 
 
 test('homeLangs: 19 languages, English first at /, lowercase paths', () => {
   assert.equal(site.homeLangs.length, 19);
-  assert.deepEqual(site.homeLangs[0], { code: 'en', tag: 'en', path: '/', name: 'English' });
+  assert.deepEqual(site.homeLangs[0], { code: 'en', tag: 'en', og: 'en', path: '/', name: 'English' });
   const ptbr = site.homeLangs.find(l => l.code === 'pt-BR');
   assert.equal(ptbr.path, '/pt-br/');
   assert.equal(ptbr.tag, 'pt-BR');
