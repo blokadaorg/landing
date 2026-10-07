@@ -24,7 +24,6 @@ function decideLocale() {
   }
 
   let userLocale = navigator.language || navigator.userLanguage
-  console.log(userLocale)
   if (langs.langs.includes(userLocale)) {
     return userLocale
   }

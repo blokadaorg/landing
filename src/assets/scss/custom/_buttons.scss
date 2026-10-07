@@ -46,7 +46,7 @@
 }
 
 .btn-inner--icon {
-    i:not(.fa) {
+    i:not(.fa):not(.fas):not(.fab) {
         position: relative;
         top: 2px;
     }

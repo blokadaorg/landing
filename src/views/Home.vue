@@ -49,7 +49,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-2">
-                        <img src="img/ill/blokada-family.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-family.webp" class="img-fluid floating" width="900" height="1221" loading="lazy" decoding="async" :alt="$t('homepage family title')">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-1">
                         <div class="pl-md-5">
@@ -111,7 +111,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-1">
-                        <img src="img/ill/blokada-cloud.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-cloud.webp" class="img-fluid floating" width="900" height="1221" loading="lazy" decoding="async" :alt="$t('homepage cloud title')">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-2">
                         <div class="pl-md-5">
@@ -174,7 +174,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-2">
-                        <img src="img/ill/blokada-libre.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-libre.webp" class="img-fluid floating" width="900" height="1221" loading="lazy" decoding="async" :alt="$t('homepage about title')">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-1">
                         <div class="pr-md-5">
@@ -237,7 +237,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-5 col-lg-6 order-md-2">
-                        <img src="img/ill/blokada-plus.png" class="img-fluid floating">
+                        <img src="img/ill/blokada-plus.webp" class="img-fluid floating" width="900" height="1221" loading="lazy" decoding="async" :alt="$t('homepage vpn title')">
                     </div>
                     <div class="col-md-7 col-lg-6 order-md-1">
                         <div class="pr-md-5">
@@ -385,7 +385,7 @@
                                                         href="https://go.blokada.org/play/family"
                                                         class="mb-3 mb-sm-0"
                                                         type="danger"
-                                                        icon="fab fa-apple">
+                                                        icon="fab fa-android">
                                                     {{ $t('homepage download action android slim') }}
                                                 </base-button>
                                             </div>
@@ -424,7 +424,7 @@
                                         </div>
                                         <div class="pl-md-4">
                                             <h4 class="title">{{ $t('homepage download option android five') }}</h4>
-                                            <p v-html="$t('homepage download desc android five')">{{ $t('homepage download desc android five') }} <a href="https://go.blokada.org/blokada5_vs_blokada4" class="text-warning">{{ $t('universal action learn more') }}</a></p>
+                                            <p v-html="$t('homepage download desc android five')"></p>
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
@@ -455,7 +455,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://app.blokada.org"
+                                                        href="https://app.blokada.org/?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="dark"
                                                         icon="fas fa-user-circle">
@@ -485,7 +485,7 @@
 
                                             <div class="btn-wrapper">
                                                 <base-button tag="a"
-                                                        href="https://app.blokada.org"
+                                                        href="https://app.blokada.org/?src=landing"
                                                         class="mb-3 mb-sm-0"
                                                         type="dark"
                                                         icon="fas fa-user-circle">
@@ -664,7 +664,7 @@
                                 <input type="hidden" name="price" :value="donateAmount" />
                                 <input type="hidden" name="currency" value="EUR" />
                                 <button type="submit" class="submit" name="submit" style="min-width:209px; min-height:57px; border-radius: 4px;border-style: none;background-color: #0f3b21;" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor"><span style="color:#fff">{{ paymentText() }} &nbsp;&nbsp;</span>
-                                <img src="https://btcpay.blocka.net/img/logo.svg" style="height:57px;display:inline-block;padding: 5% 0 5% 5px;">
+                                <img src="https://btcpay.blocka.net/img/logo.svg" alt="BTCPay" loading="lazy" style="height:57px;display:inline-block;padding: 5% 0 5% 5px;">
                                 </button></form>
 
                                 <hr />

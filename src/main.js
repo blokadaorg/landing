@@ -19,11 +19,11 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import Argon from "./plugins/argon-kit";
-import './registerServiceWorker'
 
 // TODO: Change it in the future to only import used icons, not all
-import '@fortawesome/fontawesome-free/css/all.css'
-import '@fortawesome/fontawesome-free/js/all.js'
+import '@fortawesome/fontawesome-free/css/fontawesome.css'
+import '@fortawesome/fontawesome-free/css/solid.css'
+import '@fortawesome/fontawesome-free/css/brands.css'
 import i18n from './i18n'
 
 Vue.i18n = i18n
@@ -34,5 +34,11 @@ new Vue({
   router,
   i18n,
   render: h => h(App),
+  watch: {
+    '$i18n.locale': {
+      immediate: true,
+      handler: locale => { document.documentElement.lang = locale },
+    },
+  },
   mounted: () => document.dispatchEvent(new Event("x-app-rendered")),
 }).$mount("#app");

@@ -2,12 +2,12 @@
     <header class="header-global">
         <base-nav class="navbar-main" transparent type="" effect="light" expand>
             <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-                <img src="img/brand/white.png" alt="logo">
+                <img src="img/brand/white.png" alt="Blokada">
             </router-link>
 
             <div class="row" slot="content-header" slot-scope="{closeMenu}">
                 <div class="col-6 collapse-brand">
-                    <img src="img/brand/blue.png">
+                    <img src="img/brand/blue.png" alt="Blokada" loading="lazy">
                 </div>
                 <div class="col-6 collapse-close">
                     <close-button @click="closeMenu"></close-button>
@@ -84,21 +84,21 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="https://go.blokada.org/forum" rel="noopener"
                        data-toggle="tooltip" :title="$t('homepage action forums')">
-                        <i class="ni fas fa-comments"></i>
+                        <i class="fas fa-comments"></i>
                         <span class="nav-link-inner--text d-lg-none ml-2">{{ $t('homepage action forums') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="https://app.blokada.org"
+                    <a class="nav-link nav-link-icon" href="https://app.blokada.org/?src=landing"
                        rel="noopener" data-toggle="tooltip" :title="$t('homepage action dashboard')">
-                        <i class="ni fas fa-user-circle"></i>
+                        <i class="fas fa-user-circle"></i>
                         <span class="nav-link-inner--text d-lg-none ml-2">{{ $t('homepage action dashboard') }}</span>
                     </a>
                 </li>
                 <li class="nav-item ml-lg-4">
                   <a href="#" rel="noopener" @click.prevent="modal = true"
                     class="nav-link nav-link-icon" data-toggle="tooltip" :title="$t('app settings language label')">
-                    <i class="ni fas fa-flag"></i>
+                    <i class="fas fa-flag"></i>
                     <span class="nav-link-inner--text ml-2">{{ $i18n.locale.toUpperCase() }}</span>
                   </a>
                 </li>
@@ -173,7 +173,6 @@
     },
     methods: {
       saveLocale(lang) {
-        console.log(`Changed locale: ${lang}`)
         this.$i18n.locale = lang
         sessionStorage.setItem("blokada_locale", lang)
         this.modal = false

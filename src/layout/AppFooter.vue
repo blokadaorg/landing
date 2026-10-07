@@ -12,22 +12,22 @@
                 <div class="col-lg-6 text-lg-center btn-wrapper">
                     <a rel="noopener" href="https://go.blokada.org/social_twitter"
                        class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Twitter">
+                       data-original-title="Twitter" aria-label="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
                     <a rel="noopener" href="https://go.blokada.org/social_facebook"
                        class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Facebook">
+                       data-original-title="Facebook" aria-label="Facebook">
                         <i class="fab fa-facebook-square"></i>
                     </a>
                     <a rel="noopener" href="https://go.blokada.org/social_reddit"
                        class="btn btn-neutral btn-icon-only btn-pinterest btn-lg btn-round" data-toggle="tooltip"
-                       data-original-title="Reddit">
+                       data-original-title="Reddit" aria-label="Reddit">
                         <i class="fab fa-reddit"></i>
                     </a>
                     <a rel="noopener" href="https://go.blokada.org/dev_home"
                        class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip"
-                       data-original-title="Github">
+                       data-original-title="Github" aria-label="Github">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
