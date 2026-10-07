@@ -43,7 +43,7 @@
   if (!doc) return;
 
   var page = doc.documentElement;
-  var langs = JSON.parse(page.getAttribute('data-langs'));
+  var langs = JSON.parse(doc.body.getAttribute('data-langs'));
   var current = page.getAttribute('data-lang');
   var store = storage(root);
 
