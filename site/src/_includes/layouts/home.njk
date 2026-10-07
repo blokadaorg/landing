@@ -35,8 +35,17 @@
   <link rel="stylesheet" href="/assets/home.css">
 </head>
 <body>
+  {% include "home/header.njk" %}
   <main>
-    <h1>{{ 'homepage hero heading' | tr }} <span>{{ 'homepage hero heading platforms' | tr }}</span></h1>
+    {% include "home/hero.njk" %}
+    {% include "home/products.njk" %}
+    {% include "home/download.njk" %}
+    {% include "home/community.njk" %}
+    {% include "home/reviews.njk" %}
+    {% include "home/faq.njk" %}
+    {% include "home/support.njk" %}
+    {% include "home/developer.njk" %}
   </main>
+  {% include "home/footer.njk" %}
 </body>
 </html>

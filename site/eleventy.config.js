@@ -34,6 +34,13 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter('tr', function (key, code) {
     return translate(homeStrings, code || this.ctx.hl.code, key);
   });
+  // Font Awesome Free 5 icons (CC BY 4.0), inlined so no icon font loads.
+  eleventyConfig.addShortcode('icon', (name, classes) => {
+    const svg = fs.readFileSync(path.join(here, 'src/_includes/icons', `${name}.svg`), 'utf8');
+    return svg
+      .replace(/<!--[\s\S]*?-->/g, '')
+      .replace('<svg ', `<svg class="i${classes ? ` ${classes}` : ''}" aria-hidden="true" focusable="false" `);
+  });
   // The hero paragraph's first sentence is the search description.
   eleventyConfig.addFilter('firstSentence', text => {
     const end = text.search(/[.!?](?=\s)|。|\.$/);
