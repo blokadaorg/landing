@@ -19,6 +19,19 @@ export default {
   })),
   // Where each language's guides live. English keeps the unprefixed URLs.
   prefix: { en: '', de: '/de', sv: '/sv' },
+  social: [
+    'https://community.blokada.org/',
+    'https://github.com/blokadaorg/blokada',
+    'https://twitter.com/blokadaorg',
+    'https://www.facebook.com/blokadaorg/',
+    'https://www.reddit.com/r/blokada',
+  ],
+  // For the structured data on the homepage.
+  apps: [
+    { name: 'Blokada 6', os: 'iOS, Android', url: 'https://apps.apple.com/app/blokada/id1508341781' },
+    { name: 'Blokada Family', os: 'iOS, Android', url: 'https://apps.apple.com/app/id6458733529' },
+    { name: 'Blokada 5', os: 'Android', url: 'https://go.blokada.org/apk5' },
+  ],
   // The four product blocks, in page order.
   products: [
     {

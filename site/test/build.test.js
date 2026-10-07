@@ -130,3 +130,27 @@ test('the inline script stays small', () => {
   const script = fs.readFileSync(path.join(ROOT, 'src/_includes/js/home.cjs'), 'utf8');
   assert.ok(script.length <= 5 * 1024, `home.cjs is ${script.length} bytes`);
 });
+
+const jsonLd = html => JSON.parse(attr(html, /<script type="application\/ld\+json">([\s\S]*?)<\/script>/));
+
+test('structured data parses on every homepage and on guides', () => {
+  for (const lang of site.homeLangs) {
+    assert.equal(jsonLd(page(lang))['@graph'].length, 5, lang.code);
+  }
+  assert.equal(jsonLd(read('fr/index.html'))['@graph'][1].inLanguage, 'fr');
+  assert.deepEqual(jsonLd(read('guides/router-ad-blocking/index.html'))['@graph'].map(n => n['@type']), ['BreadcrumbList', 'Article']);
+  assert.deepEqual(jsonLd(read('sv/guides/index.html'))['@graph'].map(n => n['@type']), ['BreadcrumbList']);
+});
+
+test('the sitemap lists every built page once', () => {
+  const locs = [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+  assert.equal(new Set(locs).size, locs.length);
+  for (const lang of site.homeLangs) assert.ok(locs.includes(site.origin + lang.path), lang.code);
+  assert.equal(locs.length, 19 + 30);
+  for (const loc of locs) assert.ok(fs.existsSync(path.join(OUT, new URL(loc).pathname, 'index.html')), loc);
+});
+
+test('guides link their own language homepage', () => {
+  assert.ok(read('de/guides/index.html').includes('<a class="brand" href="/de/">'));
+  assert.ok(read('guides/index.html').includes('<a class="brand" href="/">'));
+});

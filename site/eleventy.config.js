@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import site from './src/_data/site.js';
 import { loadStrings, translate } from './lib/homeStrings.js';
+import { homeJsonLd, guideJsonLd, serialise } from './lib/jsonld.js';
 
 const LANGS = ['en', 'de', 'sv'];
 
@@ -61,6 +62,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData(
     'homeScript',
     fs.readFileSync(new URL('./src/_includes/js/home.cjs', import.meta.url), 'utf8'),
+  );
+  eleventyConfig.addFilter('homeJsonLd', (lang, description) => serialise(homeJsonLd(site, lang, description)));
+  eleventyConfig.addFilter('guideJsonLd', page =>
+    serialise(guideJsonLd(site, { ...page, updated: page.updated ? new Date(page.updated).toISOString().slice(0, 10) : undefined })),
   );
   eleventyConfig.addFilter('langList', langs => JSON.stringify(langs.map(({ code, path }) => ({ code, path }))));
 
