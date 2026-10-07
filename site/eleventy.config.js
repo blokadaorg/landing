@@ -58,6 +58,12 @@ export default function (eleventyConfig) {
     fs.readFileSync(new URL('./src/_includes/js/ui.js', import.meta.url), 'utf8'),
   );
 
+  eleventyConfig.addGlobalData(
+    'homeScript',
+    fs.readFileSync(new URL('./src/_includes/js/home.cjs', import.meta.url), 'utf8'),
+  );
+  eleventyConfig.addFilter('langList', langs => JSON.stringify(langs.map(({ code, path }) => ({ code, path }))));
+
   // For notices that end on a date, such as the Mullvad shutdown.
   eleventyConfig.addGlobalData('buildDate', new Date().toISOString().slice(0, 10));
 
@@ -111,7 +117,11 @@ export default function (eleventyConfig) {
   // tags (inline buttons, icons and stars sit flush), so none is emitted.
   eleventyConfig.addTransform('homeWhitespace', function (html) {
     if (!this.page.inputPath.endsWith('/home.njk')) return html;
-    return html.replace(/>\s+</g, '><');
+    // Script contents are left alone.
+    return html
+      .split(/(<script[\s\S]*?<\/script>)/)
+      .map((part, i) => (i % 2 ? part : part.replace(/>\s+</g, '><')))
+      .join('');
   });
 
   eleventyConfig.addFilter('byLang', (items, lang) => items.filter(p => p.data.lang === lang));

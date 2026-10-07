@@ -113,3 +113,20 @@ test('the homepage stylesheet stays small and has no icon fonts', () => {
   assert.ok(css.length <= 36 * 1024, `home.css is ${css.length} bytes`);
   assert.ok(!/@font-face/.test(css));
 });
+
+test('language dialog links all 19 pages, prompt offers the other 18', () => {
+  for (const lang of site.homeLangs) {
+    const html = page(lang);
+    const dialog = html.slice(html.indexOf('<dialog'), html.indexOf('</dialog>'));
+    assert.equal((dialog.match(/<a /g) || []).length, 19, lang.code);
+    assert.equal((dialog.match(/aria-current="page"/g) || []).length, 1, lang.code);
+    const prompt = html.slice(html.indexOf('class="lang-prompt"'), html.indexOf('<dialog'));
+    assert.equal((prompt.match(/<a /g) || []).length, 18, lang.code);
+    assert.equal(JSON.parse(attr(html, /data-langs="([^"]+)"/).replace(/&quot;/g, '"')).length, 19);
+  }
+});
+
+test('the inline script stays small', () => {
+  const script = fs.readFileSync(path.join(ROOT, 'src/_includes/js/home.cjs'), 'utf8');
+  assert.ok(script.length <= 5 * 1024, `home.cjs is ${script.length} bytes`);
+});

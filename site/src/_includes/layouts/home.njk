@@ -3,7 +3,7 @@
 {%- set description = 'homepage hero desc' | tr | firstSentence -%}
 {%- set guidesPath = (site.prefix[hl.code] if site.prefix[hl.code] is defined else '') + '/guides/' -%}
 <!DOCTYPE html>
-<html lang="{{ hl.tag }}">
+<html lang="{{ hl.tag }}" data-lang="{{ hl.code }}" data-langs="{{ site.homeLangs | langList }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="/assets/home.css">
 </head>
 <body>
+  {% include "home/languages.njk" %}
   {% include "home/header.njk" %}
   <main>
     {% include "home/hero.njk" %}
@@ -47,5 +48,6 @@
     {% include "home/developer.njk" %}
   </main>
   {% include "home/footer.njk" %}
+  <script>{{ homeScript | safe }}</script>
 </body>
 </html>

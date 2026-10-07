@@ -8,7 +8,7 @@
 .btn-reset{background:none;border:0;cursor:pointer}
 .js [data-pane]:not(.active){display:none}
 .newlines{white-space:pre-wrap}
-.lang-prompt{margin:0;padding:8px 16px;background:#1c1c1e;color:#fff;text-align:center;font-size:.875rem}
+.lang-prompt{position:fixed;left:0;right:0;bottom:0;z-index:1050;margin:0;padding:10px 16px;background:#1c1c1e;color:#fff;text-align:center;font-size:.875rem;box-shadow:0 -2px 12px rgba(0,0,0,.25)}
 .lang-prompt a{color:#fff;text-decoration:underline}
 .lang-prompt button{margin-left:12px;color:#fff}
 dialog.languages{border:0;border-radius:6px;padding:24px;max-width:420px;width:calc(100% - 32px)}
