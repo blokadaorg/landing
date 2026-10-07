@@ -170,7 +170,7 @@ The homepage and the guides keep separate stylesheets.
 
 ## JavaScript
 
-One inline script, 3 KB or less, no dependencies:
+One inline script, 5 KB or less with its comments, no dependencies:
 
 - mobile menu open and close.
 - the "About" and "More" dropdowns.
@@ -253,7 +253,7 @@ The self-unregistering `service-worker.js` stays published.
   legitimately identical (product names, "FAQ", "Newsletter" and similar).
   This is the check that keeps the PR unmerged until Crowdin delivers.
 - the sitemap lists every built page once.
-- `home.css` is 30 KB or less; the inline script is 3 KB or less.
+- `home.css` is 30 KB or less; the inline script is 5 KB or less.
 
 The existing guides tests stay as they are.
 
