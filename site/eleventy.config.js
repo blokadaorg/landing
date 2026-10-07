@@ -15,7 +15,12 @@ function slug(text) {
 }
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ 'src/assets': 'guides/assets' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets/guides.css': 'guides/assets/guides.css' });
+  // Files served from the site root as they are: 404 page, icons, images and
+  // the service worker that unregisters the old homepage's one.
+  eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets/home.css': 'assets/home.css' });
+  eleventyConfig.ignores.add('src/locales/**');
 
   // Inlined into every guide: one small script, no extra request, and nothing
   // for a crawler to wait on.

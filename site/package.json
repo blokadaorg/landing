@@ -1,7 +1,7 @@
 {
-  "name": "blokada-guides",
+  "name": "blokada-site",
   "private": true,
-  "description": "Static setup guides published under blokada.org/guides",
+  "description": "blokada.org homepage and setup guides",
   "type": "module",
   "scripts": {
     "build": "eleventy",
