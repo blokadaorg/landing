@@ -1,0 +1,14 @@
+{
+  "name": "blokada-site",
+  "private": true,
+  "description": "blokada.org homepage and setup guides",
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve --port 8090",
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

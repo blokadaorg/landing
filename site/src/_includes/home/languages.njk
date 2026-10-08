@@ -1,0 +1,15 @@
+<p class="lang-prompt" role="status" hidden>
+{%- for l in site.homeLangs %}{% if l.code != hl.code %}
+<a href="{{ l.path }}" data-lang="{{ l.code }}" lang="{{ l.tag }}" hreflang="{{ l.tag }}" hidden>{{ 'homepage language prompt' | tr(l.code) }}</a>
+{%- endif %}{% endfor %}
+<button type="button" class="btn-reset" data-prompt-close aria-label="{{ 'universal action close' | tr }}">&times;</button>
+</p>
+<dialog class="languages" id="languages" aria-labelledby="languages-title">
+<p class="h6" id="languages-title">{{ 'app settings language label' | tr }}</p>
+<ul>
+{%- for l in site.homeLangs %}
+<li><a href="{{ l.path }}" data-lang="{{ l.code }}" lang="{{ l.tag }}" hreflang="{{ l.tag }}"{% if l.code == hl.code %} aria-current="page"{% endif %}>{{ l.name }}</a></li>
+{%- endfor %}
+</ul>
+<button type="button" class="btn btn-link" data-languages-close>{{ 'universal action cancel' | tr }}</button>
+</dialog>

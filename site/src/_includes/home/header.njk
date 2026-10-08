@@ -1,0 +1,104 @@
+<header class="header-global">
+<nav class="navbar navbar-main navbar-expand-lg navbar-light navbar-transparent">
+<div class="container">
+<a href="{{ hl.path }}" class="navbar-brand mr-lg-5">
+<img src="/img/brand/white.png" alt="Blokada">
+</a>
+<button type="button" aria-label="Menu" aria-controls="menu" aria-expanded="false" class="navbar-toggler" data-menu-open>
+<span class="navbar-toggler-icon">
+</span>
+</button>
+<div id="menu" class="collapse navbar-collapse">
+<div class="navbar-collapse-header">
+<div class="row">
+<div class="col-6 collapse-brand">
+<img src="/img/brand/blue.png" alt="Blokada" loading="lazy">
+</div>
+<div class="col-6 collapse-close">
+<button type="button" aria-label="{{ 'universal action close' | tr }}" class="navbar-toggler" data-menu-close>
+<span>
+</span>
+<span>
+</span>
+</button>
+</div>
+</div>
+</div>
+<ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+<li aria-haspopup="true" class="dropdown nav-item dropdown">
+<a href="#" role="button" class="nav-link" data-dropdown aria-expanded="false">{% icon "solid-laptop", "d-lg-none mr-2" %}<span class="nav-link-inner--text">{{ 'account action about' | tr }}</span>
+</a>
+<div class="dropdown-menu dropdown-menu-xl">
+<div class="dropdown-menu-inner">
+<a href="#cloud" class="media d-flex align-items-center">
+<div class="icon icon-shape bg-gradient-info rounded-circle text-white">{% icon "solid-info" %}</div>
+<div class="media-body ml-3">
+<span class="heading h6 d-block mb-md-1">{{ 'homepage header what is blokada' | tr }}</span>
+<p class="description d-none d-md-inline-block mb-0">{{ 'homepage desc what is blokada' | tr }}</p>
+</div>
+</a>
+<a href="#download" class="media d-flex align-items-center">
+<div class="icon icon-shape bg-gradient-warning rounded-circle text-white">{% icon "solid-cloud-download-alt" %}</div>
+<div class="media-body ml-3">
+<span class="heading h5 d-block mb-md-1">{{ 'universal action download' | tr }}</span>
+<p class="description d-none d-md-inline-block mb-0">{{ 'homepage desc download' | tr }}</p>
+</div>
+</a>
+<a href="#community" class="media d-flex align-items-center">
+<div class="icon icon-shape bg-gradient-success rounded-circle text-white">{% icon "solid-comments" %}</div>
+<div class="media-body ml-3">
+<span class="heading h5 d-block mb-md-1">{{ 'universal action community' | tr }}</span>
+<p class="description d-none d-md-inline-block mb-0">{{ 'homepage desc community' | tr }}</p>
+</div>
+</a>
+<a href="#donate" class="media d-flex align-items-center">
+<div class="icon icon-shape bg-gradient-primary rounded-circle text-white">{% icon "solid-heart" %}</div>
+<div class="media-body ml-3">
+<span class="heading h5 d-block mb-md-1">{{ 'homepage header support' | tr }}</span>
+<p class="description d-none d-md-inline-block mb-0">{{ 'homepage desc support' | tr }}</p>
+</div>
+</a>
+</div>
+</div>
+</li>
+<li aria-haspopup="true" class="dropdown nav-item dropdown">
+<a href="#" role="button" class="nav-link" data-dropdown aria-expanded="false">{% icon "solid-book-open", "d-lg-none mr-2" %}<span class="nav-link-inner--text">{{ 'universal action more' | tr }}</span>
+</a>
+<div class="dropdown-menu">
+<a href="https://go.blokada.org/newsletter?src=landing" class="dropdown-item">{{ 'homepage action newsletter' | tr }}</a>
+<a href="#faq" class="dropdown-item">{{ 'homepage action faq' | tr }}</a>
+<a href="#family" class="dropdown-item">Blokada Family</a>
+<a href="#cloud" class="dropdown-item">Blokada 6 (Cloud)</a>
+<a href="#vpn" class="dropdown-item">Blokada Plus (VPN)</a>
+<a href="#opinions" class="dropdown-item">{{ 'homepage action opinions' | tr }}</a>
+<a href="#developer" class="dropdown-item">{{ 'homepage action source' | tr }}</a>
+<a href="https://go.blokada.org/credits" class="dropdown-item">{{ 'homepage action authors' | tr }}</a>
+<a href="https://go.blokada.org/terms" class="dropdown-item">{{ 'payment action terms' | tr }}</a>
+<a href="https://go.blokada.org/privacy" class="dropdown-item">{{ 'payment action policy' | tr }}</a>
+</div>
+</li>
+</ul>
+<ul class="navbar-nav align-items-lg-center ml-lg-auto">
+<li class="nav-item">
+<a href="https://go.blokada.org/forum?src=landing" rel="noopener" title="{{ 'homepage action forums' | tr }}" class="nav-link nav-link-icon">{% icon "solid-comments" %}<span class="nav-link-inner--text d-lg-none ml-2">{{ 'homepage action forums' | tr }}</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="https://app.blokada.org/?src=landing" rel="noopener" title="{{ 'homepage action dashboard' | tr }}" class="nav-link nav-link-icon">{% icon "solid-user-circle" %}<span class="nav-link-inner--text d-lg-none ml-2">{{ 'homepage action dashboard' | tr }}</span>
+</a>
+</li>
+<li class="nav-item ml-lg-4">
+<button type="button" class="nav-link nav-link-icon btn-reset" data-languages-open aria-label="{{ 'app settings language label' | tr }}">{% icon "solid-flag" %}<span class="nav-link-inner--text ml-2">{{ hl.code | upper }}</span>
+</button>
+</li>
+<li class="nav-item d-none d-lg-block ml-lg-4">
+<a href="#download" rel="noopener" class="btn btn-neutral btn-icon">
+<span class="btn-inner--icon">{% icon "solid-cloud-download-alt", "mr-2" %}</span>
+<span class="nav-link-inner--text">{{ 'universal action download' | tr }}</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>

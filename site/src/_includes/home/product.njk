@@ -1,0 +1,30 @@
+<section id="{{ p.id }}" class="section section-lg">
+<div class="container">
+<div class="row row-grid align-items-center">
+<div class="col-md-5 col-lg-6 order-md-{{ 1 if p.imageFirst else 2 }}">
+<img src="/img/ill/{{ p.img }}" width="900" height="1221" loading="lazy" decoding="async" alt="{{ p.title | tr }}" class="img-fluid floating">
+</div>
+<div class="col-md-7 col-lg-6 order-md-{{ 2 if p.imageFirst else 1 }}">
+<div class="{{ p.pad }}">
+<h2 class="h3">{{ p.title | tr }}</h2>
+<p>{{ p.desc | tr }}</p>
+<ul class="list-unstyled mt-5">
+{%- for point in p.points %}
+<li class="py-2">
+<div class="d-flex align-items-center">
+<span class="badge mr-3 badge-warning badge-circle">{% icon "solid-check" %}</span>
+<span class="mb-0 h6">{{ point | tr }}</span>
+</div>
+</li>
+{%- endfor %}
+</ul>
+</div>
+</div>
+</div>
+<div>
+<p class="h6 mt-5">
+<a href="#faq" class="text-warning">{{ 'homepage about action faq' | tr }}</a>
+</p>
+</div>
+</div>
+</section>
