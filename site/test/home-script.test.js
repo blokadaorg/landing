@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import site from '../src/_data/site.js';
 
-const { matchLanguage, langRedirect, storage } = createRequire(import.meta.url)('../src/_includes/js/home.cjs');
+const { matchLanguage, langRedirect, storage, pickReviews } = createRequire(import.meta.url)('../src/_includes/js/home.cjs');
 const codes = site.homeLangs.map(l => l.code);
 
 test('matchLanguage: exact, case and region variants', () => {
@@ -48,4 +48,19 @@ test('storage survives a browser that blocks it', () => {
   const ok = storage({ localStorage: { getItem: k => values[k] ?? null, setItem: (k, v) => { values[k] = v; } } });
   ok.set('blokada_lang', 'de');
   assert.equal(ok.get('blokada_lang'), 'de');
+});
+
+test('pickReviews: distinct indexes within the pool', () => {
+  for (let run = 0; run < 50; run++) {
+    const picked = pickReviews(9, 3, Math.random);
+    assert.equal(new Set(picked).size, 3);
+    for (const i of picked) assert.ok(Number.isInteger(i) && i >= 0 && i < 9, String(i));
+  }
+});
+
+test('pickReviews: a repeated draw is skipped, a small pool is shown whole', () => {
+  const draws = [0, 0, 0.5, 0.99];
+  assert.deepEqual(pickReviews(9, 3, () => draws.shift()), [0, 4, 8]);
+  assert.deepEqual(pickReviews(2, 3, Math.random).sort(), [0, 1]);
+  assert.deepEqual(pickReviews(0, 3, Math.random), []);
 });
