@@ -34,10 +34,11 @@ export default {
     { name: 'Blokada Family', os: 'iOS, Android', url: 'https://apps.apple.com/app/id6458733529' },
     { name: 'Blokada 5', os: 'Android', url: 'https://go.blokada.org/apk5' },
   ],
-  // The four product blocks, in page order.
+  // The four product blocks, in page order. `page` is the product's own
+  // page, in English only.
   products: [
     {
-      id: 'family', img: 'blokada-family.webp', imageFirst: false, pad: 'pl-md-5',
+      id: 'family', page: '/blokada-family/', img: 'blokada-family.webp', imageFirst: false, pad: 'pl-md-5',
       title: 'homepage family title',
       desc: 'homepage family desc',
       points: [
@@ -51,7 +52,7 @@ export default {
       ],
     },
     {
-      id: 'cloud', img: 'blokada-cloud.webp', imageFirst: true, pad: 'pl-md-5',
+      id: 'cloud', page: '/blokada-6/', img: 'blokada-cloud.webp', imageFirst: true, pad: 'pl-md-5',
       title: 'homepage cloud title',
       desc: 'homepage cloud desc',
       points: [
@@ -65,7 +66,7 @@ export default {
       ],
     },
     {
-      id: 'about', img: 'blokada-libre.webp', imageFirst: false, pad: 'pr-md-5',
+      id: 'about', page: '/blokada-5/', img: 'blokada-libre.webp', imageFirst: false, pad: 'pr-md-5',
       title: 'homepage about title',
       desc: 'homepage about desc',
       points: [
@@ -79,7 +80,7 @@ export default {
       ],
     },
     {
-      id: 'vpn', img: 'blokada-plus.webp', imageFirst: false, pad: 'pr-md-5',
+      id: 'vpn', page: '/blokada-plus/', img: 'blokada-plus.webp', imageFirst: false, pad: 'pr-md-5',
       title: 'homepage vpn title',
       desc: 'homepage vpn desc',
       points: [

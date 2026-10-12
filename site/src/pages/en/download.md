@@ -4,7 +4,7 @@ description: Blokada 5 is the free, open source ad blocker for Android. It is no
 updated: 2026-10-12
 ---
 
-Blokada 5 blocks ads and trackers in every app and browser on your Android phone or tablet. It is free, open source, and needs no account and no root.
+[Blokada 5](/blokada-5/) blocks ads and trackers in every app and browser on your Android phone or tablet. It is free, open source, and needs no account and no root.
 
 <p><a class="btn btn-primary" href="https://go.blokada.org/apk5?src=landing">Download Blokada 5 (.apk)</a></p>
 
@@ -30,7 +30,7 @@ Blokada 5 uses Android's VPN feature to filter ads on the device itself. Your tr
 
 Blokada 5 is the older app. It stays free.
 
-[Blokada 6](https://go.blokada.org/play_cloud?src=landing) is the current app, and it is on Google Play and the App Store. It blocks in the cloud, so it works on iPhone, on computers and on the other devices in your home too. It needs a subscription, with a 7 day free trial.
+[Blokada 6](/blokada-6/) is the current app, and it is on Google Play and the App Store. It blocks in the cloud, so it works on iPhone, on computers and on the other devices in your home too. It needs a subscription, with a 7 day free trial.
 
 | | Blokada 5 | Blokada 6 |
 |---|---|---|

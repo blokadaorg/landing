@@ -31,6 +31,12 @@
 </div>
 <div class="col-12 col-md-8">
 <ul class="nav nav-footer justify-content-end">
+{#- Product names are the same in every language. #}
+{%- for item in [['/blokada-6/', 'Blokada 6'], ['/blokada-family/', 'Blokada Family'], ['/blokada-plus/', 'Blokada Plus'], ['/blokada-5/', 'Blokada 5']] %}
+<li class="nav-item">
+<a href="{{ item[0] }}" class="nav-link">{{ item[1] }}</a>
+</li>
+{%- endfor %}
 <li class="nav-item">
 <a href="https://go.blokada.org/dev_home" rel="noopener" class="nav-link">{{ 'homepage action source' | tr }}</a>
 </li>
