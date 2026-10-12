@@ -88,12 +88,16 @@ export default function (eleventyConfig) {
 
   // Splits a rendered guide at its h2 headings: each heading gets an id, each
   // part becomes a <section>, and the headings make the "On this page" list.
+  // A heading ending in {:#some-id} gets that id in every language, so links
+  // to it survive translation; others get one from their own text.
   eleventyConfig.addFilter('outline', html => {
     const used = new Set();
     const toc = [];
-    const withIds = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, inner) => {
+    const withIds = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, heading) => {
+      const fixed = heading.match(/\s*\{:#([a-z0-9-]+)\}\s*$/);
+      const inner = fixed ? heading.slice(0, fixed.index) : heading;
       const text = inner.replace(/<[^>]+>/g, '').trim();
-      const base = slug(text) || 'section';
+      const base = fixed ? fixed[1] : slug(text) || 'section';
       let id = base;
       for (let n = 2; used.has(id); n += 1) id = `${base}-${n}`;
       used.add(id);

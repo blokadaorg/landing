@@ -20,6 +20,9 @@ const PATTERNS = {
   guideLinks: /\]\(\.\.\/[^)]*\)/g,
   // Sections and the "On this page" list are built from the headings.
   headings: /^#{2,3} /gm,
+  // Fixed heading ids, which in-page links point at.
+  headingIds: /\{:#[a-z0-9-]+\}/g,
+  pageLinks: /\]\(#[^)]*\)/g,
 };
 
 function signature(text) {
