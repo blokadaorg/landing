@@ -46,7 +46,7 @@ Om du angav `https://dns.nextdns.io/…` som webbläsarens _säkra DNS_ byter du
 
 Om din router använder NextDNS via DNS över TLS eller DNS över HTTPS ersätter du NextDNS-namnet eller -länken med ditt Blokada-DNS-namn eller din DoH-länk, enligt [routerguiden](../router-ad-blocking/).
 
-Om den använder NextDNS via vanliga IP-adresser byter du ut dem mot en IPv6-adress från Blokada, som i [routerguiden](../router-ad-blocking/). Det kräver IPv6 på din anslutning, och uppslagen är inte krypterade. Blokada har inga vanliga IPv4-adresser än, så en inställning med en _linked IP_ från NextDNS kan inte tas över som den är. Utan IPv6 ställer du in dina enheter en i taget, eller använder en router som har stöd för krypterad DNS.
+Om den använder NextDNS via vanliga IP-adresser, ersätt dem med en Blokada IPv6-adress enligt [routerguiden](../router-ad-blocking/). Detta kräver att du har IPv6 på din anslutning och förfrågningarna är inte krypterade. Blokada har ännu inga vanliga IPv4-adresser, så en installation med en NextDNS _länkad IP_ kan inte tas över som den är. Utan IPv6 måste du konfigurera dina enheter en och en, eller använda en router som stöder krypterad DNS.
 
 ## Kontrollera att det fungerar
 

@@ -9,12 +9,12 @@ Jedes Gerät in deinem Netzwerk fragt den Router, welchen DNS-Server es nutzen s
 
 ## Was dein Router können muss
 
-Es gibt zwei Wege, einen Router einzurichten:
+Es gibt zwei Möglichkeiten, einen Router einzurichten:
 
-- **Verschlüsseltes DNS mit Hostnamen**, also DNS over TLS (DoT) oder DNS over HTTPS (DoH). Viele neuere Router können das, darunter die Modelle unten. Je nachdem, was dein Router unterstützt, brauchst du deinen DNS-Namen oder deinen DoH-Link. Beide stehen oben unter _Deine Daten_.
-- **Eine einfache IPv6-DNS-Adresse.** Viele Router von Internetanbietern akzeptieren für DNS nur einfache IP-Adressen. Ist das bei dir so und hat dein Anschluss IPv6, gibt dir Blokada eine IPv6-Adresse zum Eintragen. Siehe [Router, die nur eine IP-Adresse annehmen](#routers-that-only-take-an-ip-address).
+- **Verschlüsseltes DNS mit Hostnamen**, also DNS over TLS (DoT) oder DNS over HTTPS (DoH). Viele neuere Router unterstützen das, darunter die unten aufgeführten Modelle. Je nachdem, was dein Router unterstützt, benötigst du entweder deinen DNS-Namen oder deinen DoH-Link, beide findest du oben unter _Deine Daten_.
+- **Eine einfache IPv6-DNS-Adresse.** Viele Router von Internetanbietern akzeptieren nur einfache IP-Adressen für DNS. Wenn das bei deinem Router der Fall ist und deine Verbindung IPv6 hat, stellt dir Blokada eine IPv6-Adresse zur Verfügung, die du eintragen kannst. Siehe [Router, die nur eine IP-Adresse akzeptieren](#routers-that-only-take-an-ip-address).
 
-Nutze verschlüsseltes DNS, wenn dein Router es unterstützt. Dann bleiben deine Anfragen auf dem Weg zu Blokada privat.
+Verwende verschlüsseltes DNS, wenn dein Router dies unterstützt. So bleiben Anfragen auf dem Weg zu Blokada privat.
 
 ## FRITZ!Box
 
@@ -47,30 +47,30 @@ ASUS-Firmware neuer als 3.0.0.4.386.4xxxx und Asuswrt-Merlin.
 
 ## Andere Router
 
-Suche nach einer Einstellung namens _DNS over TLS_, _Privates DNS_, _Verschlüsseltes DNS_ oder _DNS over HTTPS_. Trage deinen Blokada-DNS-Namen oder DoH-Link von oben ein und entferne alle anderen DNS-Server, auch Fallback-Server. Gibt es keine solche Einstellung, nutze eine einfache IPv6-Adresse wie unten beschrieben.
+Suche nach einer Einstellung namens _DNS over TLS_, _Privates DNS_, _Verschlüsseltes DNS_ oder _DNS over HTTPS_. Gib deinen Blokada-DNS-Namen oder den DoH-Link von oben ein und entferne alle anderen DNS-Server, einschließlich Fallback-Server. Falls es keine solche Einstellung gibt, verwende wie unten beschrieben eine einfache IPv6-Adresse.
 
-## Router, die nur eine IP-Adresse annehmen {:#routers-that-only-take-an-ip-address}
+## Router, die nur eine IP-Adresse akzeptieren {:#routers-that-only-take-an-ip-address}
 
-Dafür brauchen dein Router und dein Internetanschluss IPv6. Unterstützung für einfache IPv4-Adressen kommt später.
+Dein Router und deine Internetverbindung benötigen hierfür IPv6. Die Unterstützung für einfache IPv4-Adressen folgt später.
 
-1. Öffne im [Dashboard](https://app.blokada.org/setup?src=guides) die Seite _Setup_ und wähle _Router, TV, game console_.
-2. Gib dem Router einen Namen, zum Beispiel _Router zu Hause_, und wähle _Get address_. Der Name erscheint in deiner Aktivität und lässt sich später nicht ändern.
-3. Suche in den Einstellungen des Routers die DNS-Server für IPv6, oft unter _Internet_, _WAN_ oder _IPv6_, und trage die Adresse als einzigen DNS-Server ein.
-4. **Entferne alle anderen DNS-Server, auch die für IPv4.** Geräte, die vom Router noch einen IPv4-DNS-Server bekommen, schicken einen Teil ihrer Anfragen an Blokada vorbei. Lässt der Router das IPv4-DNS nicht leer, richte deine Geräte stattdessen einzeln ein: [Android](../android-private-dns/), [Mac und Apple TV](../apple-devices/), [Windows](../windows-dns-over-https/), [Linux](../linux-dns-over-tls/) und [Browser](../browser-dns-over-https/).
+1. Öffne im [Dashboard](https://app.blokada.org/setup?src=guides) den Bereich _Einrichtung_ und wähle _Router, TV, Spielkonsole_.
+2. Gib dem Router einen Namen, zum Beispiel _Heimrouter_, und wähle _Adresse abrufen_. Der Name erscheint in deiner Aktivität und kann später nicht geändert werden.
+3. Finde in den Einstellungen des Routers die DNS-Server für IPv6, meist unter _Internet_, _WAN_ oder _IPv6_, und trage die Adresse als einzigen DNS-Server ein.
+4. **Entferne alle anderen DNS-Server, einschließlich IPv4.** Geräte, die vom Router weiterhin einen IPv4-DNS-Server erhalten, schicken einige Anfragen an Blokada vorbei. Falls der Router kein leeres IPv4-DNS zulässt, richte deine Geräte stattdessen einzeln ein: [Android](../android-private-dns/), [Mac und Apple TV](../apple-devices/), [Windows](../windows-dns-over-https/), [Linux](../linux-dns-over-tls/) und [Browser](../browser-dns-over-https/).
 
-Genauso funktioniert es mit einem Fernseher oder einer Spielkonsole, bei denen du einen DNS-Server von Hand eintragen kannst. Gib jedem Gerät eine eigene Adresse, dann erscheint es mit seinem Namen in deiner Aktivität.
+Die gleiche Einrichtung funktioniert für Fernseher oder Spielkonsolen, bei denen du einen DNS-Server manuell eingeben kannst. Vergib für jedes Gerät eine eigene Adresse, damit es namentlich in deiner Aktivität erscheint.
 
 <div class="note aside">
 
-Diese Anfragen gehen unverschlüsselt an Blokada, wie bei jedem einfachen DNS-Server. Unterstützt dein Router DNS over TLS oder DNS over HTTPS, nutze lieber das.
+Diese Anfragen werden wie bei jedem normalen DNS-Server unverschlüsselt zu Blokada übertragen. Falls dein Router DNS over TLS oder DNS over HTTPS unterstützt, nutze stattdessen diese Optionen.
 
 </div>
 
 ## Prüfen, ob es funktioniert
 
 1. Starte ein Gerät neu oder schalte sein WLAN aus und wieder ein, damit es die Änderung übernimmt.
-2. Schalte auf diesem Gerät Blokada aus, falls es läuft, und öffne [go.blokada.org/test](https://go.blokada.org/test). Dort siehst du, ob dein DNS über Blokada läuft.
-3. Surfe eine Minute lang und öffne dann die Seite _Aktivität_ im [Dashboard](https://app.blokada.org/stats?src=guides). Dort erscheinen die Anfragen aus deinem Netzwerk.
+2. Deaktiviere auf diesem Gerät Blokada, falls die App ausgeführt wird, und öffne dann [go.blokada.org/test](https://go.blokada.org/test). Die Seite zeigt an, ob dein DNS über Blokada läuft.
+3. Surfe eine Minute lang und öffne dann die Seite _Aktivität_ im [Dashboard](https://app.blokada.org/stats?src=guides). Dort erscheinen die Anfragen deines Netzwerks.
 
 ## Wenn manche Geräte noch Werbung zeigen
 
