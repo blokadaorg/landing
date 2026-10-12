@@ -88,7 +88,7 @@ test('internal links point at built files', () => {
 
 test('outgoing links keep their attribution', () => {
   const html = page(site.homeLangs[0]);
-  for (const target of ['appstore/family', 'appstore', 'play/family', 'play/v6', 'apk5', 'forum', 'newsletter', 'opinions', 'faq', 'donate']) {
+  for (const target of ['appstore/family', 'appstore', 'play/family', 'play/v6', 'apk5', 'forum', 'newsletter', 'opinions', 'donate']) {
     assert.ok(html.includes(`https://go.blokada.org/${target}?src=landing"`), target);
   }
   assert.ok(html.includes('https://app.blokada.org/?src=landing"'));
@@ -164,7 +164,8 @@ test('old urls redirect to where the page lives now', () => {
 });
 
 // English-only pages outside the guides.
-const PAGES = ['download'];
+const PAGES = ['download', 'faq', 'privacy', 'terms'];
+const LEGAL = ['privacy', 'terms'];
 
 test('standalone pages: own head tags, no guides crumb, in the sitemap', () => {
   for (const name of PAGES) {
@@ -180,8 +181,10 @@ test('standalone pages: own head tags, no guides crumb, in the sitemap', () => {
     assert.deepEqual(crumbs.map(c => c.item), [`${site.origin}/`, url], name);
     assert.ok(read('sitemap.xml').includes(`<loc>${url}</loc>`), `${name} is not in the sitemap`);
     assert.ok(!site.redirects.some(r => r.from === `/${name}/index.html`), `${name} is both a page and a redirect`);
+    // The legal pages are copied text: their links stay as written.
+    if (LEGAL.includes(name)) continue;
     for (const [, href] of html.matchAll(/href="(https:\/\/go\.blokada\.org\/[^"]*)"/g)) {
-      if (!/\/(terms|privacy)$/.test(href)) assert.ok(href.includes('src=landing'), `${name}: ${href} has no source`);
+      assert.ok(href.includes('src=landing'), `${name}: ${href} has no source`);
     }
   }
 });
@@ -190,6 +193,22 @@ test('the download page offers the apk and says what the free app is', () => {
   const html = read('download/index.html');
   assert.ok(html.includes('href="https://go.blokada.org/apk5?src=landing"'));
   assert.ok(html.includes('href="https://go.blokada.org/play_cloud?src=landing"'));
+});
+
+test('the faq, privacy policy and terms are on the site and linked from it', () => {
+  for (const lang of site.homeLangs) {
+    const html = page(lang);
+    for (const href of ['/faq/', '/privacy/', '/terms/']) assert.ok(html.includes(`href="${href}"`), `${lang.code} ${href}`);
+    assert.ok(!/go\.blokada\.org\/(faq|privacy|terms)["?]/.test(html), `${lang.code} still links the go link`);
+  }
+  const faq = read('faq/index.html');
+  assert.equal((faq.match(/<h2 id=/g) || []).length, 10);
+  assert.ok(!faq.includes('homepage faq'), 'a string key was printed instead of its text');
+  // Signs that the legal text was copied whole.
+  assert.ok(read('privacy/index.html').includes('Data controller contact information'));
+  assert.ok(read('terms/index.html').includes('Applicable law and venue'));
+  assert.ok(read('terms/index.html').includes('Blocka AB<br>'), 'address lines ran together');
+  for (const name of LEGAL) assert.ok(!/UTC \| #\d|<hr/.test(read(`${name}/index.html`)), `${name} carries forum leftovers`);
 });
 
 test('the inline script stays small', () => {

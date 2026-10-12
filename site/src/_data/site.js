@@ -119,8 +119,6 @@ export default {
     { from: '/lang/pt_BR/index.html', to: '/pt-br/' },
     { from: '/lang/zh_TW/index.html', to: '/zh-hant/' },
     { from: '/index.htm', to: '/' },
-    { from: '/privacy/index.html', to: 'https://go.blokada.org/privacy' },
-    { from: '/terms/index.html', to: 'https://go.blokada.org/terms' },
   ],
   // Resolver IPs, for setups that need one next to the name: Windows DoH
   // (cloud.blokada.org) and DoT on ASUS routers and systemd-resolved
