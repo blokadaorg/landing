@@ -107,6 +107,22 @@ export default {
     { text: 'Loads of apps have no ads coz of this amazing app worth every penny thanks', name: 'Southsoundxx', source: 'App Store', date: '2023-07' },
     { text: 'Subscribed for the last 3 years or so and love it. Wonderful app & people :)', name: 'Daniel', source: 'Google Play', date: '2024-01' },
   ],
+  // Old addresses that are still linked or searched for. Each becomes a page
+  // that sends the visitor on: GitHub Pages cannot answer with a redirect.
+  // `from` is the file to write, `to` a path on this site or a full url.
+  redirects: [
+    { from: '/pt/index.html', to: '/pt-br/' },
+    { from: '/zh_TW/index.html', to: '/zh-hant/' },
+    { from: '/lang/de_DE/index.html', to: '/de/' },
+    { from: '/lang/hu_HU/index.html', to: '/hu/' },
+    { from: '/lang/pl_PL/index.html', to: '/pl/' },
+    { from: '/lang/pt_BR/index.html', to: '/pt-br/' },
+    { from: '/lang/zh_TW/index.html', to: '/zh-hant/' },
+    { from: '/index.htm', to: '/' },
+    { from: '/download/index.html', to: '/#download' },
+    { from: '/privacy/index.html', to: 'https://go.blokada.org/privacy' },
+    { from: '/terms/index.html', to: 'https://go.blokada.org/terms' },
+  ],
   // Resolver IPs, for setups that need one next to the name: Windows DoH
   // (cloud.blokada.org) and DoT on ASUS routers and systemd-resolved
   // (*.cloud.blokada.org). The dashboard keeps the same pair in
