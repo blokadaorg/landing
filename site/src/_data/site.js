@@ -92,11 +92,20 @@ export default {
       ],
     },
   ],
-  // Shown as they were written, in English, on every language's page.
+  // Five-star store reviews, shown as they were written, in English, on every
+  // language's page. Three are visible: the first three without JavaScript,
+  // a random three with it. `date` is not printed; it says which ones to
+  // replace when the pool is refreshed.
   reviews: [
-    'Thanks for it. It totally solved the problem. Not a single ad. I tried some other apps /games from playstore which are known to have most annoying ads, but I didn’t see a single type of ad in any form. I didn’t know that it was my system’s fault, but thanks to Blokada now I’m ad free.',
-    'A world without blokada is desolate, annoying and too full.',
-    'My parents are phone shopping and yes this is a selling point that it works with Blokada as dad said so.',
+    { text: 'The best overall adblocker there is, have been using it for years!', name: 'Ville', source: 'Google Play', date: '2026-06' },
+    { text: 'Haven’t seen an ad since downloading the app. Makes such a difference!', name: 'ReeRee255', source: 'App Store', date: '2026-06' },
+    { text: 'Works great. It has been blocking Ads, and Pop-ups exactly as I hoped it would. It does great at blocking the ads and pop-ups across my entire device.', name: 'Jason', source: 'Google Play', date: '2026-08' },
+    { text: 'The best ad blocker I\'ve ever seen. I\'ve tried some other apps but this is surely the best', name: 'Damceedrizzy', source: 'App Store', date: '2025-12' },
+    { text: 'Completely amazing app! Does exactly what it\'s supposed to do exactly how it\'s supposed to do it!', name: 'Bruce', source: 'Google Play', date: '2025-09' },
+    { text: 'I love this and works as advertised and best decision I’ve made', name: 'CraftyJewelry', source: 'App Store', date: '2026-01' },
+    { text: 'This app makes a huge positive difference to my online experience', name: 'Laura', source: 'Google Play', date: '2025-03' },
+    { text: 'Loads of apps have no ads coz of this amazing app worth every penny thanks', name: 'Southsoundxx', source: 'App Store', date: '2023-07' },
+    { text: 'Subscribed for the last 3 years or so and love it. Wonderful app & people :)', name: 'Daniel', source: 'Google Play', date: '2024-01' },
   ],
   // Resolver IPs, for setups that need one next to the name: Windows DoH
   // (cloud.blokada.org) and DoT on ASUS routers and systemd-resolved

@@ -128,9 +128,28 @@ test('language dialog links all 19 pages, prompt offers the other 18', () => {
   }
 });
 
+test('reviews: a named pool, three shown before the script runs', () => {
+  assert.ok(site.reviews.length >= 6, 'pool too small to rotate');
+  for (const review of site.reviews) {
+    for (const key of ['text', 'name', 'source', 'date']) assert.ok(review[key], `${key}: ${JSON.stringify(review)}`);
+    assert.ok(['App Store', 'Google Play'].includes(review.source), review.source);
+    assert.match(review.date, /^\d{4}-\d{2}$/);
+    assert.ok(review.text.length <= 220, `too long for a card: ${review.text}`);
+  }
+  for (const lang of site.homeLangs) {
+    const section = page(lang).match(/<section id="opinions"[\s\S]*?<\/section>/)[0];
+    const cards = section.match(/<div class="col-lg-4" data-review[^>]*>/g) || [];
+    assert.equal(cards.length, site.reviews.length, lang.code);
+    assert.equal(cards.filter(card => !card.includes(' hidden')).length, 3, lang.code);
+    assert.ok(!cards.slice(0, 3).some(card => card.includes(' hidden')), `${lang.code}: the first three are the default`);
+    // The date is kept as data for refreshing the pool, never printed.
+    for (const review of site.reviews) assert.ok(!section.includes(review.date), review.date);
+  }
+});
+
 test('the inline script stays small', () => {
   const script = fs.readFileSync(path.join(ROOT, 'src/_includes/js/home.cjs'), 'utf8');
-  assert.ok(script.length <= 5 * 1024, `home.cjs is ${script.length} bytes`);
+  assert.ok(script.length <= 6 * 1024, `home.cjs is ${script.length} bytes`);
 });
 
 const jsonLd = html => JSON.parse(attr(html, /<script type="application\/ld\+json">([\s\S]*?)<\/script>/));

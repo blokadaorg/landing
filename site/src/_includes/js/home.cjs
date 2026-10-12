@@ -38,7 +38,17 @@
     };
   }
 
-  if (typeof module !== 'undefined') module.exports = { matchLanguage: matchLanguage, langRedirect: langRedirect, storage: storage };
+  // Which reviews to show: `count` different indexes out of `total`.
+  function pickReviews(total, count, random) {
+    var picked = [];
+    while (picked.length < Math.min(count, total)) {
+      var i = Math.floor(random() * total);
+      if (picked.indexOf(i) < 0) picked.push(i);
+    }
+    return picked;
+  }
+
+  if (typeof module !== 'undefined') module.exports = { matchLanguage: matchLanguage, langRedirect: langRedirect, storage: storage, pickReviews: pickReviews };
   var doc = root.document;
   if (!doc) return;
 
@@ -93,6 +103,13 @@
       pane.classList.toggle('active', pane.getAttribute('data-pane') === el.getAttribute('data-tab'));
     });
   });
+
+  // Three reviews from the pool on each visit. The picked ones move to the
+  // front, so the first card keeps the row's spacing.
+  var reviews = all('[data-review]');
+  var shown = pickReviews(reviews.length, 3, Math.random);
+  reviews.forEach(function (el, i) { el.hidden = shown.indexOf(i) < 0; });
+  shown.forEach(function (i) { reviews[i].parentNode.insertBefore(reviews[i], reviews[i].parentNode.firstChild); });
 
   var dialog = doc.getElementById('languages');
   on('[data-languages-open]', function () { if (dialog.showModal) dialog.showModal(); else dialog.setAttribute('open', ''); });
