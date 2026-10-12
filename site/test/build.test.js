@@ -244,7 +244,7 @@ test('og:locale uses the codes sharing sites know', () => {
   assert.equal(by('de'), 'de');
 });
 
-test('links within a guide point at ids on that page', () => {
+test('links within a guide point at ids that appear once on that page', () => {
   const pages = ['guides', 'de/guides', 'sv/guides'].flatMap(dir =>
     fs.readdirSync(path.join(OUT, dir), { withFileTypes: true })
       .filter(d => d.isDirectory() && fs.existsSync(path.join(OUT, dir, d.name, 'index.html')))
@@ -252,7 +252,10 @@ test('links within a guide point at ids on that page', () => {
   assert.ok(pages.length > 20, `found ${pages.length} guide pages`);
   for (const rel of pages) {
     const html = read(rel);
-    const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]));
+    const all = [...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
+    const ids = new Set(all);
+    // Two elements with one id would send a link to whichever comes first.
+    assert.deepEqual(all.filter((id, i) => all.indexOf(id) !== i), [], `${rel} repeats ids`);
     for (const [, target] of html.matchAll(/href="#([^"]+)"/g)) {
       assert.ok(ids.has(decodeURIComponent(target)), `${rel} links to #${target}`);
     }
