@@ -163,6 +163,35 @@ test('old urls redirect to where the page lives now', () => {
   }
 });
 
+// English-only pages outside the guides.
+const PAGES = ['download'];
+
+test('standalone pages: own head tags, no guides crumb, in the sitemap', () => {
+  for (const name of PAGES) {
+    const html = read(`${name}/index.html`);
+    const url = `${site.origin}/${name}/`;
+    assert.equal(attr(html, /<html lang="([^"]+)"/), 'en', name);
+    assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, `${name} h1 count`);
+    assert.equal(attr(html, /<link rel="canonical" href="([^"]+)"/), url, name);
+    const description = attr(html, /<meta name="description" content="([^"]*)"/);
+    assert.ok(description.length > 50 && description.length < 200, `${name} description: ${description}`);
+    assert.ok(!html.includes('class="crumbs"'), `${name} has the guides crumb`);
+    const crumbs = jsonLd(html)['@graph'].find(n => n['@type'] === 'BreadcrumbList').itemListElement;
+    assert.deepEqual(crumbs.map(c => c.item), [`${site.origin}/`, url], name);
+    assert.ok(read('sitemap.xml').includes(`<loc>${url}</loc>`), `${name} is not in the sitemap`);
+    assert.ok(!site.redirects.some(r => r.from === `/${name}/index.html`), `${name} is both a page and a redirect`);
+    for (const [, href] of html.matchAll(/href="(https:\/\/go\.blokada\.org\/[^"]*)"/g)) {
+      if (!/\/(terms|privacy)$/.test(href)) assert.ok(href.includes('src=landing'), `${name}: ${href} has no source`);
+    }
+  }
+});
+
+test('the download page offers the apk and says what the free app is', () => {
+  const html = read('download/index.html');
+  assert.ok(html.includes('href="https://go.blokada.org/apk5?src=landing"'));
+  assert.ok(html.includes('href="https://go.blokada.org/play_cloud?src=landing"'));
+});
+
 test('the inline script stays small', () => {
   const script = fs.readFileSync(path.join(ROOT, 'src/_includes/js/home.cjs'), 'utf8');
   assert.ok(script.length <= 6 * 1024, `home.cjs is ${script.length} bytes`);
@@ -183,7 +212,7 @@ test('the sitemap lists every built page once', () => {
   const locs = [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
   assert.equal(new Set(locs).size, locs.length);
   for (const lang of site.homeLangs) assert.ok(locs.includes(site.origin + lang.path), lang.code);
-  assert.equal(locs.length, 19 + 30);
+  assert.equal(locs.length, 19 + 30 + PAGES.length);
   for (const loc of locs) assert.ok(fs.existsSync(path.join(OUT, new URL(loc).pathname, 'index.html')), loc);
 });
 

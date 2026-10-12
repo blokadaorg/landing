@@ -119,7 +119,6 @@ export default {
     { from: '/lang/pt_BR/index.html', to: '/pt-br/' },
     { from: '/lang/zh_TW/index.html', to: '/zh-hant/' },
     { from: '/index.htm', to: '/' },
-    { from: '/download/index.html', to: '/#download' },
     { from: '/privacy/index.html', to: 'https://go.blokada.org/privacy' },
     { from: '/terms/index.html', to: 'https://go.blokada.org/terms' },
   ],
