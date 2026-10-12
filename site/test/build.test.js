@@ -147,6 +147,22 @@ test('reviews: a named pool, three shown before the script runs', () => {
   }
 });
 
+test('old urls redirect to where the page lives now', () => {
+  assert.ok(site.redirects.length > 0);
+  for (const { from, to } of site.redirects) {
+    const html = read(from);
+    const target = to.startsWith('/') ? site.origin + to : to;
+    assert.ok(html.includes(`<meta http-equiv="refresh" content="0; url=${target}">`), from);
+    assert.ok(html.includes(`<link rel="canonical" href="${target}">`), from);
+    assert.ok(html.includes(`<a href="${target}">`), `${from}: no link for browsers that ignore the refresh`);
+    if (to.startsWith('/')) {
+      const file = to.split('#')[0];
+      assert.ok(fs.existsSync(path.join(OUT, file, 'index.html')), `${from} points at ${to}, which is not built`);
+    }
+    assert.ok(!read('sitemap.xml').includes(site.origin + from.replace(/index\.html$/, '') + '<'), `${from} is in the sitemap`);
+  }
+});
+
 test('the inline script stays small', () => {
   const script = fs.readFileSync(path.join(ROOT, 'src/_includes/js/home.cjs'), 'utf8');
   assert.ok(script.length <= 6 * 1024, `home.cjs is ${script.length} bytes`);
