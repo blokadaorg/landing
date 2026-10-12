@@ -88,15 +88,28 @@ export default function (eleventyConfig) {
 
   // Splits a rendered guide at its h2 headings: each heading gets an id, each
   // part becomes a <section>, and the headings make the "On this page" list.
+  // A heading ending in {:#some-id} gets that id in every language, so links
+  // to it survive translation; others get one from their own text.
+  // Fixed ids are taken first, so a heading earlier on the page can't end up
+  // with one, and a fixed id used twice fails the build.
   eleventyConfig.addFilter('outline', html => {
+    const FIXED = /\s*\{:#([a-z0-9-]+)\}\s*<\/h2>/g;
     const used = new Set();
-    const toc = [];
-    const withIds = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, inner) => {
-      const text = inner.replace(/<[^>]+>/g, '').trim();
-      const base = slug(text) || 'section';
-      let id = base;
-      for (let n = 2; used.has(id); n += 1) id = `${base}-${n}`;
+    for (const [, id] of html.matchAll(FIXED)) {
+      if (used.has(id)) throw new Error(`Two headings have the fixed id #${id}`);
       used.add(id);
+    }
+    const toc = [];
+    const withIds = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, heading) => {
+      const fixed = heading.match(/\s*\{:#([a-z0-9-]+)\}\s*$/);
+      const inner = fixed ? heading.slice(0, fixed.index) : heading;
+      const text = inner.replace(/<[^>]+>/g, '').trim();
+      let id = fixed ? fixed[1] : slug(text) || 'section';
+      if (!fixed) {
+        const base = id;
+        for (let n = 2; used.has(id); n += 1) id = `${base}-${n}`;
+        used.add(id);
+      }
       toc.push({ id, text });
       return `<h2 id="${id}">${inner}</h2>`;
     });

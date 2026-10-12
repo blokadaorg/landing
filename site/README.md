@@ -46,6 +46,11 @@ running JavaScript.
   They show placeholders, filled in with the reader's own addresses when the
   page is opened from the dashboard (`#tag=<device tag>&name=<name>`, see
   `src/_includes/js/personalise.cjs`).
+- Headings get their id from their own text, so it differs per language. To
+  link to a heading within the page, give it a fixed id with `{:#some-id}` at
+  the end of the heading and link to `#some-id`. Translations keep it as it
+  is (`npm test` checks), and the build fails on a link to an id that is not
+  on the page.
 - Interface strings around the guides are in `src/_data/t.js`.
 
 Every guide ends with the Blokada Cloud call to action (links carry

@@ -12,7 +12,7 @@ Alla enheter i nätverket frågar routern vilken DNS-server de ska använda. Pek
 Det finns två sätt att ställa in en router:
 
 - **Krypterad DNS med ett värdnamn**, det vill säga DNS över TLS (DoT) eller DNS över HTTPS (DoH). Många nyare routrar har stöd för det, inklusive modellerna nedan. Beroende på vad din router stöder behöver du ditt DNS-namn eller din DoH-länk, båda finns ovan under _Dina uppgifter_.
-- **En vanlig IPv6-DNS-adress.** Många routrar från internetleverantörer accepterar bara vanliga IP-adresser som DNS. Om din gör det och din anslutning har IPv6 ger Blokada dig en IPv6-adress att ange. Se [Routrar som bara tar en IP-adress](#routrar-som-bara-tar-en-ip-adress).
+- **En vanlig IPv6-DNS-adress.** Många routrar från internetleverantörer accepterar bara vanliga IP-adresser som DNS. Om din gör det och din anslutning har IPv6 ger Blokada dig en IPv6-adress att ange. Se [Routrar som bara tar en IP-adress](#routers-that-only-take-an-ip-address).
 
 Använd krypterad DNS om din router stöder det. Då förblir uppslagen privata på vägen till Blokada.
 
@@ -49,7 +49,7 @@ ASUS-firmware senare än 3.0.0.4.386.4xxxx och Asuswrt-Merlin.
 
 Leta efter en inställning som heter _DNS over TLS_, _Private DNS_, _Encrypted DNS_ eller _DNS over HTTPS_. Ange ditt Blokada-DNS-namn eller din DoH-länk från ovan och ta bort alla andra DNS-servrar, även reservservrar. Om det inte finns någon sådan inställning använder du en vanlig IPv6-adress enligt nedan.
 
-## Routrar som bara tar en IP-adress
+## Routrar som bara tar en IP-adress {:#routers-that-only-take-an-ip-address}
 
 Din router och din internetanslutning behöver IPv6 för det här. Stöd för vanliga IPv4-adresser kommer senare.
 

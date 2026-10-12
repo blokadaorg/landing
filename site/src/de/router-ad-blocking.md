@@ -12,7 +12,7 @@ Jedes Gerät in deinem Netzwerk fragt den Router, welchen DNS-Server es nutzen s
 Es gibt zwei Wege, einen Router einzurichten:
 
 - **Verschlüsseltes DNS mit Hostnamen**, also DNS over TLS (DoT) oder DNS over HTTPS (DoH). Viele neuere Router können das, darunter die Modelle unten. Je nachdem, was dein Router unterstützt, brauchst du deinen DNS-Namen oder deinen DoH-Link. Beide stehen oben unter _Deine Daten_.
-- **Eine einfache IPv6-DNS-Adresse.** Viele Router von Internetanbietern akzeptieren für DNS nur einfache IP-Adressen. Ist das bei dir so und hat dein Anschluss IPv6, gibt dir Blokada eine IPv6-Adresse zum Eintragen. Siehe [Router, die nur eine IP-Adresse annehmen](#router-die-nur-eine-ip-adresse-annehmen).
+- **Eine einfache IPv6-DNS-Adresse.** Viele Router von Internetanbietern akzeptieren für DNS nur einfache IP-Adressen. Ist das bei dir so und hat dein Anschluss IPv6, gibt dir Blokada eine IPv6-Adresse zum Eintragen. Siehe [Router, die nur eine IP-Adresse annehmen](#routers-that-only-take-an-ip-address).
 
 Nutze verschlüsseltes DNS, wenn dein Router es unterstützt. Dann bleiben deine Anfragen auf dem Weg zu Blokada privat.
 
@@ -49,7 +49,7 @@ ASUS-Firmware neuer als 3.0.0.4.386.4xxxx und Asuswrt-Merlin.
 
 Suche nach einer Einstellung namens _DNS over TLS_, _Privates DNS_, _Verschlüsseltes DNS_ oder _DNS over HTTPS_. Trage deinen Blokada-DNS-Namen oder DoH-Link von oben ein und entferne alle anderen DNS-Server, auch Fallback-Server. Gibt es keine solche Einstellung, nutze eine einfache IPv6-Adresse wie unten beschrieben.
 
-## Router, die nur eine IP-Adresse annehmen
+## Router, die nur eine IP-Adresse annehmen {:#routers-that-only-take-an-ip-address}
 
 Dafür brauchen dein Router und dein Internetanschluss IPv6. Unterstützung für einfache IPv4-Adressen kommt später.
 

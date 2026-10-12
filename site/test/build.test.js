@@ -243,3 +243,29 @@ test('og:locale uses the codes sharing sites know', () => {
   assert.equal(by('pt-BR'), 'pt_BR');
   assert.equal(by('de'), 'de');
 });
+
+test('links within a guide point at ids that appear once on that page', () => {
+  const pages = ['guides', 'de/guides', 'sv/guides'].flatMap(dir =>
+    fs.readdirSync(path.join(OUT, dir), { withFileTypes: true })
+      .filter(d => d.isDirectory() && fs.existsSync(path.join(OUT, dir, d.name, 'index.html')))
+      .map(d => path.join(dir, d.name, 'index.html')));
+  assert.ok(pages.length > 20, `found ${pages.length} guide pages`);
+  for (const rel of pages) {
+    const html = read(rel);
+    const all = [...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
+    const ids = new Set(all);
+    // Two elements with one id would send a link to whichever comes first.
+    assert.deepEqual(all.filter((id, i) => all.indexOf(id) !== i), [], `${rel} repeats ids`);
+    for (const [, target] of html.matchAll(/href="#([^"]+)"/g)) {
+      assert.ok(ids.has(decodeURIComponent(target)), `${rel} links to #${target}`);
+    }
+  }
+});
+
+test('a fixed heading id is used as is and left out of the heading text', () => {
+  for (const dir of ['guides', 'de/guides', 'sv/guides']) {
+    const html = read(`${dir}/router-ad-blocking/index.html`);
+    assert.match(html, /<h2 id="routers-that-only-take-an-ip-address">/, dir);
+    assert.doesNotMatch(html, /\{:#/, dir);
+  }
+});
