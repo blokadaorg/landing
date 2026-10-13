@@ -58,7 +58,7 @@ Dein Router und deine Internetverbindung benötigen hierfür IPv6. Die Unterstü
 3. Finde in den Einstellungen des Routers die DNS-Server für IPv6, meist unter _Internet_, _WAN_ oder _IPv6_, und trage die Adresse als einzigen DNS-Server ein.
 4. **Entferne alle anderen DNS-Server, einschließlich IPv4.** Geräte, die vom Router weiterhin einen IPv4-DNS-Server erhalten, schicken einige Anfragen an Blokada vorbei. Falls der Router kein leeres IPv4-DNS zulässt, richte deine Geräte stattdessen einzeln ein: [Android](../android-private-dns/), [Mac und Apple TV](../apple-devices/), [Windows](../windows-dns-over-https/), [Linux](../linux-dns-over-tls/) und [Browser](../browser-dns-over-https/).
 
-Die gleiche Einrichtung funktioniert für Fernseher oder Spielkonsolen, bei denen du einen DNS-Server manuell eingeben kannst. Vergib für jedes Gerät eine eigene Adresse, damit es namentlich in deiner Aktivität erscheint.
+Die gleiche Einrichtung funktioniert für Fernseher oder Spielkonsolen, bei denen man einen DNS-Server manuell eingeben kann. Vergib für jedes Gerät eine eigene Adresse, damit es namentlich in deiner Aktivität erscheint.
 
 <div class="note aside">
 

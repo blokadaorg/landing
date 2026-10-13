@@ -9,7 +9,7 @@ Ein Pi-hole blockiert Werbung für jedes Gerät in deinem Netzwerk, solange der 
 
 - **Keine Box, um die du dich kümmern musst.** Keine SD-Karten, keine Updates, kein Ausfall, wenn der Pi ausfällt.
 - **Funktioniert auch unterwegs.** Handys und Laptops blockieren weiter, auch mobil und in anderen WLANs.
-- **Verschlüsselt.** Geräte kommunizieren mit Blokada über DNS over TLS oder DNS over HTTPS, sodass dein Anbieter deine Anfragen nicht lesen oder verändern kann. Eine Ausnahme ist ein Router oder Gerät, das mit einer einfachen IPv6-Adresse eingerichtet ist; dessen Anfragen sind nicht verschlüsselt.
+- **Verschlüsselt.** Geräte kommunizieren mit Blokada über DNS über TLS oder DNS über HTTPS, sodass dein Anbieter deine Anfragen nicht lesen oder verändern kann. Eine Ausnahme ist ein Router oder Gerät, das mit einer einfachen IPv6-Adresse eingerichtet ist; dessen Anfragen sind nicht verschlüsselt.
 - **Ein Dashboard.** Sperrlisten, erlaubte und blockierte Domains und die Aktivität pro Gerät, unter [app.blokada.org](https://app.blokada.org/?src=guides).
 
 Es gibt zwei Wege zum Wechsel: Ersetze den Pi-hole ganz, oder behalte ihn und nutze Blokada Cloud als Upstream.

@@ -46,7 +46,7 @@ Hast du `https://dns.nextdns.io/…` als _sicheres DNS_ in deinem Browser einget
 
 Nutzt dein Router NextDNS über DNS over TLS oder DNS over HTTPS, ersetze den NextDNS-Namen oder -Link durch deinen von Blokada, wie in der [Router-Anleitung](../router-ad-blocking/) beschrieben.
 
-Wenn NextDNS über einfache IP-Adressen verwendet wird, ersetze sie durch eine Blokada IPv6-Adresse, wie im [Router-Leitfaden](../router-ad-blocking/) beschrieben. Dafür muss IPv6 in deiner Verbindung aktiviert sein. Die Anfragen sind dabei nicht verschlüsselt. Blokada bietet aktuell keine einfachen IPv4-Adressen an, deshalb kann eine Einrichtung mit einer NextDNS _verknüpften IP_ nicht direkt übernommen werden. Ohne IPv6 musst du deine Geräte einzeln einrichten oder einen Router nutzen, der verschlüsseltes DNS unterstützt.
+Wenn NextDNS über einfache IP-Adressen verwendet wird, ersetze sie durch eine Blokada IPv6-Adresse, wie im [Router-Leitfaden](../router-ad-blocking/) beschrieben. Dafür muss IPv6 in deiner Verbindung aktiviert sein. Die Anfragen sind dabei nicht verschlüsselt. Blokada bietet aktuell keine einfachen IPv4-Adressen an, deshalb kann eine Einrichtung mit einer NextDNS _verknüpften IP_ nicht direkt übernommen werden. Ohne IPv6 musst du deine Geräte einzeln einrichten oder einen Router nutzen, der verschlüsselten DNS unterstützt.
 
 ## Prüfen, ob es funktioniert
 

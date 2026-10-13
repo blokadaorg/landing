@@ -11,8 +11,8 @@ Alla enheter i nätverket frågar routern vilken DNS-server de ska använda. Pek
 
 Det finns två sätt att konfigurera en router:
 
-- **Krypterad DNS med ett värdnamn**, det vill säga DNS över TLS (DoT) eller DNS över HTTPS (DoH). Många nyare routrar gör det, inklusive modellerna nedan. Beroende på vad din router stöder behöver du ditt DNS-namn eller din DoH-länk, båda finns ovan under _Dina uppgifter_.
-- **En vanlig IPv6 DNS-adress.** Många routrar från internetleverantörer accepterar bara vanliga IP-adresser för DNS. Om din gör det och din anslutning har IPv6, ger Blokada dig en IPv6-adress att ange. Se [Routrar som bara accepterar en IP-adress](#routers-that-only-take-an-ip-address).
+- Din router måste stödja **krypterad DNS med ett värdnamn**, det vill säga DNS över TLS (DoT) eller DNS över HTTPS (DoH). Många nyare routrar gör det, inklusive modellerna nedan. Beroende på vad din router stöder behöver du ditt DNS-namn eller din DoH-länk, båda finns ovan under _Dina uppgifter_.
+- **En vanlig IPv6 DNS-adress.** Många routers från internetleverantörer accepterar bara vanliga IP-adresser för DNS. Om din gör det och din anslutning har IPv6, ger Blokada dig en IPv6-adress att ange. Se [Routrar som bara accepterar en IP-adress](#routers-that-only-take-an-ip-address).
 
 Använd krypterad DNS om din router stöder det. Uppslag hålls privata på sin väg till Blokada.
 
@@ -53,7 +53,7 @@ Leta efter en inställning som heter _DNS over TLS_, _Private DNS_, _Encrypted D
 
 Din router och din internetanslutning behöver IPv6 för detta. Stöd för vanliga IPv4-adresser kommer senare.
 
-1. I [dashboarden](https://app.blokada.org/setup?src=guides), öppna _Inställningar_ och välj _Router, TV, spelkonsol_.
+1. I [dashboarden](https://app.blokada.org/setup?src=guides), öppna _Konfiguration_ och välj _Router, TV, spelkonsol_.
 2. Ge routern ett namn, till exempel _Hemrouter_, och välj _Hämta adress_. Namnet visas i din aktivitet och kan inte ändras senare.
 3. Gå till routerinställningarna och leta upp DNS-servrarna för IPv6, ofta under _Internet_, _WAN_ eller _IPv6_, och ange adressen som den enda DNS-servern.
 4. **Ta bort alla andra DNS-servrar, även IPv4-servrar.** Enheter som fortfarande får en IPv4 DNS-server från routern skickar vissa uppslag utanför Blokada. Om routern inte kan lämna IPv4 DNS tom, ställ in dina enheter en i taget istället: [Android](../android-private-dns/), [Mac och Apple TV](../apple-devices/), [Windows](../windows-dns-over-https/), [Linux](../linux-dns-over-tls/) och [webbläsare](../browser-dns-over-https/).
