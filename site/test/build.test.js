@@ -88,7 +88,7 @@ test('internal links point at built files', () => {
 
 test('outgoing links keep their attribution', () => {
   const html = page(site.homeLangs[0]);
-  for (const target of ['appstore/family', 'appstore', 'play/family', 'play/v6', 'apk5', 'forum', 'newsletter', 'opinions', 'faq', 'donate']) {
+  for (const target of ['appstore/family', 'appstore', 'play/family', 'play/v6', 'apk5', 'forum', 'newsletter', 'opinions', 'donate']) {
     assert.ok(html.includes(`https://go.blokada.org/${target}?src=landing"`), target);
   }
   assert.ok(html.includes('https://app.blokada.org/?src=landing"'));
@@ -164,7 +164,7 @@ test('old urls redirect to where the page lives now', () => {
 });
 
 // English-only pages outside the guides.
-const PAGES = ['download'];
+const PAGES = ['download', 'faq'];
 
 test('standalone pages: own head tags, no guides crumb, in the sitemap', () => {
   for (const name of PAGES) {
@@ -190,6 +190,17 @@ test('the download page offers the apk and says what the free app is', () => {
   const html = read('download/index.html');
   assert.ok(html.includes('href="https://go.blokada.org/apk5?src=landing"'));
   assert.ok(html.includes('href="https://go.blokada.org/play_cloud?src=landing"'));
+});
+
+test('the faq is a page on the site and the homepage links it', () => {
+  for (const lang of site.homeLangs) {
+    const html = page(lang);
+    assert.ok(html.includes('href="/faq/"'), lang.code);
+    assert.ok(!/go\.blokada\.org\/faq["?]/.test(html), `${lang.code} still links the go link`);
+  }
+  const faq = read('faq/index.html');
+  assert.equal((faq.match(/<h2 id=/g) || []).length, 10);
+  assert.ok(!faq.includes('homepage faq'), 'a string key was printed instead of its text');
 });
 
 test('the inline script stays small', () => {

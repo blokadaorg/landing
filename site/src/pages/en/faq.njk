@@ -1,0 +1,18 @@
+---
+title: Frequently Asked Questions
+description: Answers about Blokada's apps and subscriptions. What each product does, what is free and what is paid, how your privacy is protected, and refunds.
+updated: 2026-10-12
+---
+{#- The answers the homepage shows, from the same strings, plus two that only
+    this page has. English only, like every page in this folder. -#}
+<h2>What does Blokada cost?</h2>
+<p><a href="/download/">Blokada 5</a> for Android is free. Blokada 6, Blokada Family and Blokada Plus need a subscription. Each starts with a 7 day free trial, and you can get a refund within 7 days of paying.</p>
+<p>Prices differ by country and store. The App Store, Google Play or the web dashboard shows the exact price before you pay.</p>
+
+{%- for n in [7, 8, 3, 4, 1, 2, 5, 6] %}
+<h2>{{ ('homepage faq title ' + n) | tr('en') }}</h2>
+<p>{{ ('homepage faq desc ' + n) | tr('en') | safe }}</p>
+{%- endfor %}
+
+<h2>Where can I ask something else?</h2>
+<p>On the <a href="{{ site.forum }}">community forum</a>, where other users and the team answer. The <a href="/guides/">setup guides</a> cover routers, TVs, computers and phones step by step.</p>
