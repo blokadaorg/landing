@@ -164,7 +164,8 @@ test('old urls redirect to where the page lives now', () => {
 });
 
 // English-only pages outside the guides.
-const PAGES = ['download', 'faq'];
+const PRODUCT_PAGES = ['blokada-6', 'blokada-family', 'blokada-plus', 'blokada-5'];
+const PAGES = ['download', 'faq', ...PRODUCT_PAGES];
 
 test('standalone pages: own head tags, no guides crumb, in the sitemap', () => {
   for (const name of PAGES) {
@@ -189,7 +190,7 @@ test('standalone pages: own head tags, no guides crumb, in the sitemap', () => {
 test('the download page offers the apk and says what the free app is', () => {
   const html = read('download/index.html');
   assert.ok(html.includes('href="https://go.blokada.org/apk5?src=landing"'));
-  assert.ok(html.includes('href="https://go.blokada.org/play_cloud?src=landing"'));
+  assert.ok(html.includes('href="/blokada-6/"'));
 });
 
 test('the faq is a page on the site and the homepage links it', () => {
@@ -201,6 +202,24 @@ test('the faq is a page on the site and the homepage links it', () => {
   const faq = read('faq/index.html');
   assert.equal((faq.match(/<h2 id=/g) || []).length, 10);
   assert.ok(!faq.includes('homepage faq'), 'a string key was printed instead of its text');
+});
+
+test('product pages: points, a way to get the product, and what it costs without a price', () => {
+  assert.deepEqual(site.products.map(p => p.page).sort(), PRODUCT_PAGES.map(p => `/${p}/`).sort());
+  for (const name of PRODUCT_PAGES) {
+    const html = read(`${name}/index.html`);
+    const product = site.products.find(p => p.page === `/${name}/`);
+    assert.equal((html.match(/<article[\s\S]*?<ul>([\s\S]*?)<\/ul>/)[1].match(/<li>/g) || []).length, product.points.length, name);
+    assert.ok(!/homepage [a-z]+ (desc|point|title)/.test(html), `${name}: a string key was printed instead of its text`);
+    assert.ok(html.includes('<h2 id="what-it-costs">'), name);
+    assert.ok(/7 day free trial|is free\./.test(html), `${name} does not say what is paid`);
+    assert.ok(!/[$€£]\s?\d|\d\s?(USD|EUR)/.test(html.match(/<article[\s\S]*<\/article>/)[0]), `${name} shows a price`);
+    assert.ok(/class="btn btn-primary" href="(https:\/\/go\.blokada\.org\/|\/download\/)/.test(html), `${name} has no way to get the product`);
+    assert.ok(html.includes(`src="/img/ill/${product.img}" width="900" height="1221" loading="lazy"`), name);
+  }
+  for (const lang of site.homeLangs) {
+    for (const name of PRODUCT_PAGES) assert.ok((page(lang).match(new RegExp(`href="/${name}/"`, 'g')) || []).length >= 2, `${lang.code} ${name}`);
+  }
 });
 
 test('the inline script stays small', () => {

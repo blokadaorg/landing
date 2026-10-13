@@ -1,0 +1,9 @@
+{#- The product's points as the homepage lists them, from the same strings. -#}
+{%- for p in site.products %}{% if p.id == product %}
+<img class="product-ill" src="/img/ill/{{ p.img }}" width="900" height="1221" loading="lazy" decoding="async" alt="">
+<ul>
+{%- for point in p.points %}
+<li>{{ point | tr('en') | safe }}</li>
+{%- endfor %}
+</ul>
+{%- endif %}{% endfor %}
