@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+{%- set s = t[lang] -%}
+{%- set doc = content | outline -%}
+<div class="guide-layout">
+  <article class="guide">
+    {%- if doc.toc.length > 2 %}
+    <nav class="toc" aria-label="{{ s.onThisPage }}">
+      <details class="toc-inner">
+        <summary class="toc-title">{{ s.onThisPage }}</summary>
+        <ol>
+          {%- for item in doc.toc %}
+          <li><a href="#{{ item.id }}">{{ item.text | safe }}</a></li>
+          {%- endfor %}
+        </ol>
+      </details>
+    </nav>
+    {%- endif %}
+
+    {{ doc.html | safe }}
+
+    {%- if updated %}
+    <p class="updated">{{ s.updated }} <time datetime="{{ updated | isoDate }}">{{ updated | isoDate }}</time></p>
+    {%- endif %}
+  </article>
+</div>

@@ -27,8 +27,10 @@ export function homeJsonLd(site, lang, description) {
 
 export function guideJsonLd(site, page) {
   const crumb = (position, name, url) => ({ '@type': 'ListItem', position, name, item: site.origin + url });
-  const crumbs = [crumb(1, 'Blokada', page.homeUrl), crumb(2, page.guidesTitle, page.guidesUrl)];
-  if (!page.isIndex) crumbs.push(crumb(3, page.title, page.url));
+  // Pages outside the guides have no guidesUrl and sit right under the homepage.
+  const crumbs = [crumb(1, 'Blokada', page.homeUrl)];
+  if (page.guidesUrl) crumbs.push(crumb(2, page.guidesTitle, page.guidesUrl));
+  if (!page.isIndex) crumbs.push(crumb(crumbs.length + 1, page.title, page.url));
   const graph = [{ '@type': 'BreadcrumbList', itemListElement: crumbs }];
   if (!page.isIndex) {
     graph.push({
