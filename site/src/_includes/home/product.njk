@@ -23,7 +23,9 @@
 </div>
 <div>
 <p class="h6 mt-5">
-<a href="{{ p.page }}" class="text-warning" style="margin-right:1.5rem">{{ 'universal action learn more' | tr }}</a>
+{#- "Learn more" alone says nothing out of context: screen readers and search
+    engines also get the product's name. #}
+<a href="{{ p.page }}" class="text-warning" style="margin-right:1.5rem">{{ 'universal action learn more' | tr }}<span class="sr-only">: {{ p.name }}</span></a>
 <a href="#faq" class="text-warning">{{ 'homepage about action faq' | tr }}</a>
 </p>
 </div>

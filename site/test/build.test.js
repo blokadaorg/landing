@@ -222,6 +222,17 @@ test('product pages: points, a way to get the product, and what it costs without
   }
 });
 
+test('no link on the homepage reads only "Learn more"', () => {
+  const html = page(site.homeLangs[0]);
+  // Links within the page are judged by where they sit, links away by their text.
+  for (const [, href, text] of html.matchAll(/<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g)) {
+    if (href.startsWith('#')) continue;
+    const plain = text.replace(/<[^>]+>/g, '').trim();
+    assert.ok(!/^(learn more|read more|click here)$/i.test(plain), `a link reads only "${plain}"`);
+  }
+  for (const p of site.products) assert.ok(html.includes(`<span class="sr-only">: ${p.name}</span>`), p.id);
+});
+
 test('the inline script stays small', () => {
   const script = fs.readFileSync(path.join(ROOT, 'src/_includes/js/home.cjs'), 'utf8');
   assert.ok(script.length <= 6 * 1024, `home.cjs is ${script.length} bytes`);
