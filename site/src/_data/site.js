@@ -38,7 +38,7 @@ export default {
   // page, in English only.
   products: [
     {
-      id: 'family', page: '/blokada-family/', img: 'blokada-family.webp', imageFirst: false, pad: 'pl-md-5',
+      id: 'family', name: 'Blokada Family', page: '/blokada-family/', img: 'blokada-family.webp', imageFirst: false, pad: 'pl-md-5',
       title: 'homepage family title',
       desc: 'homepage family desc',
       points: [
@@ -52,7 +52,7 @@ export default {
       ],
     },
     {
-      id: 'cloud', page: '/blokada-6/', img: 'blokada-cloud.webp', imageFirst: true, pad: 'pl-md-5',
+      id: 'cloud', name: 'Blokada 6', page: '/blokada-6/', img: 'blokada-cloud.webp', imageFirst: true, pad: 'pl-md-5',
       title: 'homepage cloud title',
       desc: 'homepage cloud desc',
       points: [
@@ -66,7 +66,7 @@ export default {
       ],
     },
     {
-      id: 'about', page: '/blokada-5/', img: 'blokada-libre.webp', imageFirst: false, pad: 'pr-md-5',
+      id: 'about', name: 'Blokada 5', page: '/blokada-5/', img: 'blokada-libre.webp', imageFirst: false, pad: 'pr-md-5',
       title: 'homepage about title',
       desc: 'homepage about desc',
       points: [
@@ -80,7 +80,7 @@ export default {
       ],
     },
     {
-      id: 'vpn', page: '/blokada-plus/', img: 'blokada-plus.webp', imageFirst: false, pad: 'pr-md-5',
+      id: 'vpn', name: 'Blokada Plus', page: '/blokada-plus/', img: 'blokada-plus.webp', imageFirst: false, pad: 'pr-md-5',
       title: 'homepage vpn title',
       desc: 'homepage vpn desc',
       points: [
