@@ -1,3 +1,11 @@
+// The old homepage's language addresses (/lang/de_DE/), by homepage language.
+const OLD_LOCALES = {
+  en: 'en_US', bg: 'bg_BG', cs: 'cs_CZ', de: 'de_DE', es: 'es_ES', fi: 'fi_FI', fr: 'fr_FR',
+  hu: 'hu_HU', id: 'id_ID', it: 'it_IT', ja: 'ja_JP', nl: 'nl_NL', pl: 'pl_PL', 'pt-BR': 'pt_BR',
+  ro: 'ro_RO', ru: 'ru_RU', sv: 'sv_SE', tr: 'tr_TR', 'zh-Hant': 'zh_TW',
+};
+const langPath = code => (code === 'en' ? '/' : `/${code.toLowerCase()}/`);
+
 export default {
   origin: 'https://blokada.org',
   dashboard: 'https://app.blokada.org',
@@ -16,7 +24,7 @@ export default {
     tag: code,
     // Open Graph has no script subtags: Traditional Chinese is zh_TW there.
     og: code === 'zh-Hant' ? 'zh_TW' : code.replace('-', '_'),
-    path: code === 'en' ? '/' : `/${code.toLowerCase()}/`,
+    path: langPath(code),
     name,
   })),
   // Where each language's guides live. English keeps the unprefixed URLs.
@@ -114,12 +122,10 @@ export default {
   redirects: [
     { from: '/pt/index.html', to: '/pt-br/' },
     { from: '/zh_TW/index.html', to: '/zh-hant/' },
-    { from: '/lang/de_DE/index.html', to: '/de/' },
-    { from: '/lang/hu_HU/index.html', to: '/hu/' },
-    { from: '/lang/pl_PL/index.html', to: '/pl/' },
-    { from: '/lang/pt_BR/index.html', to: '/pt-br/' },
-    { from: '/lang/zh_TW/index.html', to: '/zh-hant/' },
+    ...Object.entries(OLD_LOCALES).map(([code, old]) => ({ from: `/lang/${old}/index.html`, to: langPath(code) })),
     { from: '/index.htm', to: '/' },
+    { from: '/apk/index.html', to: '/download/' },
+    { from: '/pricing/index.html', to: '/faq/#what-does-blokada-cost' },
     { from: '/privacy/index.html', to: 'https://go.blokada.org/privacy' },
     { from: '/terms/index.html', to: 'https://go.blokada.org/terms' },
   ],
