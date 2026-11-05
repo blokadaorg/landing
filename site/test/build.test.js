@@ -233,6 +233,14 @@ test('no link on the homepage reads only "Learn more"', () => {
   for (const p of site.products) assert.ok(html.includes(`<span class="sr-only">: ${p.name}</span>`), p.id);
 });
 
+test('every homepage language has a redirect from its old /lang/ address', () => {
+  for (const lang of site.homeLangs) {
+    const stub = site.redirects.find(r => r.from.startsWith('/lang/') && r.to === lang.path);
+    assert.ok(stub, `${lang.code} has no /lang/ redirect`);
+  }
+  assert.equal(new Set(site.redirects.map(r => r.from)).size, site.redirects.length, 'a redirect is listed twice');
+});
+
 test('the inline script stays small', () => {
   const script = fs.readFileSync(path.join(ROOT, 'src/_includes/js/home.cjs'), 'utf8');
   assert.ok(script.length <= 6 * 1024, `home.cjs is ${script.length} bytes`);
