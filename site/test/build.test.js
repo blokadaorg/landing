@@ -187,9 +187,11 @@ test('standalone pages: own head tags, no guides crumb, in the sitemap', () => {
   }
 });
 
-test('the download page offers the apk and says what the free app is', () => {
+test('the download page leads with Blokada 6 and still offers the apk', () => {
   const html = read('download/index.html');
-  assert.ok(html.includes('href="https://go.blokada.org/apk5?src=landing"'));
+  const play = html.indexOf('href="https://go.blokada.org/play/v6?src=landing"');
+  assert.ok(play >= 0 && html.includes('href="https://go.blokada.org/appstore?src=landing"'));
+  assert.ok(play < html.indexOf('href="https://go.blokada.org/apk5?src=landing"'), 'store buttons come before the apk');
   assert.ok(html.includes('href="/blokada-6/"'));
 });
 
